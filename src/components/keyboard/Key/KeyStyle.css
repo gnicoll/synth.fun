@@ -1,0 +1,58 @@
+
+ 
+.arp_keys_octave:nth-of-type(1) .arp_key:nth-of-type(1) > .arp_key_inner {
+    clip-path: polygon(0 0, 100% 0, 99% 99%, 4% 100%);
+}
+  
+ 
+ /*C*/
+  .arp_key:nth-of-type(1) > .arp_key_inner {
+    clip-path: polygon(0 0, 100% 0, 99% 99%, 4% 100%);
+  }
+  /*C#
+  clip-path: polygon(5% 2%, 97% 1%, 99% 97%, 1% 100%);
+  */
+  /*D*/
+  .arp_key:nth-of-type(2) > .arp_key_inner {
+    clip-path: polygon(0 1%, 100% 0, 98% 100%, 0 99%);
+  }
+  /*D#
+  clip-path: polygon(2% 1%, 97% 1%, 92% 97%, 2% 97%);
+  */
+  /*E*/
+  .arp_key:nth-of-type(3) > .arp_key_inner {
+    clip-path: polygon(3% 1%, 98% 0, 98% 97%, 0 100%);
+  }
+  /*F*/
+  .arp_key:nth-of-type(4) > .arp_key_inner {
+    clip-path: polygon(9% 0, 98% 3%, 95% 97%, 2% 100%);
+}
+  /*F#
+  clip-path: polygon(9% 4%, 94% 0, 96% 99%, 3% 98%);
+  */
+/*G*/
+  .arp_key:nth-of-type(5) > .arp_key_inner {
+    clip-path: polygon(11% 4%, 95% 3%, 99% 100%, 2% 99%);
+}
+/*G#
+clip-path: polygon(9% 1%, 95% 4%, 100% 100%, 3% 97%);
+*/
+/*A*/
+  .arp_key:nth-of-type(6) > .arp_key_inner {
+    clip-path: polygon(0 0, 95% 3%, 99% 100%, 6% 96%);
+}
+/*A#
+clip-path: polygon(5% 1%, 96% 5%, 100% 97%, 1% 99%);
+*/
+/*B*/
+  .arp_key:nth-of-type(7) > .arp_key_inner {
+    clip-path: polygon(3% 3%, 98% 3%, 95% 97%, 2% 100%);
+
+}
+
+.arp_key:nth-of-type(1) > .arp_key_inner {
+    clip-path: polygon(5% 1%, 96% 5%, 100% 97%, 1% 99%);
+  }
+  .arp_key:nth-of-type(2) > .arp_key_inner {
+    clip-path: polygon(9% 1%, 95% 4%, 100% 100%, 3% 97%);
+    }
