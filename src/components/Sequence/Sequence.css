@@ -1,0 +1,10 @@
+
+
+.arp_sequence {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    height: 40vh;
+    width: 40vh;
+    margin: 0 auto;
+    gap: 1vh;
+}

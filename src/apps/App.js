@@ -1,28 +1,28 @@
 import logo from './logo.svg';
-import React, { useEffect, useCallback  } from 'react';
+import React, { useEffect, useCallback, useRef  } from 'react';
 import './App.css';
 import { ReactSVG } from 'react-svg'
 import Keyboard from '../components/keyboard/Keyboard';
+import Sequence from '../components/Sequence/Sequence';
+import * as Tone from 'tone';
 
 function App() {
+  console.log("Rendered App.js")
   const [notes, setNotes] = React.useState([undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined]);
-  const [playedNote, setPlayedNote] = React.useState(-1);
+  const [playedNote, setPlayedNote] = React.useState({number: undefined, note: undefined});
   const [highlightNote, setHighlightNote] = React.useState(undefined);
-
-  const assignNote = useCallback((num , n) => {
-    
-  }, []);
+  const [selectedStep, setSelectedStep] = React.useState(0);
 
   
-  function hoverSequenceHandler(num){
-    if (notes.filter((n)=>n?.number===num)?.length !== 0)
-      setHighlightNote(num);
+  function SelectSequenceStep(num){
+    setSelectedStep(num)
   }
 
   return (
-    <div className="App">
-      <Keyboard onClick={assignNote} notes={notes} onHover={hoverSequenceHandler} playedNote={playedNote} highlightNote={highlightNote} />
-
+    <div className={"App arp_sequence_step-"+selectedStep+"--selected"}>
+      <Keyboard notes={notes} />
+      <div>{playedNote.note}</div>
+      <Sequence notes={notes} onClick={SelectSequenceStep} />
     </div>
   );
 }

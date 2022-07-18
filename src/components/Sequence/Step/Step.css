@@ -1,0 +1,114 @@
+.arp_sequence_step {
+    position: relative;
+    background-color: #07060a;
+    margin: 0 0.5vh;
+}
+
+.arp_sequence_step::after {
+    left: 0;
+    background-color: #888;
+    height: 20%;
+    width: 100%;
+    content: "";
+    position: absolute;
+    bottom: 0;
+}
+
+.arp_sequence_step-0 {
+    clip-path: polygon(99% 99%, 98% 0, 1% 2%, 4% 100%);
+}
+.arp_sequence_step-1 {
+    clip-path: polygon(100% 96%, 98% 1%, 2% 0, 0 100%);
+}
+.arp_sequence_step-2 {
+    clip-path: polygon(98% 93%, 98% 1%, 0 2%, 3% 99%);
+}
+.arp_sequence_step-3 {
+    clip-path: polygon(99% 99%, 98% 0, 1% 2%, 4% 100%);
+}
+.arp_sequence_step-4 {
+    clip-path: polygon(99% 99%, 98% 0, 1% 2%, 4% 100%);
+}
+.arp_sequence_step-5 {
+    clip-path: polygon(99% 99%, 98% 0, 1% 2%, 4% 100%);
+}
+.arp_sequence_step-6 {
+    clip-path: polygon(99% 99%, 98% 0, 1% 2%, 4% 100%);
+}
+.arp_sequence_step-7 {
+    clip-path: polygon(99% 99%, 98% 0, 1% 2%, 4% 100%);
+}
+.arp_sequence_step-8 {
+    clip-path: polygon(99% 99%, 98% 0, 1% 2%, 4% 100%);
+}
+.arp_sequence_step-9 {
+    clip-path: polygon(99% 99%, 98% 0, 1% 2%, 4% 100%);
+}
+.arp_sequence_step-10 {
+    clip-path: polygon(99% 99%, 98% 0, 1% 2%, 4% 100%);
+}
+.arp_sequence_step-11 {
+    clip-path: polygon(99% 99%, 98% 0, 1% 2%, 4% 100%);
+}
+.arp_sequence_step-12 {
+    clip-path: polygon(99% 99%, 98% 0, 1% 2%, 4% 100%);
+}
+.arp_sequence_step-13 {
+    clip-path: polygon(99% 99%, 98% 0, 1% 2%, 4% 100%);
+}
+.arp_sequence_step-14 {
+    clip-path: polygon(99% 99%, 98% 0, 1% 2%, 4% 100%);
+}
+.arp_sequence_step-15 {
+    clip-path: polygon(99% 99%, 98% 0, 1% 2%, 4% 100%);
+}
+
+
+.arp_sequence_step-0--selected .arp_sequence_step-0::after{
+    background-color: #0170C2;
+}
+.arp_sequence_step-1--selected .arp_sequence_step-1::after{
+    background-color: #0170C2;
+}
+.arp_sequence_step-2--selected .arp_sequence_step-2::after{
+    background-color: #0170C2;
+}
+.arp_sequence_step-3--selected .arp_sequence_step-3::after{
+    background-color: #0170C2;
+}
+.arp_sequence_step-4--selected .arp_sequence_step-4::after{
+    background-color: #0170C2;
+}
+.arp_sequence_step-5--selected .arp_sequence_step-5::after{
+    background-color: #0170C2;
+}
+.arp_sequence_step-6--selected .arp_sequence_step-6::after{
+    background-color: #0170C2;
+}
+.arp_sequence_step-7--selected .arp_sequence_step-7::after{
+    background-color: #0170C2;
+}
+.arp_sequence_step-8--selected .arp_sequence_step-8::after{
+    background-color: #0170C2;
+}
+.arp_sequence_step-9--selected .arp_sequence_step-9::after{
+    background-color: #0170C2;
+}
+.arp_sequence_step-10--selected .arp_sequence_step-10::after{
+    background-color: #0170C2;
+}
+.arp_sequence_step-11--selected .arp_sequence_step-11::after{
+    background-color: #0170C2;
+}
+.arp_sequence_step-12--selected .arp_sequence_step-12::after{
+    background-color: #0170C2;
+}
+.arp_sequence_step-13--selected .arp_sequence_step-13::after{
+    background-color: #0170C2;
+}
+.arp_sequence_step-14--selected .arp_sequence_step-14::after{
+    background-color: #0170C2;
+}
+.arp_sequence_step-15--selected .arp_sequence_step-15::after{
+    background-color: #0170C2;
+}

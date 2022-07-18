@@ -1,3 +1,69 @@
 .arp_keys {
-    height: 40%;
+    height: 42vh;
+    background-color: #261f22;
+    padding: 2vh 0;
+}
+
+.arp_keys_octave_container {
+  height: 40vh;
+  margin: 0 auto;
+  width: 90vw;
+  overflow: hidden;
+  position: relative;
+}
+
+@media screen and (min-width: 640px) {
+    .arp_keys_octave_container{
+        width: 95vw;
+    }
+}
+
+.arp_keys_rest {
+
+    z-index: 5;
+    position: absolute;
+    height: 12vh;
+    width: 8vw;
+    bottom: 4vh;
+    background: #07060a;
+    left: 0vw;
+
+    clip-path: polygon(99% 99%, 98% 0, 1% 2%, 4% 100%);
+    opacity: 1;
+}
+.arp_keys_rest:hover {
+    opacity: 0.5;
+}
+
+
+.arp_keys_octave_up {
+
+    z-index: 5;
+    position: absolute;
+    height: 8vh;
+    width: 10vw;
+    top: 2vh;
+    background: #ED1B24;
+    right: 0vw;
+    clip-path: polygon(0 0, 100% 4%, 48% 21%, 22% 100%);
+}
+.arp_keys_octave_up:hover {
+
+    background: #f0353d;
+}
+
+.arp_keys_octave_down {
+
+    z-index: 5;
+    position: absolute;
+    height: 8vh;
+    width: 10vw;
+    top: 9vh;
+    background: #ED1B24;
+    right: 0vw;
+    clip-path: polygon(100% 100%, 93% 0, 73% 57%, 0 78%);
+}
+.arp_keys_octave_down:hover {
+
+    background: #f0353d;
 }

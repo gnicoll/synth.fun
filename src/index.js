@@ -4,10 +4,13 @@ import './index.css';
 import App from './apps/App';
 import reportWebVitals from './reportWebVitals';
 import { sendToVercelAnalytics } from './vitals';
+import {SynthProvider} from './context/SynthContext';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <SynthProvider>
+      <App />
+    </SynthProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
