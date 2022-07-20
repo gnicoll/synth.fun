@@ -7,7 +7,8 @@ const Step = ({stepNum,  onClick, note, sequenceNum }) => {
     <div
      onClick={() => onClick(sequenceNum)}
      className={"arp_sequence_step " + "arp_sequence_step-"+sequenceNum} >
-        {note?.note}
+        {note?.name}
+        {note === null && '-'}
     </div>
   )
 }

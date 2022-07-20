@@ -2,16 +2,36 @@ import React, { useReducer, useEffect, useContext } from "react";
 
 const SequenceContext = React.createContext(null);
 
-let sequenceInit = [{'noteNum': 60, 'note':'C4'}];
+let sequenceInit = 
+[
+  undefined,
+  undefined,
+  undefined,
+  undefined,
+  undefined,
+  undefined,
+  undefined,
+  undefined,
+  undefined,
+  undefined,
+  undefined,
+  undefined,
+  undefined,
+  undefined,
+  undefined,
+  undefined
+];
 
 
 
 export function SequenceProvider(props) {
-  const [tone, dispatch] = useReducer(synthReducer, {
-    sequence:sequenceInit
+  const [sequence, dispatch] = useReducer(sequenceReducer, {
+    sequence:sequenceInit,
+    sequenceIndex:0
   });
   const contextValue = {
-    sequence:sequenceInit
+    sequence,
+    dispatch
   };
   return (
     <SequenceContext.Provider value={contextValue}>
@@ -20,20 +40,36 @@ export function SequenceProvider(props) {
   );
 }
 
+function nextSequenceIndex(sequence) {
+  for (let i = 0; i < sequence.length; i++) {
+    if (sequence[i] === undefined) {
+      return i;
+    }
+  }
+  return sequence.length;
+}
+
 export default function sequenceReducer(store, action) {
+  const { note, index } = action;
     switch (action.type) {
         case "addNote": {
-        const { note, sequenceIndex } = action;
         let newSequence = [...store.sequence];
 
-        if (!sequenceIndex && newSequence.length < 16) {
-          newSequence.push(note);
-        } else if (sequenceIndex && sequenceIndex < 16) {
-          newSequence[sequenceIndex] = note;
+        if (!index && store.sequenceIndex < newSequence.length) {
+          newSequence[store.sequenceIndex] = note;
+        } else if (index && index < newSequence.length) {
+          newSequence[index] = note;
         }
         
         return {
-          'sequence':newSequence
+          'sequence':newSequence,
+          'sequenceIndex':nextSequenceIndex(newSequence)
+        };
+      }
+      case "setIndex": {
+        return {
+          'sequence':store.sequence,
+          'sequenceIndex':index
         };
       }
       default:

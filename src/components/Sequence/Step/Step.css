@@ -2,6 +2,13 @@
     position: relative;
     background-color: #07060a;
     margin: 0 0.5vh;
+    color: white;
+    line-height: 0;
+    display: grid;
+    font-size: 3vh;
+    justify-items: center;
+    align-items: center;
+    font-family: 'Poiret One';
 }
 
 .arp_sequence_step::after {

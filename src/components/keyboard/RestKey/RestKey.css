@@ -1,0 +1,32 @@
+
+.arp_keys_rest {
+  z-index: 5;
+  position: absolute;
+  height: 12vh;
+  width: 8vw;
+  bottom: 4vh;
+  background: #07060a;
+  left: 0vw;
+  clip-path: polygon(99% 99%, 98% 0, 1% 2%, 4% 100%);
+  opacity: 1;
+}
+.arp_keys_rest:hover {
+  background: #FEF200 !important;
+}
+
+@media screen and (min-width: 1024px) {
+  .arp_keys_rest {
+    
+    height: 8vh;
+    width: 2vw;
+    bottom: 2vh;
+  }
+}
+@media screen and (min-width: 1260px) {
+  .arp_keys_rest {
+    
+    height: 8vh;
+    width: 2vw;
+    bottom: 2vh;
+  }
+}

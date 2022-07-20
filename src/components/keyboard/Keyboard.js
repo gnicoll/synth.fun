@@ -2,6 +2,7 @@ import React from 'react';
 import Octave from './Octave/Octave';
 import PropTypes from 'prop-types';
 import styles from './Keyboard.css';
+import RestKey from './RestKey/RestKey';
 
 const Keyboard = ({playedNote, highlightNote, onHover, notes}) => {
   const [mouseDown , setMouseDown] = React.useState(false);
@@ -23,14 +24,14 @@ const Keyboard = ({playedNote, highlightNote, onHover, notes}) => {
 
   return (
     <>
-      <div className={"arp_keys arp_keys--playing_"+playedNote+" arp_keys--highlighting_"+highlightNote}>
+      <div className={"arp_keys arp_keys--playing_"+playedNote+" arp_keys--highlighting_"+highlightNote+" arp_keys_octave-"+octaveNum}>
         <div className="arp_keys_shadow"></div>
+        <div className="arp_keys_octave_up" onClick={()=>handleOctaveSet(octaveNum-1)} ></div>
+        <div className="arp_keys_octave_down" onClick={()=>handleOctaveSet(octaveNum+1)}></div>
+        <RestKey />
         <div className='arp_keys_octave_container'>
-          <div className="arp_keys_octave_up" onClick={()=>handleOctaveSet(octaveNum-1)} ></div>
-          <div className="arp_keys_octave_down" onClick={()=>handleOctaveSet(octaveNum+1)}></div>
-          <div className="arp_keys_rest" onClick={()=>{}}></div>
           <div 
-            className={"arp_keys_octaves "+"arp_keys_octave-"+octaveNum}
+            className={"arp_keys_octaves "}
             onMouseDown={() => setMouseDown(true)} 
             onMouseUp={() => setMouseDown(false)} 
             >
@@ -39,9 +40,6 @@ const Keyboard = ({playedNote, highlightNote, onHover, notes}) => {
             )}
           </div>
         </div>
-      </div>
-      <div>
-        mouseDown = {mouseDown? "true":"false"}
       </div>
     </>
   )

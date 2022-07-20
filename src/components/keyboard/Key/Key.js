@@ -1,11 +1,14 @@
 import style from './Key.css';
 import { useSynth } from '../../../context/SynthContext';
+import { useSequence } from '../../../context/SequenceContext';
 
 const Key = ({ note, sharp, noteNumber, onHover, mouseDown }) => {
-    const { dispatch } = useSynth();
+  const synthDispatch  = useSynth().dispatch;
+  const sequenceDispatch = useSequence().dispatch;
   
     function clickHandler(num, n){
-      dispatch({'type': 'play', 'note': {'number': num, 'note': n}});
+      synthDispatch({'type': 'play', 'note': {'number': num, 'note': n}});
+      sequenceDispatch({'type': 'addNote', 'note': {'number': num, 'name': n}});
     }
     function hoverHandler(num, n){
       if (onHover)

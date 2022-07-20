@@ -5,11 +5,14 @@ import App from './apps/App';
 import reportWebVitals from './reportWebVitals';
 import { sendToVercelAnalytics } from './vitals';
 import {SynthProvider} from './context/SynthContext';
+import {SequenceProvider} from './context/SequenceContext';
 
 ReactDOM.render(
   <React.StrictMode>
     <SynthProvider>
-      <App />
+      <SequenceProvider>
+        <App />
+      </SequenceProvider>
     </SynthProvider>
   </React.StrictMode>,
   document.getElementById('root')
