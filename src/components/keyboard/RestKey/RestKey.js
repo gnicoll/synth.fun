@@ -1,20 +1,27 @@
 import style from './RestKey.css';
-import { useSequence } from '../../../context/SequenceContext';
+import { useSynth } from '../../../context/SynthContext';
 
-const RestKey = ({ note, sharp, noteNumber, onHover, mouseDown }) => {
-  const sequenceDispatch = useSequence().dispatch;
+
+const RestKey = ({ note, noteNumber}) => {
   
-    function clickHandler(num, n){
-      sequenceDispatch({'type': 'addNote', 'note': null});
-    }
+  const {controls, dispatch}  = useSynth();
+  
+  function clickHandler(){
+    dispatch(
+      {
+        'type': 'playNote', 
+        sequenceIndex: controls.sequenceIndex,
+        'note': null
+      });
+  }
 
-    return (
-      <div 
-        onMouseDown={() => clickHandler(noteNumber, note)} 
-        className="arp_keys_rest" 
-      >
-      </div>
-    )
+  return (
+    <div 
+      onMouseDown={() => clickHandler()} 
+      className="arp_keys_rest" 
+    >
+    </div>
+  )
 }
   
   export default RestKey

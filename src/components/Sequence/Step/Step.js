@@ -1,14 +1,17 @@
 import style from './Step.css';
 
 
-const Step = ({stepNum,  onClick, note, sequenceNum }) => {
+const Step = ({ onClick, step, sequenceNum }) => {
   
   return (
-    <div
-     onClick={() => onClick(sequenceNum)}
-     className={"arp_sequence_step " + "arp_sequence_step-"+sequenceNum} >
-        {note?.name}
-        {note === null && '-'}
+    <div className='arp_sequence_step_container'>
+      <div className={"arp_sequence_step_highlight " + "arp_sequence_step-"+sequenceNum}></div>
+      <div
+        onClick={() => (step!==undefined) && onClick(sequenceNum)}
+        className={"arp_sequence_step " + "arp_sequence_step-"+sequenceNum} >
+          {step?.rootNote?.name}
+          {step?.rootNote === null && '-'}
+      </div>
     </div>
   )
 }

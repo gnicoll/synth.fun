@@ -1,14 +1,32 @@
+.arp_sequence_step_container {
+
+    position: relative;
+    padding: 0 0.5vh;
+}
+
+.arp_sequence_step_highlight {
+    position: absolute;
+    height: 100%;
+    width: 90%;
+    background: orange;
+    clip-path: polygon(100% 96%, 98% 1%, 2% 0, 0 100%);
+    z-index: 1;
+    opacity: 0;
+    transform: scale(1.1);
+}
+
 .arp_sequence_step {
     position: relative;
     background-color: #07060a;
-    margin: 0 0.5vh;
     color: white;
     line-height: 0;
     display: grid;
     font-size: 3vh;
     justify-items: center;
-    align-items: center;
-    font-family: 'Poiret One';
+    align-items: center; 
+    height: 100%;
+    z-index: 5;
+/*    font-family: 'Plaster';*/
 }
 
 .arp_sequence_step::after {

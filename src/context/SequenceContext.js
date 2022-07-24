@@ -27,7 +27,8 @@ let sequenceInit =
 export function SequenceProvider(props) {
   const [sequence, dispatch] = useReducer(sequenceReducer, {
     sequence:sequenceInit,
-    sequenceIndex:0
+    sequenceIndex:0,
+    pattern:[0,3,7,3]
   });
   const contextValue = {
     sequence,
