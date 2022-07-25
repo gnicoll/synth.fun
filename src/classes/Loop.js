@@ -1,7 +1,7 @@
 export default class Loop {
-    constructor(p) {
+    constructor(d) {
+        this.dispatch = d;
         //bool to indicate if the loop is playing
-        this.playing = p;
         this.patternIndex = 0;
         this.playingIndex = 0;
         //an array of arrays of Step objects
@@ -56,10 +56,19 @@ export default class Loop {
             }
             this.playingIndex = 0;
         }
-        return {
+
+        let playDetails = {
             noteNumber,
             sequenceIndex
-        };
+            
+        }
+        
+        this.dispatch({
+            'type': 'setPlayDetails',
+            playDetails
+        });
+
+        return playDetails;
     }
 
     getCurrentSequence() {
@@ -89,11 +98,4 @@ export default class Loop {
         this.nextSequence = sequence;
     }
 
-    setPlaying(playing) {
-        console.log("setPlaying", playing);
-        this.playing = playing;
-    }
-    getPlaying() {
-        return this.playing;
-    }
   }

@@ -63,6 +63,8 @@ export function SynthProvider(props) {
     controls,
     loop
   });
+  loop.dispatch = dispatch;
+
   const contextValue = {
     tone,
     loop,
@@ -110,8 +112,6 @@ export default function synthReducer(store, action) {
         //store.tone.start();
         const { play } = action;
 
-        store.loop.setPlaying(play);
-
         if (play) 
         store.tone.Transport.start();
         else
@@ -129,6 +129,21 @@ export default function synthReducer(store, action) {
         
         store.controls.sequenceIndex = index;
 
+        return {
+          tone: store.tone,
+          loop: store.loop,
+          controls: store.controls
+        };
+      }
+
+      case 'setPlayDetails' : {
+        const { playDetails } = action;
+        const { noteNumber, sequenceIndex } = playDetails;
+
+        store.controls.notesPlayed = noteMap[noteNumber];
+        store.controls.noteNumberPlayed = noteNumber;
+        store.controls.patternIndexPlayed = sequenceIndex;
+        
         return {
           tone: store.tone,
           loop: store.loop,
