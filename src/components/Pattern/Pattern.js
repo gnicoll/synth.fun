@@ -7,8 +7,16 @@ const Pattern = () => {
   }
   
   return (
-    <div className="arp_Pattern" >
-      {controls.pattern}
+    <div className="arp_patterns" >
+      <div className='arp_pattern'>
+        <div className='arp_pattern_image' >
+
+        </div>
+        <div className='arp_pattern_details' >
+          {controls.pattern}
+
+        </div>
+      </div>
     </div>
   )
 }

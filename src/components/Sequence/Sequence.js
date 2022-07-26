@@ -20,9 +20,7 @@ const Sequence = () => {
   
   
   return (
-    <div className={'arp_sequence' + ' arp_sequence_playing_step_'+controls.patternIndexPlayed}>
-      <div>{controls.patternIndexPlayed}</div>
-      
+    <div className={'arp_sequence' + ' arp_sequence_playing_step_'+controls.patternIndexPlayed}>     
       <div className="arp_sequence_grid" >
         {loop.getCurrentSequence()?.map((entry, index) => 
           <Step onClick={()=>handleClick(index)} step={entry} key={index} sequenceNum={index} />

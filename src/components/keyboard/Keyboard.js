@@ -45,7 +45,6 @@ const Keyboard = ({playedNote, highlightNote, onHover, notes}) => {
           </div>
         </div>
       </div>
-      <div>played:{controls.notesPlayed}</div>
     </>
   )
 }
