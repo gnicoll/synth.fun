@@ -6,7 +6,7 @@
   width: 8vw;
   bottom: 4vh;
   background: #07060a;
-  left: 0vw;
+  left: 5vw;
   clip-path: polygon(99% 99%, 98% 0, 1% 2%, 4% 100%);
   opacity: 1;
 }
@@ -17,6 +17,7 @@
 @media screen and (min-width: 1024px) {
   .arp_keys_rest {
     
+  left: 0vw;
     height: 8vh;
     width: 2vw;
     bottom: 2vh;
@@ -27,6 +28,7 @@
     
     height: 8vh;
     width: 2vw;
-    bottom: 2vh;
+    bottom: 3vh;
+    left: 2vw;
   }
 }

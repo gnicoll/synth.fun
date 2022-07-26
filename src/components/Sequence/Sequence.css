@@ -1,6 +1,12 @@
 
 
 .arp_sequence {
+    position: absolute;
+    width: 100%;
+    bottom: 7vh; 
+}
+
+.arp_sequence_grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     height: 40vh;

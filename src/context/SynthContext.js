@@ -35,7 +35,7 @@ synthInit.connect(gain);
 let controls = {
   'mode': 'sequence',
   'sequenceIndex': 0,
-  'pattern': [0,4,7,11,7,4],
+  'pattern': [0,4,7,4,null],
   'tempo': 120,
   'gain': 0.6,
   'notesPlayed': null,
@@ -99,6 +99,9 @@ export default function synthReducer(store, action) {
 
           store.loop.addStepToSequence(step, sequenceIndex);
           store.controls.sequenceIndex = sequenceNext(loop.getCurrentSequence());
+        } else if (store.controls.mode === 'live') {
+          
+          //loop.synth.triggerAttackRelease(noteMap[playDetails.noteNumber], '4n', time);
         }
         return {
           tone: store.tone,

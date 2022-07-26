@@ -12,6 +12,73 @@
     clip-path: polygon(100% 96%, 98% 1%, 2% 0, 0 100%);
     z-index: 1;
     opacity: 0;
+    transform: scale(1.0);
+    transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+
+}
+
+.arp_sequence_playing_step_0 .arp_sequence_step_highlight.arp_sequence_step-0 {
+    opacity: 1;
+    transform: scale(1.1);
+}
+.arp_sequence_playing_step_1 .arp_sequence_step_highlight.arp_sequence_step-1 {
+    opacity: 1;
+    transform: scale(1.1);
+}
+.arp_sequence_playing_step_2 .arp_sequence_step_highlight.arp_sequence_step-2 {
+    opacity: 1;
+    transform: scale(1.1);
+}
+.arp_sequence_playing_step_3 .arp_sequence_step_highlight.arp_sequence_step-3 {
+    opacity: 1;
+    transform: scale(1.1);
+}
+.arp_sequence_playing_step_4 .arp_sequence_step_highlight.arp_sequence_step-4 {
+    opacity: 1;
+    transform: scale(1.1);
+}
+.arp_sequence_playing_step_5 .arp_sequence_step_highlight.arp_sequence_step-5 {
+    opacity: 1;
+    transform: scale(1.1);
+}
+.arp_sequence_playing_step_6 .arp_sequence_step_highlight.arp_sequence_step-6 {
+    opacity: 1;
+    transform: scale(1.1);
+}
+.arp_sequence_playing_step_7 .arp_sequence_step_highlight.arp_sequence_step-7 {
+    opacity: 1;
+    transform: scale(1.1);
+}
+.arp_sequence_playing_step_8 .arp_sequence_step_highlight.arp_sequence_step-8 {
+    opacity: 1;
+    transform: scale(1.1);
+}
+.arp_sequence_playing_step_9 .arp_sequence_step_highlight.arp_sequence_step-9 {
+    opacity: 1;
+    transform: scale(1.1);
+}
+.arp_sequence_playing_step_10 .arp_sequence_step_highlight.arp_sequence_step-10 {
+    opacity: 1;
+    transform: scale(1.1);
+}
+.arp_sequence_playing_step_11 .arp_sequence_step_highlight.arp_sequence_step-11 {
+    opacity: 1;
+    transform: scale(1.1);
+}
+.arp_sequence_playing_step_12 .arp_sequence_step_highlight.arp_sequence_step-12 {
+    opacity: 1;
+    transform: scale(1.1);
+}
+.arp_sequence_playing_step_13 .arp_sequence_step_highlight.arp_sequence_step-13 {
+    opacity: 1;
+    transform: scale(1.1);
+}
+.arp_sequence_playing_step_14 .arp_sequence_step_highlight.arp_sequence_step-14 {
+    opacity: 1;
+    transform: scale(1.1);
+}
+.arp_sequence_playing_step_15 .arp_sequence_step_highlight.arp_sequence_step-15 {
+    opacity: 1;
     transform: scale(1.1);
 }
 
@@ -87,6 +154,7 @@
 .arp_sequence_step-15 {
     clip-path: polygon(99% 99%, 98% 0, 1% 2%, 4% 100%);
 }
+
 
 
 .arp_sequence_step-0--selected .arp_sequence_step-0::after{

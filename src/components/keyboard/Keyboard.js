@@ -7,7 +7,7 @@ import {useSynth} from '../../context/SynthContext';
 
 const Keyboard = ({playedNote, highlightNote, onHover, notes}) => {
   const [mouseDown , setMouseDown] = React.useState(false);
-  const [octaveNum , setOctaveNum] = React.useState(4);
+  const [octaveNum , setOctaveNum] = React.useState(3);
   const {controls, dispatch}  = useSynth();
 
 
