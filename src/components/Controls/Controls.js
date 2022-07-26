@@ -16,15 +16,17 @@ const Controls = () => {
   
   return (
     <div className="arp_controls" >
-      <div className='arp_control_button'
-        onClick={()=>handleClick(!play)}
-      >
-        {!play && <div 
-          className='arp_control_button_play'>
-        </div>}
-        {play && <div 
-          className='arp_control_button_pause'>
-        </div>}
+      <div className="arp_controls_container">
+        <div className='arp_control_button'
+          onClick={()=>handleClick(!play)}
+          >
+          {!play && 
+          <div className='arp_control_button_play'>
+          </div>}
+          {play && 
+          <div className='arp_control_button_pause'>
+          </div>}
+        </div>
       </div>
     </div>
   )

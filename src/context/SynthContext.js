@@ -15,19 +15,43 @@ document.documentElement.addEventListener('mousedown', () => {
 let toneInit = Tone;
 
 let synthInit = 
-    new toneInit.MonoSynth({
-   oscillator: {
-     type: "square"
-   },
-   envelope: {
-    attack: 0.001
-   }
- });
+    new toneInit.MonoSynth(
+      {
+        frequency : 'C4',
+        detune : 0,
+        oscillator : {
+          type : 'square'
+          },
+        filter : {
+          Q : 1 ,
+          type : 'lowpass' ,
+          frequency : 550 ,
+          rolloff : -24
+        },
+        envelope : {
+          attack : 0.001,
+          decay : 0.1,
+          sustain : 0.9,
+          release : .45
+        },
+        filterEnvelope : {
+          attack : 0.001,
+          decay : 0.1,
+          sustain : 0.5,
+          release : .25,
+          baseFrequency : 200,
+          octaves : 7,
+          exponent : 2
+        }
+      }
+    );
 
 const loop = new Loop(false);
-
 const gain = new toneInit.Gain(0.6);
 gain.toDestination();
+
+//routing synth through the reverb
+
 
 synthInit.connect(gain);
 
@@ -35,14 +59,14 @@ synthInit.connect(gain);
 let controls = {
   'mode': 'sequence',
   'sequenceIndex': 0,
-  'pattern': [0,4,7,4,null],
+  'pattern': [0,4,7,11,7,4],
   'tempo': 120,
   'gain': 0.6,
   'notesPlayed': null,
   'patternIndexPlayed': null,
 }
 
-toneInit.Transport.scheduleRepeat(repeat, '16n');
+toneInit.Transport.scheduleRepeat(repeat, '8n');
 //toneInit.Transport.start();
 
 function repeat(time) {
@@ -50,7 +74,7 @@ function repeat(time) {
   let playDetails = loop.play();
 //  controls.notesPlayed = playDetails.noteNumber;
   if (playDetails.noteNumber !== undefined) {
-    synthInit.triggerAttackRelease(noteMap[playDetails.noteNumber], '4n', time);
+    synthInit.triggerAttackRelease(noteMap[playDetails.noteNumber], '8n', time);
   }
 }
 
@@ -91,7 +115,7 @@ export default function synthReducer(store, action) {
     switch (action.type) {
       case "playNote": {
         const { note, sequenceIndex } = action;
-
+        
         if (store.controls.mode === 'sequence') {
           //below pattern should come from current step selection
           //let step = new Step( note, [0,3,7,11,7,3] );

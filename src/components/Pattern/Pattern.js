@@ -13,7 +13,17 @@ const Pattern = () => {
 
         </div>
         <div className='arp_pattern_details' >
-          {controls.pattern}
+          <div>
+            UP / Down Arp            
+          </div>
+          <div>
+            Major Scale            
+          </div>
+          <div>
+            {controls.pattern.map((entry, index) =>
+              <span key={index}>{entry},</span>
+            )}
+          </div>
 
         </div>
       </div>

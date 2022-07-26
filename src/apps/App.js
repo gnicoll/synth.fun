@@ -8,6 +8,7 @@ import Pattern from '../components/Pattern/Pattern';
 import Controls from '../components/Controls/Controls';
 import * as Tone from 'tone';
 import { useSynth } from '../context/SynthContext';
+import Layout from '../Layout/Layout';
 
 function App() {
   console.log("Rendered App.js")
@@ -15,10 +16,12 @@ function App() {
 
   return (
     <div className={"App arp_sequence_step-"+controls.sequenceIndex+"--selected"}>
-      <Keyboard />
-      <Pattern />
-      <Sequence />
-      <Controls />
+      <Layout>
+        <Keyboard />
+        <Pattern />
+        <Sequence />
+        <Controls />
+      </Layout>
     </div>
   );
 }

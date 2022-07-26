@@ -1,16 +1,37 @@
 
 
-.arp_sequence {
-    position: absolute;
+.arp_sequence {   
     width: 100%;
-    bottom: 7vh; 
+    height: 100%;
+    position: relative;
 }
 
+.arp_sequence_grids {
+    
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+
+
+.arp_sequence_grid_container {   
+    width: 90%;
+    height: 100%;
+    position: relative;
+    margin: 0 auto;
+}
+
+
+
 .arp_sequence_grid {
+    position: absolute;
+    top: 0;
+    right: 0;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    height: 40vh;
-    width: 40vh;
+    height: 100%;
+    width: 100%;
     margin: 0 auto;
-    gap: 1vh;
+    grid-gap: 1%;
+    gap: 1%;
 }

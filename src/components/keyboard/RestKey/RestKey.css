@@ -2,11 +2,11 @@
 .arp_keys_rest {
   z-index: 5;
   position: absolute;
-  height: 12vh;
-  width: 8vw;
-  bottom: 4vh;
+  height: 40%;
+  width: 8%;
+  bottom: 5%;
   background: #07060a;
-  left: 5vw;
+  left: 5%;
   clip-path: polygon(99% 99%, 98% 0, 1% 2%, 4% 100%);
   opacity: 1;
 }
@@ -16,8 +16,7 @@
 
 @media screen and (min-width: 1024px) {
   .arp_keys_rest {
-    
-  left: 0vw;
+    left: 0vw;
     height: 8vh;
     width: 2vw;
     bottom: 2vh;
