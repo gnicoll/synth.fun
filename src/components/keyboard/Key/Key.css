@@ -64,7 +64,8 @@ clip-path: polygon(5% 1%, 96% 5%, 100% 97%, 1% 99%);
 
   .arp_key_inner{ 
     transition: all 0.25s ease;
-    background: #FEFBF6;
+    background: rgb(221,213,199);
+    background: linear-gradient(0deg, rgba(221,213,199,1) 0%, rgba(254,251,246,1) 1%, rgba(254,251,246,1) 57%, rgba(217,206,189,1) 100%);
     height: 80%;
     padding: 4.25% 50%;
     width: 0rem;
@@ -74,8 +75,8 @@ clip-path: polygon(5% 1%, 96% 5%, 100% 97%, 1% 99%);
     box-sizing: content-box;
   }
   .arp_key_inner:hover{
-    background: #ccc;
-    background: #FEF200 !important;
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
   }
   
   .arp_key--sharp{
@@ -89,6 +90,8 @@ clip-path: polygon(5% 1%, 96% 5%, 100% 97%, 1% 99%);
 
   .arp_key--sharp .arp_key_inner{
     background: #07060a;
+    background: rgb(3,3,5);
+background: linear-gradient(0deg, rgb(3,3,5) 0%, rgb(15,12,25) 1%, rgb(15,12,25) 57%, rgb(3,3,5) 100%);
     /* border-bottom: 2px solid #333; */
     height: 100%;
     /* border-bottom-right-radius: 3px; */
@@ -234,14 +237,12 @@ clip-path: polygon(5% 1%, 96% 5%, 100% 97%, 1% 99%);
     box-shadow: 0px 0px 15px 5px #FEF200;
   }
   .arp_keys--playing_38 .arp_key_38 .arp_key_inner {
-    background: #FEF200 !important;
-    border-bottom: 2px solid  #c0a435 !important;
-    box-shadow: 0px 0px 15px 5px #FEF200;
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
   }
   .arp_keys--playing_39 .arp_key_39 .arp_key_inner {
-    background: #FEF200 !important;
-    border-bottom: 2px solid  #c0a435 !important;
-    box-shadow: 0px 0px 15px 5px #FEF200;
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
   }
   .arp_keys--playing_40 .arp_key_40 .arp_key_inner {
     background: #FEF200 !important;

@@ -5,7 +5,8 @@
   height: 40%;
   width: 8%;
   bottom: 5%;
-  background: #07060a;
+  background: rgb(3,3,5);
+background: linear-gradient(0deg, rgb(3,3,5) 0%, rgb(15,12,25) 1%, rgb(15,12,25) 57%, rgb(3,3,5) 100%);
   left: 5%;
   clip-path: polygon(99% 99%, 98% 0, 1% 2%, 4% 100%);
   opacity: 1;

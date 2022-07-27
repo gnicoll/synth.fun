@@ -12,7 +12,8 @@
     display: flex;
     flex-direction: row;
     border: 3px solid #261f22;
-    color: #261f22;
+    color: white;
+    background-color: #261f22;
 }
 
 .arp_pattern_image {
@@ -22,6 +23,8 @@
 }
 
 .arp_pattern_details {
+    background-color: #FEFBF6;
+    color: #261f22;
     width: 60%;
     height: 100%;
     text-align: left;
