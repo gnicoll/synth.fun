@@ -31,9 +31,17 @@ const Pattern = () => {
         <div className=''>{controls.patternIndex}</div>
         {controls?.pattern?.map((entry, index) => 
         {
-          if (index === controls.patternIndex) 
-            return <span key={index}>[{entry}]</span>
-          return <span key={index}>{entry},</span>
+          
+          return <span 
+                  style = {
+                    {
+                      'clip-path': 'polygon(0 16%, 100% 30%, 100% 100%, 0% 100%)',
+                      backgroundColor: 'red'
+                    }
+                  } 
+                  key={index}>
+                    {entry},
+                  </span>
         }
       )}
       </div>
