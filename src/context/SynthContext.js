@@ -14,6 +14,9 @@ document.documentElement.addEventListener('mousedown', () => {
 
 let toneInit = Tone;
 
+
+let effect = new Tone.FeedbackDelay(0.1, 0.4); 
+
 let synthInit = 
     new toneInit.MonoSynth(
       {
@@ -46,14 +49,15 @@ let synthInit =
       }
     );
 
-const loop = new Loop(false);
 const gain = new toneInit.Gain(0.6);
 gain.toDestination();
+synthInit.connect(effect);
+effect.connect(gain);
+const loop = new Loop(false, synthInit);
 
 //routing synth through the reverb
 
 
-synthInit.connect(gain);
 
 //controls is the interface object
 let controls = {
@@ -116,6 +120,8 @@ export default function synthReducer(store, action) {
       case "playNote": {
         const { note, sequenceIndex } = action;
         
+        let synth = new Tone.Synth().toDestination();
+        synth.triggerAttackRelease(`${note.name}`, "8n");
         if (store.controls.mode === 'sequence') {
           //below pattern should come from current step selection
           //let step = new Step( note, [0,3,7,11,7,3] );
@@ -165,11 +171,13 @@ export default function synthReducer(store, action) {
 
       case 'setPlayDetails' : {
         const { playDetails } = action;
-        const { noteNumber, sequenceIndex } = playDetails;
+        const { noteNumber, sequenceIndex, pattern, patternIndex } = playDetails;
 
         store.controls.notesPlayed = noteMap[noteNumber];
         store.controls.noteNumberPlayed = noteNumber;
         store.controls.patternIndexPlayed = sequenceIndex;
+        store.controls.pattern = pattern;
+        store.controls.patternIndex = patternIndex;
         
         return {
           tone: store.tone,

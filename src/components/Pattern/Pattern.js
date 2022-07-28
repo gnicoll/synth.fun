@@ -27,6 +27,16 @@ const Pattern = () => {
 
         </div>
       </div>
+      <div>
+        <div className=''>{controls.patternIndex}</div>
+        {controls?.pattern?.map((entry, index) => 
+        {
+          if (index === controls.patternIndex) 
+            return <span key={index}>[{entry}]</span>
+          return <span key={index}>{entry},</span>
+        }
+      )}
+      </div>
     </div>
   )
 }

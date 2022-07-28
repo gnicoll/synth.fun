@@ -1,5 +1,6 @@
 export default class Loop {
-    constructor(d) {
+    constructor(d, s) {
+        this.synth = s;
         this.dispatch = d;
         //bool to indicate if the loop is playing
         this.patternIndex = 0;
@@ -59,8 +60,9 @@ export default class Loop {
 
         let playDetails = {
             noteNumber,
-            sequenceIndex
-            
+            sequenceIndex,
+            'pattern': step.pattern,
+            'patternIndex': [this.patternIndex]
         }
         
         this.dispatch({
