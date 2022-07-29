@@ -4,21 +4,21 @@
     width: 100%;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
 .arp_pattern {
     width: 90%;
-    height: 80%;
+    height: 100%;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
-    border: 3px solid #261f22;
     color: white;
-    background-color: #261f22;
 }
 
 .arp_pattern_image {
     width: 40%;
-    height: 100%;
+    height: 60%;
     background-color: #261f22;
 }
 
@@ -26,7 +26,105 @@
     background-color: #FEFBF6;
     color: #261f22;
     width: 60%;
-    height: 100%;
+    height: 60%;
     text-align: left;
-    padding: 5%;
+    padding: 0% 5%;
+    border: 3px solid #261f22;
+}
+
+.arp_pattern_patternvisual {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 40%;
+    overflow: hidden;
+}
+.arp_pattern_patternvisual_entry {
+    display: block;
+    position: relative;
+    flex-grow: 1;
+    background-color: #261f22;
+    transform: scaleX(1.15);
+    z-index: 1;
+}
+
+.arp_pattern_patternvisual_playingentry0 .arp_pattern_patternvisual_entry:nth-of-type(1) {
+z-index:2;
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+}
+.arp_pattern_patternvisual_playingentry1 .arp_pattern_patternvisual_entry:nth-of-type(2) {
+z-index:2;
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+}
+.arp_pattern_patternvisual_playingentry2 .arp_pattern_patternvisual_entry:nth-of-type(3) {
+z-index:2;
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+}
+.arp_pattern_patternvisual_playingentry3 .arp_pattern_patternvisual_entry:nth-of-type(4) {
+z-index:2;
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+}
+.arp_pattern_patternvisual_playingentry4 .arp_pattern_patternvisual_entry:nth-of-type(5) {
+z-index:2;
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+}
+.arp_pattern_patternvisual_playingentry5 .arp_pattern_patternvisual_entry:nth-of-type(6) {
+z-index:2;
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+}
+.arp_pattern_patternvisual_playingentry6 .arp_pattern_patternvisual_entry:nth-of-type(7) {
+z-index:2;
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+}
+.arp_pattern_patternvisual_playingentry7 .arp_pattern_patternvisual_entry:nth-of-type(8) {
+z-index:2;
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+}
+.arp_pattern_patternvisual_playingentry8 .arp_pattern_patternvisual_entry:nth-of-type(9) {
+z-index:2;
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+}
+.arp_pattern_patternvisual_playingentry9 .arp_pattern_patternvisual_entry:nth-of-type(10) {
+z-index:2;
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+}
+.arp_pattern_patternvisual_playingentry10 .arp_pattern_patternvisual_entry:nth-of-type(11) {
+z-index:2;
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+}
+.arp_pattern_patternvisual_playingentry11 .arp_pattern_patternvisual_entry:nth-of-type(12) {
+z-index:2;
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+}
+.arp_pattern_patternvisual_playingentry12 .arp_pattern_patternvisual_entry:nth-of-type(13) {
+z-index:2;
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+}
+.arp_pattern_patternvisual_playingentry13 .arp_pattern_patternvisual_entry:nth-of-type(14) {
+z-index:2;
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+}
+.arp_pattern_patternvisual_playingentry14 .arp_pattern_patternvisual_entry:nth-of-type(15) {
+z-index:2;
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+}
+.arp_pattern_patternvisual_playingentry15 .arp_pattern_patternvisual_entry:nth-of-type(16) {
+z-index:2;
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
 }
