@@ -16,7 +16,7 @@
     transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
 
 }
-
+/*
 .arp_sequence_playing_step_0 .arp_sequence_step_highlight.arp_sequence_step-0 {
     opacity: 1;
     transform: scale(1.1);
@@ -81,7 +81,7 @@
     opacity: 1;
     transform: scale(1.1);
 }
-
+*/
 .arp_sequence_step {
     position: relative;
     background-color: #261f22;
@@ -107,23 +107,71 @@
     content: "";
     position: absolute;
     bottom: 0;
-    box-shadow: 0 0 3vh 3vh rgba(1, 112, 194, .5);
+    box-shadow: 0 0 0vh 0vh rgba(254,242,0, 0);
+    
 }
-.arp_sequence_playing_step_0 .arp_sequence_step.arp_sequence_step-0 {
-	animation: pulse 500ms infinite;
+/*
+.arp_sequence_playing_step_0 .arp_sequence_step.arp_sequence_step-0::after {
+	animation: pulse 1000ms infinite;
 }
+.arp_sequence_playing_step_1 .arp_sequence_step.arp_sequence_step-1::after {
+	animation: pulse 1000ms infinite;
+}
+.arp_sequence_playing_step_2 .arp_sequence_step.arp_sequence_step-2::after {
+	animation: pulse 1000ms infinite;
+}
+.arp_sequence_playing_step_3 .arp_sequence_step.arp_sequence_step-3::after {
+	animation: pulse 1000ms infinite;
+}
+.arp_sequence_playing_step_4 .arp_sequence_step.arp_sequence_step-4::after {
+	animation: pulse 1000ms infinite;
+}
+.arp_sequence_playing_step_5 .arp_sequence_step.arp_sequence_step-5::after {
+	animation: pulse 1000ms infinite;
+}
+.arp_sequence_playing_step_6 .arp_sequence_step.arp_sequence_step-6::after {
+	animation: pulse 1000ms infinite;
+}
+.arp_sequence_playing_step_7 .arp_sequence_step.arp_sequence_step-7::after {
+	animation: pulse 1000ms infinite;
+}
+.arp_sequence_playing_step_8 .arp_sequence_step.arp_sequence_step-8::after {
+	animation: pulse 1000ms infinite;
+}
+.arp_sequence_playing_step_9 .arp_sequence_step.arp_sequence_step-9::after {
+	animation: pulse 1000ms infinite;
+}
+.arp_sequence_playing_step_10 .arp_sequence_step.arp_sequence_step-10::after {
+	animation: pulse 1000ms infinite;
+}
+.arp_sequence_playing_step_11 .arp_sequence_step.arp_sequence_step-11::after {
+	animation: pulse 1000ms infinite;
+}
+.arp_sequence_playing_step_12 .arp_sequence_step.arp_sequence_step-12::after {
+	animation: pulse 1000ms infinite;
+}
+.arp_sequence_playing_step_13 .arp_sequence_step.arp_sequence_step-13::after {
+	animation: pulse 1000ms infinite;
+}
+.arp_sequence_playing_step_14 .arp_sequence_step.arp_sequence_step-14::after {
+	animation: pulse 1000ms infinite;
+}
+.arp_sequence_playing_step_15 .arp_sequence_step.arp_sequence_step-15::after {
+	animation: pulse 1000ms infinite; 
+}
+*/
 
 @keyframes pulse {
 	0% {
-        box-shadow: 0 0 3vh 2.75vh rgba(1, 112, 194, .95);
+        box-shadow: 0 0 3vh 2.75vh rgba(254,242,0, 1);
 	}
 
 	50% {
-        box-shadow: 0 0 3vh 3vh rgba(1, 112, 194, 1);
+        box-shadow: 0 0 3vh 3vh rgba(221,187,51, 1);
 	}
 
 	100% {
-        box-shadow: 0 0 3vh 2.75vh rgba(1, 112, 194, .90);
+        box-shadow: 0 0 3vh 2.75vh rgba(254,242,0, 1);
 	}
 }
 
@@ -225,4 +273,55 @@
 }
 .arp_sequence_step-15--selected .arp_sequence_step-15::after{
     background-color: #0170C2;
+}
+
+
+
+.arp_sequence_playing_step_0 .arp_sequence_step-0::after{
+    background-color: rgba(254,242,0, 1);
+}
+.arp_sequence_playing_step_1 .arp_sequence_step-1::after{
+    background-color: rgba(254,242,0, 1);
+}
+.arp_sequence_playing_step_2 .arp_sequence_step-2::after{
+    background-color: rgba(254,242,0, 1);
+}
+.arp_sequence_playing_step_3 .arp_sequence_step-3::after{
+    background-color: rgba(254,242,0, 1);
+}
+.arp_sequence_playing_step_4 .arp_sequence_step-4::after{
+    background-color: rgba(254,242,0, 1);
+}
+.arp_sequence_playing_step_5 .arp_sequence_step-5::after{
+    background-color: rgba(254,242,0, 1);
+}
+.arp_sequence_playing_step_6 .arp_sequence_step-6::after{
+    background-color: rgba(254,242,0, 1);
+}
+.arp_sequence_playing_step_7 .arp_sequence_step-7::after{
+    background-color: rgba(254,242,0, 1);
+}
+.arp_sequence_playing_step_8 .arp_sequence_step-8::after{
+    background-color: rgba(254,242,0, 1);
+}
+.arp_sequence_playing_step_9 .arp_sequence_step-9::after{
+    background-color: rgba(254,242,0, 1);
+}
+.arp_sequence_playing_step_10 .arp_sequence_step-10::after{
+    background-color: rgba(254,242,0, 1);
+}
+.arp_sequence_playing_step_11 .arp_sequence_step-11::after{
+    background-color: rgba(254,242,0, 1);
+}
+.arp_sequence_playing_step_12 .arp_sequence_step-12::after{
+    background-color: rgba(254,242,0, 1);
+}
+.arp_sequence_playing_step_13 .arp_sequence_step-13::after{
+    background-color: rgba(254,242,0, 1);
+}
+.arp_sequence_playing_step_14 .arp_sequence_step-14::after{
+    background-color: rgba(254,242,0, 1);
+}
+.arp_sequence_playing_step_15 .arp_sequence_step-15::after{
+    background-color: rgba(254,242,0, 1);
 }

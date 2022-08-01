@@ -2,7 +2,7 @@ import React, { useReducer, useEffect, useContext } from "react";
 import * as Tone from 'tone';
 import Loop from '../classes/Loop';
 import Step from "../classes/Step";
-import noteMap from "../noteMap";
+import noteMap from "../data/noteMap";
 
 //used to hold the selected Synths
 console.log('initializing SynthContext')
@@ -49,10 +49,9 @@ let synthInit =
       }
     );
 
-const gain = new toneInit.Gain(0.6);
-gain.toDestination();
+const vol = new Tone.Volume(-24).toDestination();
 synthInit.connect(effect);
-effect.connect(gain);
+effect.connect(vol);
 const loop = new Loop(false, synthInit);
 
 //routing synth through the reverb
@@ -63,7 +62,7 @@ const loop = new Loop(false, synthInit);
 let controls = {
   'mode': 'sequence',
   'sequenceIndex': 0,
-  'pattern': [0,4,7,11,7,4],
+  'pattern': [0,4,7,11, 14, 11,7,4,0,4,7,11, 14, 11,7,4],
 //  'pattern': [0,11,7,4,11,4,7],
   'tempo': 120,
   'gain': 0.6,

@@ -1,5 +1,6 @@
 import style from './RestKey.css';
 import { useSynth } from '../../../context/SynthContext';
+import GenerateClipPath from '../../../Helpers/ClippathHelper';
 
 
 const RestKey = ({ note, noteNumber}) => {
