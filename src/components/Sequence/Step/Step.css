@@ -278,50 +278,66 @@
 
 
 .arp_sequence_playing_step_0 .arp_sequence_step-0::after{
-    background-color: rgba(254,242,0, 1);
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
 }
 .arp_sequence_playing_step_1 .arp_sequence_step-1::after{
-    background-color: rgba(254,242,0, 1);
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
 }
 .arp_sequence_playing_step_2 .arp_sequence_step-2::after{
-    background-color: rgba(254,242,0, 1);
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
 }
 .arp_sequence_playing_step_3 .arp_sequence_step-3::after{
-    background-color: rgba(254,242,0, 1);
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
 }
 .arp_sequence_playing_step_4 .arp_sequence_step-4::after{
-    background-color: rgba(254,242,0, 1);
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
 }
 .arp_sequence_playing_step_5 .arp_sequence_step-5::after{
-    background-color: rgba(254,242,0, 1);
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
 }
 .arp_sequence_playing_step_6 .arp_sequence_step-6::after{
-    background-color: rgba(254,242,0, 1);
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
 }
 .arp_sequence_playing_step_7 .arp_sequence_step-7::after{
-    background-color: rgba(254,242,0, 1);
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
 }
 .arp_sequence_playing_step_8 .arp_sequence_step-8::after{
-    background-color: rgba(254,242,0, 1);
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
 }
 .arp_sequence_playing_step_9 .arp_sequence_step-9::after{
-    background-color: rgba(254,242,0, 1);
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
 }
 .arp_sequence_playing_step_10 .arp_sequence_step-10::after{
-    background-color: rgba(254,242,0, 1);
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
 }
 .arp_sequence_playing_step_11 .arp_sequence_step-11::after{
-    background-color: rgba(254,242,0, 1);
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
 }
 .arp_sequence_playing_step_12 .arp_sequence_step-12::after{
-    background-color: rgba(254,242,0, 1);
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
 }
 .arp_sequence_playing_step_13 .arp_sequence_step-13::after{
-    background-color: rgba(254,242,0, 1);
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
 }
 .arp_sequence_playing_step_14 .arp_sequence_step-14::after{
-    background-color: rgba(254,242,0, 1);
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
 }
 .arp_sequence_playing_step_15 .arp_sequence_step-15::after{
-    background-color: rgba(254,242,0, 1);
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
 }

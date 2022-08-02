@@ -1,11 +1,12 @@
 import style from './RestKey.css';
+import React, { memo, useState } from 'react';
 import { useSynth } from '../../../context/SynthContext';
 import GenerateClipPath from '../../../Helpers/ClippathHelper';
 
 
 const RestKey = ({ note, noteNumber}) => {
-  
   const {controls, dispatch}  = useSynth();
+  const [clipPath, setClipPath] = useState(GenerateClipPath());
   
   function clickHandler(){
     dispatch(
@@ -20,10 +21,13 @@ const RestKey = ({ note, noteNumber}) => {
     <div 
       onMouseDown={() => clickHandler()} 
       className="arp_keys_rest" 
+      style={{'clipPath': clipPath}}
     >
     </div>
   )
 }
   
-  export default RestKey
+const MemoRestKey = memo(RestKey);
+export default MemoRestKey;
+  
   

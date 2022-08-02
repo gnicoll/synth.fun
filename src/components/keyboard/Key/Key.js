@@ -1,10 +1,11 @@
 import style from './Key.css';
-import React, { memo } from 'react';
+import React, { memo, useState } from 'react';
 import { useSynth } from '../../../context/SynthContext';
 import GenerateClipPath from '../../../Helpers/ClippathHelper';
 
 const Key = ({ note, sharp, noteNumber }) => {
   const {controls, dispatch}  = useSynth();
+  const [clipPath, setClipPath] = useState(GenerateClipPath());
   
   function clickHandler(num, n){
     console.log("key click")
@@ -22,7 +23,7 @@ const Key = ({ note, sharp, noteNumber }) => {
       <div 
         className={"arp_key_inner "} 
         onMouseDown={() => clickHandler(noteNumber, note)} 
-        style={{'clipPath': GenerateClipPath()}}
+        style={{'clipPath': clipPath}}
       >
       </div>
     </div>
