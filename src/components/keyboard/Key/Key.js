@@ -1,7 +1,7 @@
 import style from './Key.css';
 import React, { memo, useState } from 'react';
 import { useSynth } from '../../../context/SynthContext';
-import GenerateClipPath from '../../../Helpers/ClippathHelper';
+import {GenerateClipPath} from '../../../Helpers/ClippathHelper';
 
 const Key = ({ note, sharp, noteNumber }) => {
   const {controls, dispatch}  = useSynth();

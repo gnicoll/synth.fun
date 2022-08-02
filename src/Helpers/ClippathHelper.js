@@ -6,7 +6,7 @@ const options = [
 ]
 
 
-export default function GenerateClipPath(){
+export function GenerateClipPath(){
 
     let coord1 = RandomsizeCoordinates([0, 0]);
     let coord2 = RandomsizeCoordinates([100, 0]);
@@ -45,3 +45,17 @@ function RandomsizeCoordinates(coordinates, variance = 5){
 
     return randomised;
 }
+
+
+export function GeneratePatternClipPath(pattern = undefined){
+    if (!pattern){
+        return `polygon(100% 50%, 100% 100%, 0 100%, 0 50%)`;
+    }
+    for (let index = 0; index < pattern.length; index++) {
+        const step = pattern[index];
+        
+    }
+   return `polygon(100% 50%, 100% 100%, 0 100%, 0 50%, 10% 40%, 20% 30%, 30% 20%, 40% 10%, 50% 00%, 60% 10%, 70% 20%, 80% 30%,90% 40%)`
+}
+
+

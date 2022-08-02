@@ -1,7 +1,7 @@
 import style from './RestKey.css';
 import React, { memo, useState } from 'react';
 import { useSynth } from '../../../context/SynthContext';
-import GenerateClipPath from '../../../Helpers/ClippathHelper';
+import {GenerateClipPath} from '../../../Helpers/ClippathHelper';
 
 
 const RestKey = ({ note, noteNumber}) => {
