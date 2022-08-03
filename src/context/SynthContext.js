@@ -63,7 +63,7 @@ let controls = {
   'mode': 'sequence',
   'sequenceIndex': 0,
   'pattern': [0,4,7,11, 14, 11,7,4,0,4,7,11, 14, 11,7,4],
-//  'pattern': [0,11,7,4,11,4,7],
+//  'pattern': [0,4,7,4],
   'tempo': 120,
   'gain': 0.6,
   'notesPlayed': null,

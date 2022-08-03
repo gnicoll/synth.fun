@@ -15,7 +15,7 @@ function App() {
   const {controls} = useSynth();
 
   return (
-    <div className={"App arp_sequence_step-"+controls.sequenceIndex+"--selected"}>
+    <div className={"App arp_sequence_step-"+controls.sequenceIndex+"--selected"+ ' arp_pattern_patternvisual_playingentry'+controls.patternIndex}>
       <Layout>
         <Keyboard />
         <Pattern />

@@ -11,7 +11,7 @@ const Pattern = () => {
   return (
     <div className="arp_patterns" >
       <div className='arp_pattern'>
-        <div className={'arp_pattern_patternvisual arp_pattern_patternvisual_playingentry'+controls.patternIndex}>
+        <div className={'arp_pattern_patternvisual'}>
           <div className='arp_pattern_patternvisual_entries'>
             {controls?.pattern?.map((entry, index) => 
             {

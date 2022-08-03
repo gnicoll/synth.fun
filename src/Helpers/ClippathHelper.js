@@ -51,11 +51,20 @@ export function GeneratePatternClipPath(pattern = undefined){
     if (!pattern){
         return `polygon(100% 50%, 100% 100%, 0 100%, 0 50%)`;
     }
+
+    let clippath = '';
+    let range = ((Math.max(...pattern) - Math.min(...pattern)));
+    
     for (let index = 0; index < pattern.length; index++) {
         const step = pattern[index];
         
+        if (index !== 0 && index !== pattern.length -1) {   
+            clippath = clippath + `${(index * (100/pattern.length))}% ${50-(50 / range * step)}%`
+            if (index !== pattern.length -2) clippath = clippath + ',';
+        }
+            
     }
-   return `polygon(100% 50%, 100% 100%, 0 100%, 0 50%, 10% 40%, 20% 30%, 30% 20%, 40% 10%, 50% 00%, 60% 10%, 70% 20%, 80% 30%,90% 40%)`
+   return `polygon(100% ${50-(50 / range * pattern[pattern.length-1])}%, 100% 100%, 0 100%, 0 ${50-(50 / range * pattern[0])}%, ${clippath})`
 }
 
 

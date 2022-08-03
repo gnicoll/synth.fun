@@ -1,0 +1,36 @@
+.arp_sequence_playing_step_0.pattern0 .arp_sequence_step-0 .arp_sequence_step_pattern,
+.arp_sequence_playing_step_1.pattern0 .arp_sequence_step-1 .arp_sequence_step_pattern,
+.arp_sequence_playing_step_2.pattern0 .arp_sequence_step-2 .arp_sequence_step_pattern,
+.arp_sequence_playing_step_3.pattern0 .arp_sequence_step-3 .arp_sequence_step_pattern,
+.arp_sequence_playing_step_4.pattern0 .arp_sequence_step-4 .arp_sequence_step_pattern,
+.arp_sequence_playing_step_5.pattern0 .arp_sequence_step-5 .arp_sequence_step_pattern,
+.arp_sequence_playing_step_6.pattern0 .arp_sequence_step-6 .arp_sequence_step_pattern,
+.arp_sequence_playing_step_7.pattern0 .arp_sequence_step-7 .arp_sequence_step_pattern,
+.arp_sequence_playing_step_8.pattern0 .arp_sequence_step-8 .arp_sequence_step_pattern,
+.arp_sequence_playing_step_9.pattern0 .arp_sequence_step-9 .arp_sequence_step_pattern,
+.arp_sequence_playing_step_10.pattern0 .arp_sequence_step-10 .arp_sequence_step_pattern,
+.arp_sequence_playing_step_11.pattern0 .arp_sequence_step-11 .arp_sequence_step_pattern,
+.arp_sequence_playing_step_12.pattern0 .arp_sequence_step-12 .arp_sequence_step_pattern,
+.arp_sequence_playing_step_13.pattern0 .arp_sequence_step-13 .arp_sequence_step_pattern,
+.arp_sequence_playing_step_14.pattern0 .arp_sequence_step-14 .arp_sequence_step_pattern,
+.arp_sequence_playing_step_15.pattern0 .arp_sequence_step-15 .arp_sequence_step_pattern{
+    background: linear-gradient(90deg, rgb(254,242,0) 0%, rgb(221,187,51) 0%);
+}
+.arp_sequence_playing_step_0.pattern5 .arp_sequence_step-0 .arp_sequence_step_pattern,
+.arp_sequence_playing_step_1.pattern5 .arp_sequence_step-1 .arp_sequence_step_pattern,
+.arp_sequence_playing_step_2.pattern5 .arp_sequence_step-2 .arp_sequence_step_pattern,
+.arp_sequence_playing_step_3.pattern5 .arp_sequence_step-3 .arp_sequence_step_pattern,
+.arp_sequence_playing_step_4.pattern5 .arp_sequence_step-4 .arp_sequence_step_pattern,
+.arp_sequence_playing_step_5.pattern5 .arp_sequence_step-5 .arp_sequence_step_pattern,
+.arp_sequence_playing_step_6.pattern5 .arp_sequence_step-6 .arp_sequence_step_pattern,
+.arp_sequence_playing_step_7.pattern5 .arp_sequence_step-7 .arp_sequence_step_pattern,
+.arp_sequence_playing_step_8.pattern5 .arp_sequence_step-8 .arp_sequence_step_pattern,
+.arp_sequence_playing_step_9.pattern5 .arp_sequence_step-9 .arp_sequence_step_pattern,
+.arp_sequence_playing_step_10.pattern5 .arp_sequence_step-10 .arp_sequence_step_pattern,
+.arp_sequence_playing_step_11.pattern5 .arp_sequence_step-11 .arp_sequence_step_pattern,
+.arp_sequence_playing_step_12.pattern5 .arp_sequence_step-12 .arp_sequence_step_pattern,
+.arp_sequence_playing_step_13.pattern5 .arp_sequence_step-13 .arp_sequence_step_pattern,
+.arp_sequence_playing_step_14.pattern5 .arp_sequence_step-14 .arp_sequence_step_pattern,
+.arp_sequence_playing_step_15.pattern5 .arp_sequence_step-15 .arp_sequence_step_pattern{
+    background: linear-gradient(90deg, rgb(254,242,0) 5%, rgb(221,187,51) 5%);
+}
