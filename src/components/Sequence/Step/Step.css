@@ -48,6 +48,8 @@
 }
 
 .arp_sequence_step_pattern {
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
     left: 0;
     background-color: #888;
     height: 50%;
@@ -56,6 +58,87 @@
     bottom: 0;
     box-shadow: 0 0 0vh 0vh rgba(254,242,0, 0);
     z-index: 1;
+}
+.arp_sequence_step_pattern::after{
+    content: "";
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: #888;
+    z-index: 1;
+    background: orange;
+}
+
+
+
+.arp_pattern_patternvisual_playingentry0 .arp_sequence_step_pattern::after{
+    grid-column: span 1 / span 1;
+}
+.arp_pattern_patternvisual_playingentry1 .arp_sequence_step_pattern::after{
+    grid-column: span 2 / span 2;
+}
+.arp_pattern_patternvisual_playingentry2 .arp_sequence_step_pattern::after{
+    grid-column: span 3 / span 3;
+}
+.arp_pattern_patternvisual_playingentry3 .arp_sequence_step_pattern::after{
+    grid-column: span 4 / span 4;
+}
+.arp_pattern_patternvisual_playingentry4 .arp_sequence_step_pattern::after{
+    grid-column: span 5 / span 5;
+}
+.arp_pattern_patternvisual_playingentry5 .arp_sequence_step_pattern::after{
+    grid-column: span 6 / span 6;
+}
+.arp_pattern_patternvisual_playingentry6 .arp_sequence_step_pattern::after{
+    grid-column: span 7 / span 7;
+}
+.arp_pattern_patternvisual_playingentry7 .arp_sequence_step_pattern::after{
+    grid-column: span 8 / span 8;
+}
+.arp_pattern_patternvisual_playingentry8 .arp_sequence_step_pattern::after{
+    grid-column: span 9 / span 9;
+}
+.arp_pattern_patternvisual_playingentry9 .arp_sequence_step_pattern::after{
+    grid-column: span 10 / span 10;
+}
+.arp_pattern_patternvisual_playingentry10 .arp_sequence_step_pattern::after{
+    grid-column: span 11 / span 11;
+}
+.arp_pattern_patternvisual_playingentry11 .arp_sequence_step_pattern::after{
+    grid-column: span 12 / span 12;
+}
+.arp_pattern_patternvisual_playingentry12 .arp_sequence_step_pattern::after{
+    grid-column: span 13 / span 13;
+}
+.arp_pattern_patternvisual_playingentry13 .arp_sequence_step_pattern::after{
+    grid-column: span 14 / span 14;
+}
+.arp_pattern_patternvisual_playingentry14 .arp_sequence_step_pattern::after{
+    grid-column: span 15 / span 15;
+}
+.arp_pattern_patternvisual_playingentry15 .arp_sequence_step_pattern::after{
+    grid-column: span 16 / span 16;
+}
+
+
+.arp_sequence_playing_step_0 .arp_sequence_step-0 .arp_sequence_step_pattern::after,
+.arp_sequence_playing_step_1 .arp_sequence_step-1 .arp_sequence_step_pattern::after,
+.arp_sequence_playing_step_2 .arp_sequence_step-2 .arp_sequence_step_pattern::after,
+.arp_sequence_playing_step_3 .arp_sequence_step-3 .arp_sequence_step_pattern::after,
+.arp_sequence_playing_step_4 .arp_sequence_step-4 .arp_sequence_step_pattern::after,
+.arp_sequence_playing_step_5 .arp_sequence_step-5 .arp_sequence_step_pattern::after,
+.arp_sequence_playing_step_6 .arp_sequence_step-6 .arp_sequence_step_pattern::after,
+.arp_sequence_playing_step_7 .arp_sequence_step-7 .arp_sequence_step_pattern::after,
+.arp_sequence_playing_step_8 .arp_sequence_step-8 .arp_sequence_step_pattern::after,
+.arp_sequence_playing_step_9 .arp_sequence_step-9 .arp_sequence_step_pattern::after,
+.arp_sequence_playing_step_10 .arp_sequence_step-10 .arp_sequence_step_pattern::after,
+.arp_sequence_playing_step_11 .arp_sequence_step-11 .arp_sequence_step_pattern::after,
+.arp_sequence_playing_step_12 .arp_sequence_step-12 .arp_sequence_step_pattern::after,
+.arp_sequence_playing_step_13 .arp_sequence_step-13 .arp_sequence_step_pattern::after,
+.arp_sequence_playing_step_14 .arp_sequence_step-14 .arp_sequence_step_pattern::after,
+.arp_sequence_playing_step_15 .arp_sequence_step-15 .arp_sequence_step_pattern::after{
+    display: block;
+    opacity: 1;
 }
 
 .arp_sequence_playing_step_0 .arp_sequence_step-0 .arp_sequence_step_pattern,
