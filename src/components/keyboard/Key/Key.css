@@ -75,8 +75,8 @@ clip-path: polygon(5% 1%, 96% 5%, 100% 97%, 1% 99%);
     box-sizing: content-box;
   }
   .arp_key_inner:hover{
-    background: rgb(254,242,0) !important;
-    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+    background: rgb(254,242,242) !important;
+    background: linear-gradient(0deg, rgb(189, 196, 236) 57%, rgb(127, 157, 190) 100%) !important;
   }
   
   .arp_key--sharp{

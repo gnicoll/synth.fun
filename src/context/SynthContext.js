@@ -62,7 +62,8 @@ const loop = new Loop(false, synthInit);
 let controls = {
   'mode': 'sequence',
   'sequenceIndex': 0,
-  'pattern': [0,4,7,11, 14, 11,7,4,0,4,7,11, 14, 11,7,4],
+//  'pattern': [0,4,7,11, 14, 11,7,4,0,4,7,11, 14, 11,7,4],
+  'pattern': [0,5,0,3,0,5,0,8,0,10,0,8,0,5,0,3],
 //  'pattern': [0,4,7,4],
   'tempo': 120,
   'gain': 0.6,

@@ -81,19 +81,27 @@ export default class Loop {
         return this.sequences[this.sequencesIndex];
     }
 
+    getNextStepIndex() {
+        let sequence = this.sequences[this.sequencesIndex];
+        for (let index = 0; index < sequence.length; index++) {
+            if (sequence[index] === undefined) {
+                return index;
+            }
+        }
+        return sequence.length;
+    }
+
     addStepToSequence(step, index=undefined) {
         let sequence = this.sequences[this.sequencesIndex];
-        if (index === undefined) {
+        if (index !== undefined && this.getNextStepIndex() < 16) {
             for (let index = 0; index < sequence.length; index++) {
                 if (sequence[index] === undefined) {
                     sequence[index] = step;
                     return;
                 }
             }
+            sequence[index] = step;
         }
-
-        sequence[index] = step;
-        //this.sequencesIndex++;
     }
 
     setNextSequence(sequence) {

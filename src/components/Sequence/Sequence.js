@@ -20,7 +20,7 @@ const Sequence = () => {
   
   
   return (
-    <div className={'arp_sequence' + ' arp_sequence_playing_step_'+controls.patternIndexPlayed}>   
+    <div className={'arp_sequence'}>   
     <div className='arp_sequence_grids'>
       <div className='arp_sequence_grid_container'>
         <div className="arp_sequence_grid" >
