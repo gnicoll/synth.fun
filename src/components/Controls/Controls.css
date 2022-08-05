@@ -8,6 +8,9 @@
     align-items: center;
     grid-template-rows: 1fr;
     grid-template-columns: 90%;
+    position: fixed;
+    height: 10%;
+    bottom: 0;
 }
 
 .arp_controls_container { 
