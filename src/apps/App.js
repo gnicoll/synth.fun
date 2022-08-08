@@ -23,10 +23,10 @@ function App() {
         ' mode_'+controls.mode
       }>
       <Layout>
-        <Keyboard />
         <Pattern />
-        <Sequence />
+        <Keyboard />
         <Controls />
+        <Sequence />
       </Layout>
     </div>
   );
