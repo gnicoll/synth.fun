@@ -17,7 +17,7 @@ let toneInit = Tone;
 
 let effect = new Tone.FeedbackDelay(0.1, 0.4); 
 
-let synthInit = 
+let synthVoice = 
     new toneInit.MonoSynth(
       {
         frequency : 'C4',
@@ -49,6 +49,30 @@ let synthInit =
       }
     );
 
+
+let synthInit = new Tone.PolySynth({
+	"volume": 0,
+	"detune": 0,
+	"portamento": 0,
+	"envelope": {
+		"attack": 0.01,
+		"attackCurve": "exponential",
+		"decay": 0.1,
+		"decayCurve": "exponential",
+		"release": 0.4,
+		"releaseCurve": "exponential",
+		"sustain": 0.5
+	},
+	"oscillator": {
+		"partialCount": 0,
+		"partials": [],
+		"phase": 0,
+		"type": "fatsawtooth",
+		"count": 3,
+		"spread": 30
+	}
+});
+
 const vol = new Tone.Volume(-24).toDestination();
 synthInit.connect(effect);
 effect.connect(vol);
@@ -62,9 +86,9 @@ const loop = new Loop(false, synthInit);
 let controls = {
   'mode': 'sequence',
   'sequenceIndex': 0,
-//  'pattern': [0,4,7,11, 14, 11,7,4,0,4,7,11, 14, 11,7,4],
-  'pattern': [0,5,0,3,0,5,0,8,0,10,0,8,0,5,0,3],
-//  'pattern': [0,4,7,4],
+  'pattern': [0,4,7,11, 14,11,7,4, 0,4,7,11, 14,11,7,4],
+//  'pattern': [0,5,0,3, 0,5,0,8, 0,10,0,8, 0,5,0,3],
+//  'pattern': [0,4,7],
   'tempo': 120,
   'gain': 0.6,
   'notesPlayed': null,

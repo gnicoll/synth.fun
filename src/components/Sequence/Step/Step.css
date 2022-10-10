@@ -49,7 +49,7 @@
 
 .arp_sequence_step_pattern {
     display: grid;
-    grid-template-columns: repeat(16, 1fr);
+    grid-template-columns: repeat(16, 1fr); /*this needs to be dynamicly by the code, as the width of the grid should match the pattern length*/
     left: 0;
     background-color: #888;
     height: 50%;

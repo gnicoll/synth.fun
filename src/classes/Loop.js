@@ -4,7 +4,7 @@ export default class Loop {
         this.dispatch = d;
         //bool to indicate if the loop is playing
         this.patternIndex = 0;
-        this.playingIndex = 0;
+        this.sequenceIndex = 0;
         //an array of arrays of Step objects
         this.sequences = [[undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined]];
         this.sequencesIndex = 0;
@@ -15,16 +15,16 @@ export default class Loop {
 
     play() {
         //get the current sequence
-        let playingSequence = this.sequences[this.sequencesIndex];
-        if (!playingSequence) return undefined;
+        let currentSequence = this.sequences[this.sequencesIndex];
+        if (!currentSequence) return undefined;
         //get the current step in the sequence
-        if (!playingSequence[this.playingIndex]){
-            this.playingIndex = 0;
+        if (!currentSequence[this.sequenceIndex]){
+            this.sequenceIndex = 0;
             this.patternIndex = 0;
         }
-        let step = playingSequence[this.playingIndex];
+        let step = currentSequence[this.sequenceIndex];
         let noteNumber = undefined;
-        let sequenceIndex = this.playingIndex;
+        let sequenceIndex = this.sequenceIndex;
         //if no step, get the next step
         if (!step) {
             console.log('playing note: nothing' );
@@ -39,14 +39,14 @@ export default class Loop {
             this.patternIndex++;
             //if the pattern is done, go to the next step
             if (this.patternIndex >= step.pattern.length) {
-                this.playingIndex++;
+                this.sequenceIndex++;
                 this.patternIndex = 0;
             }
         }
 
 
         //if the sequence is done, repeat it or go to the next sequence
-        if (this.playingIndex >= playingSequence.length || noteNumber === undefined) {
+        if (this.sequenceIndex >= currentSequence.length || noteNumber === undefined) {
             //at the end of the sequence go back to the beginning or to the next sequence
             if (this.sequencesQueue.length) {
                 this.sequencesIndex = this.sequencesQueue[this.sequencesQueueIndex];
@@ -55,12 +55,12 @@ export default class Loop {
                     this.sequencesQueueIndex = 0;
                 }
             }
-            this.playingIndex = 0;
+            this.sequenceIndex = 0;
         }
 
         let playDetails = {
             noteNumber,
-            sequenceIndex,
+            'sequenceIndex':this.sequenceIndex,
             'pattern': step.pattern,
             'patternIndex': [this.patternIndex]
         }
