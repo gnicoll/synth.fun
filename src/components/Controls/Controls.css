@@ -1,4 +1,5 @@
 .arp_controls {
+    grid-area: controls;
     height: 100%;
     width: 100%;
     background-color: #261f22;
@@ -8,6 +9,10 @@
     align-items: center;
     grid-template-rows: 1fr;
     grid-template-columns: 90%;
+    position: fixed;
+    height: 10%;
+    bottom: 0;
+    z-index: 10;
 }
 
 .arp_controls_container { 

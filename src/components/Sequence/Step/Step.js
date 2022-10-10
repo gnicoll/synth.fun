@@ -24,7 +24,7 @@ const Step = ({ onClick, step, sequenceNum }) => {
             {step?.rootNote === null && '-'}
           </div>
           <div 
-            className='arp_sequence_step_pattern'
+            className={'arp_sequence_step_pattern'+ ' arp_sequence_step_pattern_length'+step?.getPattern().length}
             style={{'clipPath': patternClipPath}}
             ></div>
       </div>

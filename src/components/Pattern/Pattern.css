@@ -1,4 +1,5 @@
 .arp_patterns {
+    grid-area: pattern;
     display: flex;
     height: 100%;
     width: 100%;
