@@ -24,7 +24,7 @@ const Pattern = () => {
                       className={'arp_pattern_patternvisual_entry'}             
                       style = {
                         {
-                          'clipPath': 'polygon(0 '+l+'%, 100% '+r+'%, 100% 100%, 0% 100%)',
+                          'clipPath': 'polygon(0 '+l+'%, 100% '+l+'%, 100% 100%, 0% 100%)',
                         }
                       } 
                       key={index}>

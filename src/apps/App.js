@@ -11,7 +11,6 @@ import { useSynth } from '../context/SynthContext';
 import Layout from '../Layout/Layout';
 
 function App() {
-  console.log("Rendered App.js")
   const {controls} = useSynth();
 
   return (

@@ -8,8 +8,6 @@ const Key = ({ note, sharp, noteNumber }) => {
   const [clipPath, setClipPath] = useState(GenerateClipPath());
   
   function clickHandler(num, n){
-    console.log("key click")
-    console.log("<- controls.sequenceIndex: ",controls.sequenceIndex)
     dispatch(
       {
         'type': 'playNote', 

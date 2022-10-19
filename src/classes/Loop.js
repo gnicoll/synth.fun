@@ -25,6 +25,7 @@ export default class Loop {
         let step = currentSequence[this.sequenceIndex];
         let noteNumber = undefined;
         let sequenceIndex = this.sequenceIndex;
+        let patternIndex = this.patternIndex;
         //if no step, get the next step
         if (!step) {
             console.log('playing note: nothing' );
@@ -35,7 +36,7 @@ export default class Loop {
             } else {
                 noteNumber = null;
             }
-            console.log('playing note: ' + step?.rootNote?.number + ' ' + this.patternIndex + ': ' + noteNumber);
+            console.log('playing note: ' + step?.rootNote?.number + ' ' + patternIndex + ': ' + noteNumber);
             this.patternIndex++;
             //if the pattern is done, go to the next step
             if (this.patternIndex >= step.pattern.length) {
@@ -44,6 +45,12 @@ export default class Loop {
             }
         }
 
+        let playDetails = {
+            noteNumber,
+            'sequenceIndex':sequenceIndex,
+            'pattern': step?.pattern,
+            'patternIndex': [patternIndex]
+        }
 
         //if the sequence is done, repeat it or go to the next sequence
         if (this.sequenceIndex >= currentSequence.length || noteNumber === undefined) {
@@ -58,12 +65,6 @@ export default class Loop {
             this.sequenceIndex = 0;
         }
 
-        let playDetails = {
-            noteNumber,
-            'sequenceIndex':this.sequenceIndex,
-            'pattern': step.pattern,
-            'patternIndex': [this.patternIndex]
-        }
         
         this.dispatch({
             'type': 'setPlayDetails',
