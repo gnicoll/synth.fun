@@ -1,8 +1,10 @@
-const patterns = {
-    arp: [0,2,4,6,4,2,0],
+const notePatterns = {
     octave: [0, 12],
-    movement: [0,2,0,1,0,2,0,3,0,4,0,3,0,2,0,1],
+}
+
+const scalePatterns = {
+    arp: [1,3,5,7],
 }
 
 
-export default patterns;
+export default scalePatterns;

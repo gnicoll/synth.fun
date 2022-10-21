@@ -3,6 +3,7 @@ import * as Tone from 'tone';
 import Loop from '../classes/Loop';
 import Step from "../classes/Step";
 import noteMap from "../data/noteMap";
+import {patternGenerator} from '../Helpers/PatternHelper';
 
 //used to hold the selected Synths
 console.log('initializing SynthContext')
@@ -80,14 +81,21 @@ const loop = new Loop(false, synthInit);
 
 //routing synth through the reverb
 
-
+const pattern = patternGenerator(
+  {
+    'rootNote': 60,
+    'scale': 'major',
+  }, 
+  [1,3,5,7]
+  );
+  console.log('pattern: ', pattern);
 
 //controls is the interface object
 let controls = {
   'mode': 'sequence',
   'sequenceIndex': 0,
 //  'pattern': [0,4,7,11, 14,11,7,4, 0,4,7,11, 14,11,7,4],
-  'pattern': [0,0,0,5, 12,12,12,12, 0,0,0,5, 12,12,12,12],
+  'pattern': [0,0,0,-5, -12,-12,-12,-12, 0,0,0,5, 12,12,12,12],
 //  'pattern': [0,5,0,3, 0,5,0,8, 0,10,0,8, 0,5,0,3],
 //  'pattern': [0,4,7],
   'tempo': 120,
