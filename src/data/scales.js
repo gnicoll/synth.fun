@@ -1,21 +1,59 @@
 const scales = {
-    'major': [0, 2, 4, 5, 7, 9, 11],
-    'minor': [0, 2, 3, 5, 7, 9, 10],
-    'harmonic minor': [0, 2, 3, 5, 7, 8, 11],
-    'melodic minor': [0, 2, 3, 5, 7, 9, 11],
-    'major pentatonic': [0, 2, 4, 7, 9],
-    'minor pentatonic': [0, 3, 5, 7, 10],
-    'blues': [0, 3, 5, 6, 7, 10],
-    'whole tone': [0, 2, 4, 6, 8, 10],
-    'chromatic': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-    'diatonic': [0, 2, 4, 5, 7, 9, 11],
-    'blues diatonic': [0, 2, 3, 4, 5, 7, 9, 10],
-    'major diatonic': [0, 2, 4, 5, 7, 9, 11],
-    'minor diatonic': [0, 2, 3, 5, 7, 9, 10],
-    'major blues': [0, 2, 3, 4, 5, 7, 9, 10],
-    'minor blues': [0, 2, 3, 5, 6, 7, 9, 10],
-    'major bebop': [0, 2, 4, 5, 7, 9, 11],
-    'minor bebop': [0, 2, 3, 5, 7, 8, 10],
+    'major':  {
+        'scale': [0,2,4,5,7,9,11],
+        'name': 'Major',
+        'chords': ['major', 'minor', 'minor', 'major', 'major', 'minor', 'diminished']
+    },
+    'minor': {
+        'scale': [0,2,3,5,7,8,10],
+        'name': 'Minor',
+        'chords': ['minor', 'diminished', 'major', 'minor', 'minor', 'major', 'major']
+    },
+    'dorian': {
+        'scale': [0,2,3,5,7,9,10],
+        'name': 'Dorian',
+        'chords': ['minor', 'diminished', 'major', 'minor', 'minor', 'major', 'major']
+    },
+    'phrygian': {
+        'scale': [0,1,3,5,7,8,10],
+        'name': 'Phrygian',
+        'chords': ['diminished', 'major', 'minor', 'minor', 'major', 'major', 'minor']
+    },
+    'lydian': {
+        'scale': [0,2,4,6,7,9,11],
+        'name': 'Lydian',
+        'chords': ['major', 'minor', 'minor', 'major', 'major', 'minor', 'diminished']
+    },
+    'mixolydian': {
+        'scale': [0,2,4,5,7,9,10],
+        'name': 'Mixolydian',
+        'chords': ['major', 'minor', 'minor', 'major', 'major', 'minor', 'diminished']
+    },
+    'locrian': {
+        'scale': [0,1,3,5,6,8,10],
+        'name': 'Locrian',
+        'chords': ['diminished', 'major', 'minor', 'minor', 'major', 'major', 'minor']
+    },
+    'major pentatonic': {
+        'scale': [0,2,4,7,9],
+        'name': 'Major Pentatonic',
+        'chords': ['major', 'minor', 'minor', 'major', 'major']
+    },
+    'minor pentatonic': {
+        'scale': [0,3,5,7,10],
+        'name': 'Minor Pentatonic',
+        'chords': ['minor', 'major', 'major', 'minor', 'minor']
+    },
+}
+    /*
+    'diatonic':         [0, 2, 4, 5, 7, 9, 11],
+    'blues diatonic':   [0, 2, 3, 4, 5, 7, 9, 10],
+    'major diatonic':   [0, 2, 4, 5, 7, 9, 11],
+    'minor diatonic':   [0, 2, 3, 5, 7, 9, 10],
+    'major blues':      [0, 2, 3, 4, 5, 7, 9, 10],
+    'minor blues':      [0, 2, 3, 5, 6, 7, 9, 10],
+    'major bebop':      [0, 2, 4, 5, 7, 9, 11],
+    'minor bebop':      [0, 2, 3, 5, 7, 8, 10],
     'major bebop dominant': [0, 2, 4, 5, 7, 9, 10, 11],
     'minor bebop dominant': [0, 2, 3, 5, 7, 8, 10, 11],
     'major bebop minor': [0, 2, 3, 5, 7, 8, 9, 11],
@@ -63,7 +101,7 @@ const scales = {
     'major bebop octonary minor': [0, 2, 3, 5, 7, 8, 9, 11],
     'minor bebop octonary minor': [0, 2, 3, 5, 7, 8, 9, 10],
     'major bebop octonary tonic': [0, 2, 3, 5, 7, 8, 9, 11],
-}
+}//*/
 
 
 export default scales;

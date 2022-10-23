@@ -1,3 +1,7 @@
+import chords from "../data/chords";
+import scales from "../data/scales";
+import {getChordInScale} from "../Helpers/PatternHelper";
+
 export default class Loop {
     constructor(d, s) {
         this.synth = s;
@@ -6,7 +10,14 @@ export default class Loop {
         this.patternIndex = 0;
         this.sequenceIndex = 0;
         //an array of arrays of Step objects
-        this.sequences = [[undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined]];
+        this.sequences = [
+            {
+                'name': 'Sequence 1',
+                'steps': [undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined],
+                'key': 24, //C
+                'scale': 'major'
+            }
+        ];
         this.sequencesIndex = 0;
         //an array of indexes (ints) of the sequences 
         this.sequencesQueue = [];
@@ -18,12 +29,12 @@ export default class Loop {
         let currentSequence = this.sequences[this.sequencesIndex];
         if (!currentSequence) return undefined;
         //get the current step in the sequence
-        if (!currentSequence[this.sequenceIndex]){
+        if (!currentSequence.steps[this.sequenceIndex]){
             this.sequenceIndex = 0;
             this.patternIndex = 0;
         }
-        let step = currentSequence[this.sequenceIndex];
-        let noteNumber = undefined;
+        let step = currentSequence.steps[this.sequenceIndex];
+        let noteNumbers = undefined;
         let sequenceIndex = this.sequenceIndex;
         let patternIndex = this.patternIndex;
         //if no step, get the next step
@@ -31,9 +42,10 @@ export default class Loop {
         } else {
             //get the noteNumber
             if (step.rootNote !== null && step.pattern[this.patternIndex] !== null) {
-                noteNumber = step.rootNote.number + step.pattern[this.patternIndex]
+                noteNumbers = getChordInScale(currentSequence.key, currentSequence.scale, (step.rootNote.number + step.pattern[this.patternIndex]))
+                console.log(noteNumbers)
             } else {
-                noteNumber = null;
+                noteNumbers = null;
             }
             this.patternIndex++;
             //if the pattern is done, go to the next step
@@ -44,14 +56,14 @@ export default class Loop {
         }
 
         let playDetails = {
-            noteNumber,
+            noteNumbers,
             'sequenceIndex':sequenceIndex,
             'pattern': step?.pattern,
             'patternIndex': [patternIndex]
         }
 
         //if the sequence is done, repeat it or go to the next sequence
-        if (this.sequenceIndex >= currentSequence.length || noteNumber === undefined) {
+        if (this.sequenceIndex >= currentSequence.steps.length || noteNumbers === undefined) {
             //at the end of the sequence go back to the beginning or to the next sequence
             if (this.sequencesQueue.length) {
                 this.sequencesIndex = this.sequencesQueue[this.sequencesQueueIndex];
@@ -77,13 +89,13 @@ export default class Loop {
             this.sequences[this.sequencesIndex] = [[]];
         }
 
-        return this.sequences[this.sequencesIndex];
+        return this.sequences[this.sequencesIndex].steps;
     }
 
     getNextStepIndex() {
         let sequence = this.sequences[this.sequencesIndex];
-        for (let index = 0; index < sequence.length; index++) {
-            if (sequence[index] === undefined) {
+        for (let index = 0; index < sequence.steps.length; index++) {
+            if (sequence.steps[index] === undefined) {
                 return index;
             }
         }
@@ -95,11 +107,11 @@ export default class Loop {
         if (index !== undefined && this.getNextStepIndex() < 16) {
             for (let index = 0; index < sequence.length; index++) {
                 if (sequence[index] === undefined) {
-                    sequence[index] = step;
+                    sequence.steps[index] = step;
                     return;
                 }
             }
-            sequence[index] = step;
+            sequence.steps[index] = step;
         }
     }
 

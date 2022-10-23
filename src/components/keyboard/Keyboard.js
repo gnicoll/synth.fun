@@ -28,7 +28,7 @@ const Keyboard = ({playedNote, highlightNote, onHover, notes}) => {
 
   return (
     <>
-      <div className={"arp_keys arp_keys--playing_"+controls?.noteNumberPlayed+" arp_keys--highlighting_"+highlightNote+" arp_keys_octave-"+octaveNum}>
+      <div className={"arp_keys arp_keys--playing_"+controls?.noteNumbersPlayed+" arp_keys--highlighting_"+highlightNote+" arp_keys_octave-"+octaveNum}>
         <div className="arp_keys_octave_up" onClick={()=>handleOctaveSet(octaveNum-1)} ></div>
         <div className="arp_keys_octave_down" onClick={()=>handleOctaveSet(octaveNum+1)}></div>
         <RestKey />

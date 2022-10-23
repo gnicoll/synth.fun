@@ -75,7 +75,7 @@ let synthInit = new Tone.PolySynth({
 	}
 });
 
-const vol = new Tone.Volume(-24).toDestination();
+const vol = new Tone.Volume(0).toDestination();
 synthInit.connect(effect);
 effect.connect(vol);
 const loop = new Loop(false, synthInit);
@@ -112,8 +112,9 @@ function repeat(time) {
   //where should i put playDetails that the app can get it?? it should go into controls
   let playDetails = loop.play();
 //  controls.notesPlayed = playDetails.noteNumber;
-  if (playDetails.noteNumber !== undefined) {
-    synthInit.triggerAttackRelease(noteMap[playDetails.noteNumber], '8n', time);
+  let notes = playDetails.noteNumbers.map((n)=>noteMap[n]);
+  if (playDetails.noteNumbers !== undefined) {
+    synthInit.triggerAttackRelease(notes, '8n', time);
   }
 }
 
@@ -159,7 +160,7 @@ export default function synthReducer(store, action) {
         synth.triggerAttackRelease(`${note.name}`, "8n");
         if (store.controls.mode === 'sequence') {
           //below pattern should come from current step selection
-          //let step = new Step( note, [0,3,7,11,7,3] );
+          // pattern should be transposed to the current sequence key
           let step = new Step( note, store.controls.pattern );
 
           store.loop.addStepToSequence(step, sequenceIndex);
@@ -206,10 +207,10 @@ export default function synthReducer(store, action) {
 
       case 'setPlayDetails' : {
         const { playDetails } = action;
-        const { noteNumber, sequenceIndex, pattern, patternIndex } = playDetails;
+        const { noteNumbers, sequenceIndex, pattern, patternIndex } = playDetails;
 
-        store.controls.notesPlayed = noteMap[noteNumber];
-        store.controls.noteNumberPlayed = noteNumber;
+        store.controls.notesPlayed = noteNumbers.map((n)=> noteMap[n]);
+        store.controls.noteNumbersPlayed = noteNumbers;
         store.controls.patternIndexPlayed = sequenceIndex;
         store.controls.pattern = pattern;
         store.controls.patternIndex = patternIndex;

@@ -91,6 +91,22 @@ const patterns = {
         {
             step: 7,
             transpose: 0
+        },
+        {
+            step: 9,
+            transpose: 0
+        },
+        {
+            step: 7,
+            transpose: 0
+        },
+        {
+            step: 5,
+            transpose: 0
+        },
+        {
+            step: 3,
+            transpose: 0
         }
     ],
 }
