@@ -28,7 +28,6 @@ export default class Loop {
         let patternIndex = this.patternIndex;
         //if no step, get the next step
         if (!step) {
-            console.log('playing note: nothing' );
         } else {
             //get the noteNumber
             if (step.rootNote !== null && step.pattern[this.patternIndex] !== null) {
@@ -36,7 +35,6 @@ export default class Loop {
             } else {
                 noteNumber = null;
             }
-            console.log('playing note: ' + step?.rootNote?.number + ' ' + patternIndex + ': ' + noteNumber);
             this.patternIndex++;
             //if the pattern is done, go to the next step
             if (this.patternIndex >= step.pattern.length) {
