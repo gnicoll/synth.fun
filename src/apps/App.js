@@ -22,7 +22,6 @@ function App() {
         ' mode_'+controls.mode
       }>
       <Layout>
-        <Pattern />
         <Keyboard />
         <Controls />
         <Sequence />

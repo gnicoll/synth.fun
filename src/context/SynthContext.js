@@ -82,21 +82,15 @@ const loop = new Loop(false, synthInit);
 
 //routing synth through the reverb
 
-const pattern = patternGenerator(
-  {
-    'rootNote': 60,
-    'scale': 'major',
-  },
-  patterns['arp']
-);
-  console.log('pattern: ', pattern);
+const pattern = patterns['arp'];
+console.log('pattern: ', pattern);
 
 //controls is the interface object
 let controls = {
   'mode': 'sequence',
   'sequenceIndex': 0,
 //  'pattern': [0,4,7,11, 14,11,7,4, 0,4,7,11, 14,11,7,4],
-pattern,
+  pattern,
 //  'pattern': [0,5,0,3, 0,5,0,8, 0,10,0,8, 0,5,0,3],
 //  'pattern': [0,4,7],
   'tempo': 120,
@@ -161,7 +155,16 @@ export default function synthReducer(store, action) {
         if (store.controls.mode === 'sequence') {
           //below pattern should come from current step selection
           // pattern should be transposed to the current sequence key
-          let step = new Step( note, store.controls.pattern );
+          
+          const p = patternGenerator(
+            {
+              'rootNote': note,
+              'scale': 'major',
+            },
+            store.controls.pattern
+          );
+          console.log('pattern: ', pattern);
+          let step = new Step( note, p );
 
           store.loop.addStepToSequence(step, sequenceIndex);
           store.controls.sequenceIndex = sequenceNext(loop.getCurrentSequence());
