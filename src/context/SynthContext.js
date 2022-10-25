@@ -4,7 +4,7 @@ import Loop from '../classes/Loop';
 import Step from "../classes/Step";
 import noteMap from "../data/noteMap";
 import patterns from '../data/patterns';
-import {patternGenerator} from '../Helpers/PatternHelper';
+import {patternGenerator, getChordTypeForNoteInScale} from '../Helpers/PatternHelper';
 
 //used to hold the selected Synths
 console.log('initializing SynthContext')
@@ -82,7 +82,7 @@ const loop = new Loop(false, synthInit);
 
 //routing synth through the reverb
 
-const pattern = patterns['arp'];
+const pattern = patterns['j6'];
 console.log('pattern: ', pattern);
 
 //controls is the interface object
@@ -93,7 +93,7 @@ let controls = {
   pattern,
 //  'pattern': [0,5,0,3, 0,5,0,8, 0,10,0,8, 0,5,0,3],
 //  'pattern': [0,4,7],
-  'tempo': 120,
+  'tempo': 56,
   'gain': 0.6,
   'notesPlayed': null,
   'patternIndexPlayed': null,
@@ -156,15 +156,10 @@ export default function synthReducer(store, action) {
           //below pattern should come from current step selection
           // pattern should be transposed to the current sequence key
           
-          const p = patternGenerator(
-            {
-              'rootNote': note,
-              'scale': 'major',
-            },
-            store.controls.pattern
-          );
-          console.log('pattern: ', pattern);
-          let step = new Step( note, p );
+          let step = new Step( 
+            note, 
+            store.controls.pattern 
+            );
 
           store.loop.addStepToSequence(step, sequenceIndex);
           store.controls.sequenceIndex = sequenceNext(loop.getCurrentSequence());

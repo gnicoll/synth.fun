@@ -3,35 +3,52 @@ import chords from "../data/chords";
 import scales from "../data/scales";
 import noteMap from "../data/noteMap";
 
-export function getChordInScale(rootNote, scale, note){
-    //in C 64 should be minor
-    //64 should result in chord step 2
+
+export function getChordTypeForNoteInScale(rootNote, scale, note){
     if (note >= rootNote) {
         let d = note % rootNote % 12;
-        let s = scales[scale].scale;
-        let chord = scales[scale].chords[scales[scale].scale.indexOf(d)];
-        console.log('chord: ', noteMap[note] + " " + chord);
-        if (chord === undefined) return [note];
-        return chords[chord].notes.map(n =>{
+        let chordType = scales[scale].chords[scales[scale].scale.indexOf(d)];
+        console.log(chordType);
+        return chordType;
+    }
+    return null;
+
+}
+
+// takes rootNote (num), scale 'minor'/'major' etc, and note (num)
+// returns the chord for that of the note in the scale from the rootNote
+export function getChordForNoteInScale(rootNote, scale, note){
+    let chordType = getChordTypeForNoteInScale(rootNote, scale, note);
+
+    if (chordType !== null && chordType !== undefined) {
+        //console.log('chord: ', noteMap[note] + " " + chordType);
+        return chords[chordType].notes.map(n =>{
             return n + note;
         })
     }
+    else {
+        return chords[scale].notes.map(n =>{
+            return n + note;
+        })
+        
+    }
+    console.log(noteMap[note]);
     return [note];
 
 }
 
 
 export function patternGenerator(key, pattern) {
-    console.log('pattern: ', pattern);
+   // console.log('pattern: ', pattern);
     const root = key.rootNote;
     const scale =  scales[key.scale]?.scale;
-    console.log('root: ', root);
+  //  console.log('root: ', root);
     const patternNotes = pattern.map(({step, transpose}) => {
         //pattern is not zero indexed
 
-        console.log('------------- ');
+ //       console.log('------------- ');
         let noteNum = getNote(step, transpose, scale);
-        console.log('noteNum: ', noteNum);
+  //      console.log('noteNum: ', noteNum);
         //if (noteNum > scale.length-1)
         //    noteNum = noteNum - scale.length;
         return noteNum;
@@ -44,17 +61,17 @@ function getNote(i, transpose, scale){
     let noteNum = 0;
     if (index < 0) {
         index = index * -1;
-        console.log('scale: ', scale);
-        console.log('index: ', index);
+   //     console.log('scale: ', scale);
+    //    console.log('index: ', index);
         let calc = ((index % (scale.length-1))-1)*-1 ;
-        console.log('calc: ', calc);
+    //    console.log('calc: ', calc);
         index++;
     } else {
         index--;
-        console.log('scale: ', scale);
-        console.log('index: ', index);
+     //   console.log('scale: ', scale);
+    //    console.log('index: ', index);
         let calc = (index % (scale.length-1))-1;
-        console.log('calc: ', calc);
+      //  console.log('calc: ', calc);
         if (calc === 0 || index <= scale.length-1)
             noteNum = scale[index];
         else{

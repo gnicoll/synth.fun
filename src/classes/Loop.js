@@ -1,6 +1,6 @@
 import chords from "../data/chords";
 import scales from "../data/scales";
-import {getChordInScale} from "../Helpers/PatternHelper";
+import {getChordForNoteInScale, getChordTypeForNoteInScale, patternGenerator} from "../Helpers/PatternHelper";
 
 export default class Loop {
     constructor(d, s) {
@@ -42,8 +42,17 @@ export default class Loop {
         } else {
             //get the noteNumber
             if (step.rootNote !== null && step.pattern[this.patternIndex] !== null) {
-                noteNumbers = getChordInScale(currentSequence.key, currentSequence.scale, (step.rootNote.number + step.pattern[this.patternIndex]))
-                console.log(noteNumbers)
+                //use step key and scale
+                noteNumbers = getChordForNoteInScale(currentSequence.key, currentSequence.scale, (step.rootNote.number + step.pattern[this.patternIndex]))
+                if (noteNumbers.length === 1) {
+
+                    console.log('playing : ', step.name);
+                    console.log('step: ', this.patternIndex);
+                    
+                    console.log('playing pattern: ', step.pattern);
+                    console.log('trying to get chord '+step.rootNote.name);
+                    console.log(noteNumbers)
+                }
             } else {
                 noteNumbers = null;
             }
@@ -58,7 +67,7 @@ export default class Loop {
         let playDetails = {
             noteNumbers,
             'sequenceIndex':sequenceIndex,
-            'pattern': step?.pattern,
+            'pattern': step?.rootPattern,
             'patternIndex': [patternIndex]
         }
 
@@ -105,13 +114,18 @@ export default class Loop {
     addStepToSequence(step, index=undefined) {
         let sequence = this.sequences[this.sequencesIndex];
         if (index !== undefined && this.getNextStepIndex() < 16) {
-            for (let index = 0; index < sequence.length; index++) {
-                if (sequence[index] === undefined) {
-                    sequence.steps[index] = step;
-                    return;
-                }
-            }
+            let chordType = getChordTypeForNoteInScale(sequence.key, sequence.scale, step.getRootNote().number);
+            const p = patternGenerator(
+                {
+                    'rootNote': step.getRootNote(),
+                    'scale': chordType,
+                },
+                step.getRootPattern()
+                );
+            step.setPattern(p);
+            step.setName( step.getRootNote().name + ' '+chordType)
             sequence.steps[index] = step;
+            return;
         }
     }
 

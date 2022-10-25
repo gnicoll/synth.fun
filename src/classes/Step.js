@@ -1,7 +1,9 @@
 export default class Step {
-    constructor(n, p) {
+    constructor(n, rp) {
+        this.name = '';
+        this.rootPattern = rp;
         this.rootNote = n;
-        this.pattern = p;
+        this.pattern = undefined;
         this.selectable = false;
     }
 
@@ -13,8 +15,20 @@ export default class Step {
         return this.selectable;
     }
 
+    getRootPattern() {
+        return this.rootPattern;
+    }
+    
     getPattern() {
         return this.pattern;
+    }
+    
+    setPattern(p) {
+        this.pattern = p;
+    }
+
+    setName(n) {
+        this.name = n;
     }
 
     getRootNote() {

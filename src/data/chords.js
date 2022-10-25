@@ -1,3 +1,6 @@
+//'chords': ['major', 'minor', 'minor', 'major', 'major', 'minor', 'diminished']
+
+
 const chords = {
     "major": {
         "name": "Major",
