@@ -55,11 +55,11 @@
     z-index: 1;
 }
 
-/*
+
 .arp_pattern_patternvisual_entry:last-of-type {
     margin-right: 0;
 }
-
+/*
 .arp_pattern_patternvisual_entry_column:last-of-type {
     transform: translateX(-100%) scaleY(0%); 
 }
