@@ -68,8 +68,6 @@
     z-index: 2;
     height: 100%;
     position: absolute; 
-    background-color: #FEFBF6;
-    transition: transform 100ms ease-in-out;
     transform-origin: bottom;
     /*
     width: 2%;
@@ -86,8 +84,7 @@
 }
 */
 
-.arp_pattern_patternvisual_entry_column>div {
-    transition: transform 100ms ease-in-out;
+.arp_pattern_patternvisual_entry_column {
     transform-origin: bottom;
     height: 100%;
     width: 100%;
@@ -96,97 +93,97 @@
     background: linear-gradient(0deg, rgb(221,187,51) 57%, rgb(254,242,0) 100%) !important;
 }
 
-.arp_pattern_patternvisual_playingentry0 .arp_pattern_patternvisual_entry_column:nth-of-type(1)>div {
+.arp_pattern_patternvisual_playingentry0 .arp_pattern_patternvisual_entry:nth-of-type(1)>.arp_pattern_patternvisual_entry_column {
 z-index:2;
     transform: translateX(0%) scaleY(100%);
     background: rgb(254,242,0) !important;
     background: linear-gradient(0deg, rgb(221,187,51) 57%, rgb(254,242,0) 100%) !important;
 }
-.arp_pattern_patternvisual_playingentry1 .arp_pattern_patternvisual_entry_column:nth-of-type(2)>div {
+.arp_pattern_patternvisual_playingentry1 .arp_pattern_patternvisual_entry:nth-of-type(2)>.arp_pattern_patternvisual_entry_column {
 z-index:2;
 transform: translateX(0%) scaleY(100%);
     background: rgb(254,242,0) !important;
     background: linear-gradient(0deg, rgb(221,187,51) 57%, rgb(254,242,0) 100%) !important;
 }
-.arp_pattern_patternvisual_playingentry2 .arp_pattern_patternvisual_entry_column:nth-of-type(3)>div {
+.arp_pattern_patternvisual_playingentry2 .arp_pattern_patternvisual_entry:nth-of-type(3)>.arp_pattern_patternvisual_entry_column {
 z-index:2;
 transform: translateX(0%) scaleY(100%);
     background: rgb(254,242,0) !important;
     background: linear-gradient(0deg, rgb(221,187,51) 57%, rgb(254,242,0) 100%) !important;
 }
-.arp_pattern_patternvisual_playingentry3 .arp_pattern_patternvisual_entry_column:nth-of-type(4)>div {
+.arp_pattern_patternvisual_playingentry3 .arp_pattern_patternvisual_entry:nth-of-type(4)>.arp_pattern_patternvisual_entry_column {
 z-index:2;
 transform: translateX(0%) scaleY(100%);
     background: rgb(254,242,0) !important;
     background: linear-gradient(0deg, rgb(221,187,51) 57%, rgb(254,242,0) 100%) !important;
 }
-.arp_pattern_patternvisual_playingentry4 .arp_pattern_patternvisual_entry_column:nth-of-type(5)>div {
+.arp_pattern_patternvisual_playingentry4 .arp_pattern_patternvisual_entry:nth-of-type(5)>.arp_pattern_patternvisual_entry_column {
 z-index:2;
 transform: translateX(0%) scaleY(100%);
     background: rgb(254,242,0) !important;
     background: linear-gradient(0deg, rgb(221,187,51) 57%, rgb(254,242,0) 100%) !important;
 }
-.arp_pattern_patternvisual_playingentry5 .arp_pattern_patternvisual_entry_column:nth-of-type(6)>div {
+.arp_pattern_patternvisual_playingentry5 .arp_pattern_patternvisual_entry:nth-of-type(6)>.arp_pattern_patternvisual_entry_column {
 z-index:2;
 transform: translateX(0%) scaleY(100%);
     background: rgb(254,242,0) !important;
     background: linear-gradient(0deg, rgb(221,187,51) 57%, rgb(254,242,0) 100%) !important;
 }
-.arp_pattern_patternvisual_playingentry6 .arp_pattern_patternvisual_entry_column:nth-of-type(7)>div {
+.arp_pattern_patternvisual_playingentry6 .arp_pattern_patternvisual_entry:nth-of-type(7)>.arp_pattern_patternvisual_entry_column {
 z-index:2;
 transform: translateX(0%) scaleY(100%);
     background: rgb(254,242,0) !important;
     background: linear-gradient(0deg, rgb(221,187,51) 57%, rgb(254,242,0) 100%) !important;
 }
-.arp_pattern_patternvisual_playingentry7 .arp_pattern_patternvisual_entry_column:nth-of-type(8)>div {
+.arp_pattern_patternvisual_playingentry7 .arp_pattern_patternvisual_entry:nth-of-type(8)>.arp_pattern_patternvisual_entry_column {
 z-index:2;
 transform: translateX(0%) scaleY(100%);
     background: rgb(254,242,0) !important;
     background: linear-gradient(0deg, rgb(221,187,51) 57%, rgb(254,242,0) 100%) !important;
 }
-.arp_pattern_patternvisual_playingentry8 .arp_pattern_patternvisual_entry_column:nth-of-type(9)>div {
+.arp_pattern_patternvisual_playingentry8 .arp_pattern_patternvisual_entry:nth-of-type(9)>.arp_pattern_patternvisual_entry_column {
 z-index:2;
 transform: translateX(0%) scaleY(100%);
     background: rgb(254,242,0) !important;
     background: linear-gradient(0deg, rgb(221,187,51) 57%, rgb(254,242,0) 100%) !important;
 }
-.arp_pattern_patternvisual_playingentry9 .arp_pattern_patternvisual_entry_column:nth-of-type(10)>div {
+.arp_pattern_patternvisual_playingentry9 .arp_pattern_patternvisual_entry:nth-of-type(10)>.arp_pattern_patternvisual_entry_column {
 z-index:2;
 transform: translateX(0%) scaleY(100%);
     background: rgb(254,242,0) !important;
     background: linear-gradient(0deg, rgb(221,187,51) 57%, rgb(254,242,0) 100%) !important;
 }
-.arp_pattern_patternvisual_playingentry10 .arp_pattern_patternvisual_entry_column:nth-of-type(11)>div {
+.arp_pattern_patternvisual_playingentry10 .arp_pattern_patternvisual_entry:nth-of-type(11)>.arp_pattern_patternvisual_entry_column {
 z-index:2;
 transform: translateX(0%) scaleY(100%);
     background: rgb(254,242,0) !important;
     background: linear-gradient(0deg, rgb(221,187,51) 57%, rgb(254,242,0) 100%) !important;
 }
-.arp_pattern_patternvisual_playingentry11 .arp_pattern_patternvisual_entry_column:nth-of-type(12)>div {
+.arp_pattern_patternvisual_playingentry11 .arp_pattern_patternvisual_entry:nth-of-type(12)>.arp_pattern_patternvisual_entry_column {
 z-index:2;
 transform: translateX(0%) scaleY(100%);
     background: rgb(254,242,0) !important;
     background: linear-gradient(0deg, rgb(221,187,51) 57%, rgb(254,242,0) 100%) !important;
 }
-.arp_pattern_patternvisual_playingentry12 .arp_pattern_patternvisual_entry_column:nth-of-type(13)>div {
+.arp_pattern_patternvisual_playingentry12 .arp_pattern_patternvisual_entry:nth-of-type(13)>.arp_pattern_patternvisual_entry_column {
 z-index:2;
 transform: translateX(0%) scaleY(100%);
     background: rgb(254,242,0) !important;
     background: linear-gradient(0deg, rgb(221,187,51) 57%, rgb(254,242,0) 100%) !important;
 }
-.arp_pattern_patternvisual_playingentry13 .arp_pattern_patternvisual_entry_column:nth-of-type(14)>div {
+.arp_pattern_patternvisual_playingentry13 .arp_pattern_patternvisual_entry:nth-of-type(14)>.arp_pattern_patternvisual_entry_column {
 z-index:2;
 transform: translateX(0%) scaleY(100%);
     background: rgb(254,242,0) !important;
     background: linear-gradient(0deg, rgb(221,187,51) 57%, rgb(254,242,0) 100%) !important;
 }
-.arp_pattern_patternvisual_playingentry14 .arp_pattern_patternvisual_entry_column:nth-of-type(15)>div {
+.arp_pattern_patternvisual_playingentry14 .arp_pattern_patternvisual_entry:nth-of-type(15)>.arp_pattern_patternvisual_entry_column {
 z-index:2;
 transform: translateX(0%) scaleY(100%);
     background: rgb(254,242,0) !important;
     background: linear-gradient(0deg, rgb(221,187,51) 57%, rgb(254,242,0) 100%) !important;
 }
-.arp_pattern_patternvisual_playingentry15 .arp_pattern_patternvisual_entry_column:nth-of-type(16)>div {
+.arp_pattern_patternvisual_playingentry15 .arp_pattern_patternvisual_entry:nth-of-type(16)>.arp_pattern_patternvisual_entry_column {
 z-index:2;
 transform: translateX(0%) scaleY(100%);
     background: rgb(254,242,0) !important;

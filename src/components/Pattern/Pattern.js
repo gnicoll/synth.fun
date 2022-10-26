@@ -8,6 +8,7 @@ const Pattern = () => {
   const handleClick = (PatternNum) => {
   }
 
+  const pattern = getPattern(controls.pattern);
   
   return (
     <div className="arp_patterns" >
@@ -16,8 +17,8 @@ const Pattern = () => {
           <div className='arp_pattern_patternvisual_entries'>
             {getPattern(controls?.pattern).map((entry, index) => 
             {
-              let prevEntry = index > 0 ? controls.pattern[index - 1] : controls.pattern[controls.pattern.length-1];
-              let l = (100 * (Math.max(...controls.pattern) - prevEntry)) / ((Math.max(...controls.pattern) - Math.min(...controls.pattern) +1));
+              let prevEntry = index > 0 ? pattern[index - 1] : pattern[controls.pattern.length-1];
+              let l = (100 * (Math.max(...pattern) - prevEntry)) / ((Math.max(...pattern) - Math.min(...pattern) +1));
               //let r = (100 * (Math.max(...controls.pattern) - (entry.step+(entry.transpose*12)))) / ((Math.max(...controls.pattern) - Math.min(...controls.pattern) +1));
               return <>
                       <div 
@@ -32,11 +33,9 @@ const Pattern = () => {
                           className={'arp_pattern_patternvisual_entry_column'}             
                           style = {
                             {
-                              left: (100 / (controls.pattern.length-1)) * index + '%',
                             }
                           } 
                           key={index}>
-                            <div></div>
                       </div>
                     </div>
                     </> 
