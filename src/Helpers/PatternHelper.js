@@ -4,6 +4,13 @@ import scales from "../data/scales";
 import noteMap from "../data/noteMap";
 
 
+export function getPattern(pattern){
+    return pattern.map((entry, index) => {
+        return entry.step + (entry.transpose*12);
+    });
+
+}
+
 export function getChordTypeForNoteInScale(rootNote, scale, note){
     if (note >= rootNote) {
         let d = note % rootNote % 12;

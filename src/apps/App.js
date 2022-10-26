@@ -23,6 +23,7 @@ function App() {
       }>
       <Layout>
         <Keyboard />
+        <Pattern />
         <Controls />
         <Sequence />
       </Layout>

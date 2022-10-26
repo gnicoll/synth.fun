@@ -55,7 +55,7 @@
     z-index: 1;
 }
 
-
+/*
 .arp_pattern_patternvisual_entry:last-of-type {
     margin-right: 0;
 }
@@ -63,17 +63,20 @@
 .arp_pattern_patternvisual_entry_column:last-of-type {
     transform: translateX(-100%) scaleY(0%); 
 }
+*/
 .arp_pattern_patternvisual_entry_column {
     z-index: 2;
     height: 100%;
-    width: 2%;
     position: absolute; 
-    transform: translateX(-50%);
     background-color: #FEFBF6;
     transition: transform 100ms ease-in-out;
     transform-origin: bottom;
+    /*
+    width: 2%;
+    transform: translateX(-50%);
+    */
 }
-
+/*
 .arp_pattern_patternvisual_entry_column:last-of-type {
     transform: translateX(-100%); 
 }
@@ -81,7 +84,7 @@
 .arp_pattern_patternvisual_entry_column:first-of-type {
     transform: translateX(0%);
 }
-
+*/
 
 .arp_pattern_patternvisual_entry_column>div {
     transition: transform 100ms ease-in-out;
