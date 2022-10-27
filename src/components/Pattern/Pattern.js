@@ -2,6 +2,7 @@ import style from './Pattern.css';
 import { useSynth } from '../../context/SynthContext';
 import { useEffect, useState } from 'react';
 import {getPattern} from '../../Helpers/PatternHelper';
+import Slider from './Slider/Slider';
 
 const Pattern = () => {
   const { loop, controls, dispatch } = useSynth();
@@ -41,10 +42,8 @@ const Pattern = () => {
             )}
           </div>
         </div>
+        <Slider />
         <div className='arp_pattern_details' >
-          <div>
-            UP / Down Arp            
-          </div>
           <div>
             Major Scale            
           </div>

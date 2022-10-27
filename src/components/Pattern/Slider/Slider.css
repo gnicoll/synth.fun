@@ -1,0 +1,37 @@
+.arp_pattern_patternvisual_slider_container {
+    width: 100%; /* Width of the outside container */
+    padding: 5% 0;
+  }
+  
+  /* The slider itself */
+  .arp_pattern_patternvisual_slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 25%; /* Specified height */
+    padding: 10px 0;
+    background: #d3d3d3; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+  }
+  
+  /* Mouse-over effects */
+  .arp_pattern_patternvisual_slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+  }
+  
+  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+  .arp_pattern_patternvisual_slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 6.25%; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #07060a;
+    background: rgb(3,3,5);
+    background: linear-gradient(0deg, rgb(3,3,5) 0%, rgb(15,12,25) 1%, rgb(15,12,25) 57%, rgb(3,3,5) 100%);    
+    clip-path: polygon(0% 0%, 99.9143% 2.76166%, 99.1327% 98.7441%, 3.55271% 99.6231%);
+    cursor: pointer; /* Cursor on hover */
+  }
+  
