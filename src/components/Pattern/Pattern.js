@@ -9,6 +9,13 @@ const Pattern = () => {
   const handleClick = (PatternNum) => {
   }
 
+  const setSlider = (p) => {
+    dispatch({
+      'type': 'chords',
+      'value': p
+    });
+  }
+
   const pattern = getPattern(controls.pattern);
   
   return (
@@ -42,7 +49,7 @@ const Pattern = () => {
             )}
           </div>
         </div>
-        <Slider />
+        <Slider callback={setSlider} maxValue={15} />
         <div className='arp_pattern_details' >
           <div>
             Major Scale            

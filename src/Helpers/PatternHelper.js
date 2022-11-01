@@ -9,15 +9,15 @@ export function getPatternMap(pattern) {
         if (entry != pattern[index - 1]) {
             return 0;
         }
-        if (entry === pattern[index - 1] &&
-            index > 2 &&
-            entry === pattern[index - 2] &&
-            entry === pattern[index - 3]) {
+        if (index > 2 &&
+            entry === pattern[index - 1] &&
+            entry === pattern[index - 2] ) {
             return 75;
         }
-        if (entry === pattern[index - 1] &&
-            index > 1 &&
-            entry === pattern[index - 2]) {
+        if (index > 1 &&
+            entry === pattern[index - 1] &&
+            entry === pattern[index - 2] &&
+            entry === pattern[index - 3] ) {
             return 50;
         }
         return 25;

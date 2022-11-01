@@ -175,6 +175,19 @@ export default function synthReducer(store, action) {
       }
 
 
+      case "chords": {
+        //store.tone.start();
+        const { value } = action;
+
+        console.log(value);
+
+        return {
+          tone: store.tone,
+          loop: store.loop,
+          controls: store.controls
+        };
+      }
+
       case "playpause": {
         //store.tone.start();
         const { play } = action;
