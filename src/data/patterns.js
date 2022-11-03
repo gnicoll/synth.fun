@@ -227,7 +227,7 @@ const patterns = {
         {
             step: 3,
             transpose: 0
-        }
+        },
         {
             step: 3,
             transpose: 0
