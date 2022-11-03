@@ -9,6 +9,40 @@ const patterns = {
             transpose: 1
         },
     ],
+    j61: [
+        {
+            step: 1,
+            transpose: 0
+        },
+        {
+            step: 1,
+            transpose: 0
+        },
+        {
+            step: 1,
+            transpose: 0
+        },
+        {
+            step: 4,
+            transpose: 0
+        },
+        {
+            step: 1,
+            transpose: 1
+        },
+        {
+            step: 1,
+            transpose: 1
+        },
+        {
+            step: 1,
+            transpose: 1
+        },
+        {
+            step: 1,
+            transpose: 1
+        }
+    ],
     j6: [
         {
             step: 1,

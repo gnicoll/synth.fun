@@ -1,9 +1,13 @@
 import chords from "../data/chords";
 import scales from "../data/scales";
-import {getChordForNoteInScale, getChordTypeForNoteInScale, patternGenerator} from "../Helpers/PatternHelper";
+import patterns from "../data/patterns";
+import Sequence from "./Sequence";
+import {getChordForNoteInScale, getChordTypeForNoteInScale, patternGenerator, getPatternMap} from "../Helpers/PatternHelper";
 
 export default class Loop {
-    constructor(d, s) {
+    constructor(d, s, p) {
+        this.chordSlider = 0;
+        this.playSlider = 0;
         this.synth = s;
         this.dispatch = d;
         //bool to indicate if the loop is playing
@@ -11,12 +15,13 @@ export default class Loop {
         this.sequenceIndex = 0;
         //an array of arrays of Step objects
         this.sequences = [
-            {
-                'name': 'Sequence 1',
-                'steps': [undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined],
-                'key': 24, //C
-                'scale': 'major'
-            }
+            new Sequence( 
+                'sequence 1',
+                24,
+                'major',
+                p,
+                
+            )
         ];
         this.sequencesIndex = 0;
         //an array of indexes (ints) of the sequences 
@@ -41,18 +46,13 @@ export default class Loop {
         if (!step) {
         } else {
             //get the noteNumber
-            if (step.rootNote !== null && step.pattern[this.patternIndex] !== null) {
+            if (currentSequence.patternMap[this.patternIndex] <= this.playSlider &&
+                step.rootNote !== null && step.pattern[this.patternIndex] !== null) {
                 //use step key and scale
-                noteNumbers = getChordForNoteInScale(currentSequence.key, currentSequence.scale, (step.rootNote.number + step.pattern[this.patternIndex]))
-                if (noteNumbers.length === 1) {
-
-                    console.log('playing : ', step.name);
-                    console.log('step: ', this.patternIndex);
-                    
-                    console.log('playing pattern: ', step.pattern);
-                    console.log('trying to get chord '+step.rootNote.name);
-                    console.log(noteNumbers)
-                }
+                if (currentSequence.patternMap[this.patternIndex] >= this.chordSlider)
+                    noteNumbers = [(step.rootNote.number + step.pattern[this.patternIndex])];
+                else
+                    noteNumbers = getChordForNoteInScale(currentSequence.key, currentSequence.scale, (step.rootNote.number + step.pattern[this.patternIndex]))
             } else {
                 noteNumbers = null;
             }
@@ -120,7 +120,7 @@ export default class Loop {
                     'rootNote': step.getRootNote(),
                     'scale': chordType,
                 },
-                step.getRootPattern()
+                sequence.getRootPattern()
                 );
             step.setPattern(p);
             step.setName( step.getRootNote().name + ' '+chordType)

@@ -8,11 +8,20 @@ const Pattern = () => {
   const { loop, controls, dispatch } = useSynth();
   const handleClick = (PatternNum) => {
   }
+  const sliderMax = 4;
 
-  const setSlider = (p) => {
+  const setChordSlider = (p) => {
+    let value = p/sliderMax * 100;
     dispatch({
-      'type': 'chords',
-      'value': p
+      'type': 'chordSlider',
+      value
+    });
+  }
+  const setPlaySlider = (p) => {
+    let value = p/sliderMax * 100;
+    dispatch({
+      'type': 'playSlider',
+      value
     });
   }
 
@@ -25,8 +34,26 @@ const Pattern = () => {
           <div className='arp_pattern_patternvisual_entries'>
             {getPattern(controls?.pattern).map((entry, index) => 
             {
-              let prevEntry = index > 0 ? pattern[index - 1] : pattern[controls.pattern.length-1];
-              let l = (100 * (Math.max(...pattern) - prevEntry)) / ((Math.max(...pattern) - Math.min(...pattern) +1));
+              //let entry = index > 0 ? pattern[index - 1] : pattern[controls.pattern.length-1];
+              let l = (100 * (Math.max(...pattern) - entry)) / ((Math.max(...pattern) - Math.min(...pattern) +1));
+              if ( controls.patternMap[index] > loop.playSlider ) 
+              return <div 
+                        className={'arp_pattern_patternvisual_entry'}             
+                        style = {
+                          {
+                            'clipPath': 'polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)',
+                          }
+                        } 
+                        key={index}>
+                      <div 
+                          className={'arp_pattern_patternvisual_entry_column'}             
+                          style = {
+                            {
+                            }
+                          } 
+                          key={index}>
+                      </div>
+                    </div>;
               //let r = (100 * (Math.max(...controls.pattern) - (entry.step+(entry.transpose*12)))) / ((Math.max(...controls.pattern) - Math.min(...controls.pattern) +1));
               return <div 
                         className={'arp_pattern_patternvisual_entry'}             
@@ -49,12 +76,8 @@ const Pattern = () => {
             )}
           </div>
         </div>
-        <Slider callback={setSlider} maxValue={15} />
-        <div className='arp_pattern_details' >
-          <div>
-            Major Scale            
-          </div>
-        </div>
+        <Slider callback={setPlaySlider} maxValue={sliderMax} />
+        <Slider callback={setChordSlider} maxValue={sliderMax} />
       </div>
     </div>
   )

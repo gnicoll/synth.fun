@@ -1,6 +1,7 @@
 .arp_pattern_patternvisual_slider_container {
     width: 100%; /* Width of the outside container */
     padding: 5% 0;
+    height: 0%;
   }
   
   /* The slider itself */

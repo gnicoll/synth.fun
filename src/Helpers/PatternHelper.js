@@ -4,20 +4,24 @@ import scales from "../data/scales";
 import noteMap from "../data/noteMap";
 
 export function getPatternMap(pattern) {
-    return pattern.Map((entry, index) => {
+    let rawPattern = pattern.map((e, index) => {
+        return e.step + (12 * e.transpose);
+    })
+
+    return rawPattern.map((entry, index) => {
         if (index === 0) return 0;
-        if (entry != pattern[index - 1]) {
+        if (entry != rawPattern[index - 1]) {
             return 0;
         }
-        if (index > 2 &&
-            entry === pattern[index - 1] &&
-            entry === pattern[index - 2] ) {
+        if (index > 1 &&
+            entry === rawPattern[index - 1] &&
+            entry === rawPattern[index - 2] &&
+            entry === rawPattern[index - 3] ) {
             return 75;
         }
         if (index > 1 &&
-            entry === pattern[index - 1] &&
-            entry === pattern[index - 2] &&
-            entry === pattern[index - 3] ) {
+            entry === rawPattern[index - 1] &&
+            entry === rawPattern[index - 2] ){
             return 50;
         }
         return 25;
@@ -25,17 +29,16 @@ export function getPatternMap(pattern) {
 }
 
 export function getPattern(pattern){
+    if (!pattern) return [];
     return pattern.map((entry, index) => {
         return entry.step + (entry.transpose*12);
     });
-
 }
 
 export function getChordTypeForNoteInScale(rootNote, scale, note){
     if (note >= rootNote) {
         let d = note % rootNote % 12;
         let chordType = scales[scale].chords[scales[scale].scale.indexOf(d)];
-        console.log(chordType);
         return chordType;
     }
     return null;
@@ -59,25 +62,14 @@ export function getChordForNoteInScale(rootNote, scale, note){
         })
         
     }
-    console.log(noteMap[note]);
-    return [note];
-
 }
 
 
 export function patternGenerator(key, pattern) {
-   // console.log('pattern: ', pattern);
     const root = key.rootNote;
     const scale =  scales[key.scale]?.scale;
-  //  console.log('root: ', root);
     const patternNotes = pattern.map(({step, transpose}) => {
-        //pattern is not zero indexed
-
- //       console.log('------------- ');
         let noteNum = getNote(step, transpose, scale);
-  //      console.log('noteNum: ', noteNum);
-        //if (noteNum > scale.length-1)
-        //    noteNum = noteNum - scale.length;
         return noteNum;
     });
     return patternNotes;

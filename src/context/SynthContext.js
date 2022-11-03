@@ -4,7 +4,7 @@ import Loop from '../classes/Loop';
 import Step from "../classes/Step";
 import noteMap from "../data/noteMap";
 import patterns from '../data/patterns';
-import {patternGenerator, getChordTypeForNoteInScale} from '../Helpers/PatternHelper';
+import {patternGenerator, getChordTypeForNoteInScale, getPatternMap} from '../Helpers/PatternHelper';
 
 //used to hold the selected Synths
 console.log('initializing SynthContext')
@@ -78,11 +78,11 @@ let synthInit = new Tone.PolySynth({
 const vol = new Tone.Volume(0).toDestination();
 synthInit.connect(effect);
 effect.connect(vol);
-const loop = new Loop(false, synthInit);
+const pattern = patterns[Object.keys(patterns)[Math.round(Math.random() * (Object.keys(patterns).length-1))]];
+const loop = new Loop(false, synthInit, pattern);
 
 //routing synth through the reverb
 
-const pattern = patterns['j6'];
 console.log('pattern: ', pattern);
 
 //controls is the interface object
@@ -91,24 +91,27 @@ let controls = {
   'sequenceIndex': 0,
 //  'pattern': [0,4,7,11, 14,11,7,4, 0,4,7,11, 14,11,7,4],
   pattern,
+  patternMap: getPatternMap(pattern),
 //  'pattern': [0,5,0,3, 0,5,0,8, 0,10,0,8, 0,5,0,3],
 //  'pattern': [0,4,7],
-  'tempo': 56,
+  'tempo': 94,
   'gain': 0.6,
   'notesPlayed': null,
   'patternIndexPlayed': null,
 }
 
-toneInit.Transport.scheduleRepeat(repeat, '8n');
+
+toneInit.Transport.bpm.value = 96;
+toneInit.Transport.scheduleRepeat(repeat, '16n');
 //toneInit.Transport.start();
 
 function repeat(time) {
   //where should i put playDetails that the app can get it?? it should go into controls
   let playDetails = loop.play();
 //  controls.notesPlayed = playDetails.noteNumber;
+if (playDetails.noteNumbers) {
   let notes = playDetails.noteNumbers.map((n)=>noteMap[n]);
-  if (playDetails.noteNumbers !== undefined) {
-    synthInit.triggerAttackRelease(notes, '8n', time);
+    synthInit.triggerAttackRelease(notes, '16n', time);
   }
 }
 
@@ -175,10 +178,23 @@ export default function synthReducer(store, action) {
       }
 
 
-      case "chords": {
+      case "playSlider": {
         //store.tone.start();
         const { value } = action;
+        store.loop.playSlider = value;
+        console.log(value);
 
+        return {
+          tone: store.tone,
+          loop: store.loop,
+          controls: store.controls
+        };
+      }
+
+      case "chordSlider": {
+        //store.tone.start();
+        const { value } = action;
+        store.loop.chordSlider = value;
         console.log(value);
 
         return {
@@ -220,10 +236,10 @@ export default function synthReducer(store, action) {
         const { playDetails } = action;
         const { noteNumbers, sequenceIndex, pattern, patternIndex } = playDetails;
 
-        store.controls.notesPlayed = noteNumbers.map((n)=> noteMap[n]);
+        store.controls.notesPlayed = noteNumbers ? noteNumbers.map((n)=> noteMap[n[0]]): [];
         store.controls.noteNumbersPlayed = noteNumbers;
         store.controls.patternIndexPlayed = sequenceIndex;
-        store.controls.pattern = pattern;
+        //store.controls.pattern = pattern;
         store.controls.patternIndex = patternIndex;
         
         return {
