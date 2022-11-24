@@ -4,6 +4,11 @@ const scales = {
         'name': 'Major',
         'chords': ['major', 'minor', 'minor', 'major', 'major', 'minor', 'diminished']
     },
+    'diminished': {
+        'scale': [0,2,3,5,6,8,9,11],
+        'name': 'Diminished',
+        'chords': ['diminished', 'diminished', 'major', 'diminished', 'diminished', 'major', 'major', 'diminished']
+    },
     'minor': {
         'scale': [0,2,3,5,7,8,10],
         'name': 'Minor',

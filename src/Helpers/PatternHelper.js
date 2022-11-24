@@ -38,11 +38,22 @@ export function getPattern(pattern){
 export function getChordTypeForNoteInScale(rootNote, scale, note){
     if (note >= rootNote) {
         let d = note % rootNote % 12;
+        let s = scales[scale];
+        let i = s.scale.indexOf(d);
+        let ct = s.chords[i];
         let chordType = scales[scale].chords[scales[scale].scale.indexOf(d)];
         return chordType;
     }
     return null;
 
+}
+
+export function isNoteInScale(keyNoteNum, scale, note){
+    if (note >= keyNoteNum) {
+        let d = note % keyNoteNum % 12;
+        return scales[scale].scale[scales[scale].scale.indexOf(d)] >=0;
+    }
+    return false;
 }
 
 // takes rootNote (num), scale 'minor'/'major' etc, and note (num)

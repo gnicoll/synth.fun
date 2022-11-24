@@ -2,6 +2,7 @@ import style from './Key.css';
 import React, { memo, useState } from 'react';
 import { useSynth } from '../../../context/SynthContext';
 import {GenerateClipPath} from '../../../Helpers/ClippathHelper';
+import {isNoteInScale} from '../../../Helpers/PatternHelper';
 
 const Key = ({ note, sharp, noteNumber }) => {
   const {controls, dispatch}  = useSynth();
@@ -17,7 +18,13 @@ const Key = ({ note, sharp, noteNumber }) => {
   }
   
   return (
-    <div className={"arp_key " +"arp_key_"+noteNumber+" " + (sharp? "arp_key--sharp":"")} >
+    <div 
+      className= {
+        "arp_key " +
+        "arp_key_"+noteNumber+" " + 
+        (sharp? "arp_key--sharp ":"") +
+        (!isNoteInScale(controls.key.noteNum, controls.scale, noteNumber)? "arp_key--notinscale":"")
+      }>
       <div 
         className={"arp_key_inner "} 
         onMouseDown={() => clickHandler(noteNumber, note)} 

@@ -79,7 +79,6 @@ const vol = new Tone.Volume(0).toDestination();
 synthInit.connect(effect);
 effect.connect(vol);
 const pattern = patterns[Object.keys(patterns)[Math.round(Math.random() * (Object.keys(patterns).length-1))]];
-const loop = new Loop(false, synthInit, pattern);
 
 //routing synth through the reverb
 
@@ -87,19 +86,25 @@ console.log('pattern: ', pattern);
 
 //controls is the interface object
 let controls = {
+  'key': {
+    'name': 'C',
+    'noteNum': 24
+  },
+  'scale': 'major',
   'mode': 'sequence',
   'sequenceIndex': 0,
-//  'pattern': [0,4,7,11, 14,11,7,4, 0,4,7,11, 14,11,7,4],
+  //  'pattern': [0,4,7,11, 14,11,7,4, 0,4,7,11, 14,11,7,4],
   pattern,
   patternMap: getPatternMap(pattern),
-//  'pattern': [0,5,0,3, 0,5,0,8, 0,10,0,8, 0,5,0,3],
-//  'pattern': [0,4,7],
+  //  'pattern': [0,5,0,3, 0,5,0,8, 0,10,0,8, 0,5,0,3],
+  //  'pattern': [0,4,7],
   'tempo': 94,
   'gain': 0.6,
   'notesPlayed': null,
   'patternIndexPlayed': null,
 }
 
+const loop = new Loop(false, synthInit, controls.key.noteNum, controls.scale,  pattern);
 
 toneInit.Transport.bpm.value = 96;
 toneInit.Transport.scheduleRepeat(repeat, '16n');

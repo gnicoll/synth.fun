@@ -1,11 +1,9 @@
 import {getPatternMap} from '../Helpers/PatternHelper';
 
 export default class Sequence {
-    constructor(name, key, scale, rp) {
+    constructor(name, rp) {
         this.name =  name;
         this.steps = [undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined];
-        this.key = key; //C
-        this.scale = scale;
         this.rootPattern = rp;
         this.patternMap = rp? getPatternMap(rp) : undefined;
         console.log('rp: ', rp);

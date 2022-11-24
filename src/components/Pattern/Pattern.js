@@ -8,17 +8,18 @@ const Pattern = () => {
   const { loop, controls, dispatch } = useSynth();
   const handleClick = (PatternNum) => {
   }
-  const sliderMax = 4;
+  const chordSliderMax = 5;
+  const playSliderMax = 4;
 
   const setChordSlider = (p) => {
-    let value = p/sliderMax * 100;
+    let value = p/chordSliderMax * 100;
     dispatch({
       'type': 'chordSlider',
       value
     });
   }
   const setPlaySlider = (p) => {
-    let value = p/sliderMax * 100;
+    let value = p/playSliderMax * 100;
     dispatch({
       'type': 'playSlider',
       value
@@ -76,8 +77,8 @@ const Pattern = () => {
             )}
           </div>
         </div>
-        <Slider callback={setPlaySlider} maxValue={sliderMax} />
-        <Slider callback={setChordSlider} maxValue={sliderMax} />
+        <Slider callback={setPlaySlider} maxValue={playSliderMax} />
+        <Slider callback={setChordSlider} maxValue={chordSliderMax} />
       </div>
     </div>
   )

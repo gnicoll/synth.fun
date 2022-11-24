@@ -6,6 +6,11 @@
     flex-grow: 1;
     transform: translateY(13%);
   }
+
+  .arp_key--notinscale {
+    pointer-events: none;
+  }
+
   .arp_key:nth-of-type(5) {
     margin-right: 2.5%;
   }

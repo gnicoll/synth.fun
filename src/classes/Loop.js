@@ -5,11 +5,13 @@ import Sequence from "./Sequence";
 import {getChordForNoteInScale, getChordTypeForNoteInScale, patternGenerator, getPatternMap} from "../Helpers/PatternHelper";
 
 export default class Loop {
-    constructor(d, s, p) {
+    constructor(dispatch, synth, key, scale, rootPattern) {
         this.chordSlider = 0;
         this.playSlider = 0;
-        this.synth = s;
-        this.dispatch = d;
+        this.key= key;
+        this.scale = scale;
+        this.synth = synth;
+        this.dispatch = dispatch;
         //bool to indicate if the loop is playing
         this.patternIndex = 0;
         this.sequenceIndex = 0;
@@ -17,10 +19,7 @@ export default class Loop {
         this.sequences = [
             new Sequence( 
                 'sequence 1',
-                24,
-                'major',
-                p,
-                
+                rootPattern,
             )
         ];
         this.sequencesIndex = 0;
@@ -52,7 +51,7 @@ export default class Loop {
                 if (currentSequence.patternMap[this.patternIndex] >= this.chordSlider)
                     noteNumbers = [(step.rootNote.number + step.pattern[this.patternIndex])];
                 else
-                    noteNumbers = getChordForNoteInScale(currentSequence.key, currentSequence.scale, (step.rootNote.number + step.pattern[this.patternIndex]))
+                    noteNumbers = getChordForNoteInScale(this.key, this.scale, (step.rootNote.number + step.pattern[this.patternIndex]))
             } else {
                 noteNumbers = null;
             }
@@ -114,7 +113,7 @@ export default class Loop {
     addStepToSequence(step, index=undefined) {
         let sequence = this.sequences[this.sequencesIndex];
         if (index !== undefined && this.getNextStepIndex() < 16) {
-            let chordType = getChordTypeForNoteInScale(sequence.key, sequence.scale, step.getRootNote().number);
+            let chordType = getChordTypeForNoteInScale(this.key, this.scale, step.getRootNote().number);
             const p = patternGenerator(
                 {
                     'rootNote': step.getRootNote(),
@@ -131,6 +130,13 @@ export default class Loop {
 
     setNextSequence(sequence) {
         this.nextSequence = sequence;
+    }
+
+    setKey(key) {
+        this.key = key;
+        this.sequences.forEach(sequence => {
+            sequence.setKey(key);
+        });
     }
 
   }
