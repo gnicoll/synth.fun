@@ -7,9 +7,60 @@
     transform: translateY(13%);
   }
 
-  .arp_key--notinscale {
-    pointer-events: none;
+  .arp_key > .arp_key_inner {
+    cursor: pointer;
   }
+
+  .arp_key_inner::after{
+    width: 11%;
+    display: block;
+    height: 5%;
+    /*content: " ";*/
+    background: #0061ac !important;
+    position: absolute;
+    bottom: 23%;
+    left: 45%;
+    border-radius: 0%;
+    
+  }
+  
+  .arp_key--sharp>.arp_key_inner::after{
+    width: 60%;
+    display: block;
+    height: 7%;
+    /*content: " ";*/
+    background: #0061ac !important;
+    position: absolute;
+    bottom: -10%;
+    left: 150%;
+    border-radius: 0%;
+    
+  }
+  
+  .arp_key--notinscale > .arp_key_inner {
+    pointer-events: none;
+    cursor: auto;
+    /*background: #0063af !important;
+    background: rgb(254,242,242) !important;
+    background: linear-gradient(0deg, rgb(226, 229, 243) 57%, rgb(189, 196, 236) 100%) !important;  
+    */
+
+  }
+
+  .arp_key--sharp.arp_key--notinscale > .arp_key_inner{
+    pointer-events: none;
+    /*background: #0061ac !important;
+    background: #08080a !important;
+    background: linear-gradient(0deg, rgb(35, 35, 46) 57%, rgb(46, 46, 77) 100%) !important;
+    */
+  }
+
+  .arp_key--sharp.arp_key--notinscale > .arp_key_inner::after,.arp_key--notinscale > .arp_key_inner::after {
+    display: none;
+    /*background: #0063af !important;*/
+  }
+
+
 
   .arp_key:nth-of-type(5) {
     margin-right: 2.5%;
@@ -81,7 +132,7 @@ clip-path: polygon(5% 1%, 96% 5%, 100% 97%, 1% 99%);
   }
   .arp_key_inner:hover{
     background: rgb(254,242,242) !important;
-    background: linear-gradient(0deg, rgb(189, 196, 236) 57%, rgb(127, 157, 190) 100%) !important;
+    background: linear-gradient(0deg, rgb(226, 229, 243) 57%, rgb(189, 196, 236) 100%) !important;  
   }
   
   .arp_key--sharp{
@@ -96,12 +147,17 @@ clip-path: polygon(5% 1%, 96% 5%, 100% 97%, 1% 99%);
   .arp_key--sharp .arp_key_inner{
     background: #07060a;
     background: rgb(3,3,5);
-background: linear-gradient(0deg, rgb(3,3,5) 0%, rgb(15,12,25) 1%, rgb(15,12,25) 57%, rgb(3,3,5) 100%);
+    background: linear-gradient(0deg, rgb(3,3,5) 0%, rgb(15,12,25) 1%, rgb(15,12,25) 57%, rgb(3,3,5) 100%);
     /* border-bottom: 2px solid #333; */
     height: 100%;
     /* border-bottom-right-radius: 3px; */
     /* border-bottom-left-radius: 3px; */
     padding: 100% 200%;
+  }
+  .arp_key--sharp .arp_key_inner:hover{
+    background: #08080a !important;
+    background: linear-gradient(0deg, rgb(35, 35, 46) 57%, rgb(46, 46, 77) 100%) !important;
+
   }
  
   .arp_key_12 .arp_key_inner:before,

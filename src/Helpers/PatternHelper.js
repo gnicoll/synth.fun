@@ -3,34 +3,64 @@ import chords from "../data/chords";
 import scales from "../data/scales";
 import noteMap from "../data/noteMap";
 
+export function getMappedPattern(pattern, patternMap, transform) {
+    let mapped = pattern.map((entry, index) => {
+        if (patternMap[index] <= transform && !entry ) {
+            return pattern[0];
+        }
+        return entry;
+    });
+    return mapped;
+}
+
+export function get16Pattern(pattern) {
+    if (pattern.length === 16)
+        return pattern;
+    if (pattern.length === 8)
+        return pattern.concat(pattern);
+    if (pattern.length === 4)
+        return pattern.concat(pattern).concat(pattern).concat(pattern);
+    else 
+        return [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined];
+}
+
 export function getPatternMap(pattern) {
     let rawPattern = pattern.map((e, index) => {
+        if (!e) {
+            return null;
+        }
         return e.step + (12 * e.transpose);
     })
-
     return rawPattern.map((entry, index) => {
         if (index === 0) return 0;
-        if (entry != rawPattern[index - 1]) {
-            return 0;
-        }
-        if (index > 1 &&
+        if (!entry &&
+            index >3 &&
             entry === rawPattern[index - 1] &&
             entry === rawPattern[index - 2] &&
             entry === rawPattern[index - 3] ) {
-            return 75;
+            return 100;
         }
-        if (index > 1 &&
+        if (!entry &&
+            index > 2 &&
             entry === rawPattern[index - 1] &&
             entry === rawPattern[index - 2] ){
+            return 75;
+        }
+        if (!entry && 
+            entry === rawPattern[index - 1]) {
             return 50;
         }
-        return 25;
+        if (!entry ) {
+            return 25;
+        }
+        return 0;
     })
 }
 
 export function getPattern(pattern){
     if (!pattern) return [];
     return pattern.map((entry, index) => {
+        if (!entry) return null;
         return entry.step + (entry.transpose*12);
     });
 }
@@ -79,7 +109,9 @@ export function getChordForNoteInScale(rootNote, scale, note){
 export function patternGenerator(key, pattern) {
     const root = key.rootNote;
     const scale =  scales[key.scale]?.scale;
-    const patternNotes = pattern.map(({step, transpose}) => {
+    const patternNotes = pattern.map((p) => {
+        if (!p) return null;
+        let {step, transpose} = p;
         let noteNum = getNote(step, transpose, scale);
         return noteNum;
     });
