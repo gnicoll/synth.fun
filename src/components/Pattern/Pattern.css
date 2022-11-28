@@ -55,6 +55,9 @@
     z-index: 1;
 }
 
+.arp_pattern_patternvisual_entry--chord {
+    background: rgba(93,93,95,1);
+}
 
 .arp_pattern_patternvisual_entry:last-of-type {
     margin-right: 0;

@@ -3,6 +3,16 @@ import chords from "../data/chords";
 import scales from "../data/scales";
 import noteMap from "../data/noteMap";
 
+export function getMappedPattern(pattern, patternMap, transform) {
+    let mapped = pattern.map((entry, index) => {
+        if (patternMap[index] <= transform && !entry ) {
+            return pattern[0];
+        }
+        return entry;
+    });
+    return mapped;
+}
+
 export function get16Pattern(pattern) {
     if (pattern.length === 16)
         return pattern;
@@ -21,24 +31,29 @@ export function getPatternMap(pattern) {
         }
         return e.step + (12 * e.transpose);
     })
-
     return rawPattern.map((entry, index) => {
         if (index === 0) return 0;
-        if (entry != rawPattern[index - 1]) {
-            return 0;
-        }
-        if (index > 1 &&
+        if (!entry &&
+            index >3 &&
             entry === rawPattern[index - 1] &&
             entry === rawPattern[index - 2] &&
             entry === rawPattern[index - 3] ) {
-            return 75;
+            return 100;
         }
-        if (index > 1 &&
+        if (!entry &&
+            index > 2 &&
             entry === rawPattern[index - 1] &&
             entry === rawPattern[index - 2] ){
+            return 75;
+        }
+        if (!entry && 
+            entry === rawPattern[index - 1]) {
             return 50;
         }
-        return 25;
+        if (!entry ) {
+            return 25;
+        }
+        return 0;
     })
 }
 

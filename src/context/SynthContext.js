@@ -79,8 +79,8 @@ const vol = new Tone.Volume(0).toDestination();
 //synthInit.connect(effect);
 //effect.connect(vol);
 synthInit.connect(vol);
-//const pattern = patterns[Object.keys(patterns)[Math.round(Math.random() * (Object.keys(patterns).length-1))]];
-const pattern = patterns['j61'];
+const pattern = patterns[Object.keys(patterns)[Math.round(Math.random() * (Object.keys(patterns).length-1))]];
+//const pattern = patterns['j61'];
 const patternFullLength = get16Pattern(pattern);
 //routing synth through the reverb
 
