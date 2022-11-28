@@ -2,24 +2,49 @@ import Key from '../Key/Key';
 import style from './Octave.css';
 
 
-const Octave = ({ octaveNumber, onHover, mouseDown }) => {
+const Octave = ({ keyNote, octaveNumber, onHover, mouseDown }) => {
   //Middle C should be 60
   let octave = (octaveNumber+1);
 
+
+
+  const keys = [
+    {name: 'C',  octave: octave, number: 0},
+    {name: 'C#', octave: octave, number: 1},
+    {name: 'D',  octave: octave, number: 2},
+    {name: 'D#', octave: octave, number: 3},
+    {name: 'E',  octave: octave, number: 4},
+    {name: 'F',  octave: octave, number: 5},
+    {name: 'F#', octave: octave, number: 6},
+    {name: 'G',  octave: octave, number: 7},
+    {name: 'G#', octave: octave, number: 8},
+    {name: 'A',  octave: octave, number: 9},
+    {name: 'A#', octave: octave, number: 10},
+    {name: 'B',  octave: octave, number: 11},
+  ];
+
+  const startingNote = keys[0];
+  //const startingNote = keys.find((k) => k.name === keyNote.name);
+  
   return (
     <div className="arp_keys_octave" >
-      <Key mouseDown={mouseDown} onHover={onHover} noteNumber={0 +((octave)*12)} note={"C"+octaveNumber} />
-      <Key mouseDown={mouseDown} onHover={onHover} noteNumber={1 +((octave)*12)} note={"C#"+octaveNumber} sharp />
-      <Key mouseDown={mouseDown} onHover={onHover} noteNumber={2 +((octave)*12)} note={"D"+octaveNumber} />
-      <Key mouseDown={mouseDown} onHover={onHover} noteNumber={3 +((octave)*12)} note={"D#"+octaveNumber} sharp />
-      <Key mouseDown={mouseDown} onHover={onHover} noteNumber={4 +((octave)*12)} note={"E"+octaveNumber} />
-      <Key mouseDown={mouseDown} onHover={onHover} noteNumber={5 +((octave)*12)} note={"F"+octaveNumber} />
-      <Key mouseDown={mouseDown} onHover={onHover} noteNumber={6 +((octave)*12)} note={"F#"+octaveNumber} sharp />
-      <Key mouseDown={mouseDown} onHover={onHover} noteNumber={7 +((octave)*12)} note={"G"+octaveNumber} />
-      <Key mouseDown={mouseDown} onHover={onHover} noteNumber={8 +((octave)*12)} note={"G#"+octaveNumber} sharp />
-      <Key mouseDown={mouseDown} onHover={onHover} noteNumber={9 +((octave)*12)} note={"A"+octaveNumber} />
-      <Key mouseDown={mouseDown} onHover={onHover} noteNumber={10+((octave)*12)} note={"A#"+octaveNumber} sharp />
-      <Key mouseDown={mouseDown} onHover={onHover} noteNumber={11+((octave)*12)} note={"B"+octaveNumber} />
+      {keys.map((k, i) => 
+        {
+        let noteIndex = (i + startingNote.number);
+        if (noteIndex > 11) { noteIndex = noteIndex - 12; }
+        return <Key 
+        key={keys[noteIndex].name + octaveNumber}
+        mouseDown={mouseDown} 
+        onHover={onHover} 
+        noteNumber={keys[noteIndex].number +((octave)*12)} 
+        sharp = {keys[noteIndex].name.indexOf('#') > -1}
+        note={
+          ( keys[noteIndex].name + octaveNumber
+          )
+          } 
+          />
+        }
+      )}
     </div>
   )
 }

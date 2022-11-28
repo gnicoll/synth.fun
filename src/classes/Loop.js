@@ -7,7 +7,7 @@ import {getChordForNoteInScale, getChordTypeForNoteInScale, patternGenerator, ge
 export default class Loop {
     constructor(dispatch, synth, key, scale, rootPattern) {
         this.chordSlider = 0;
-        this.playSlider = 0;
+        this.fillSlider = 0;
         this.key= key;
         this.scale = scale;
         this.synth = synth;
@@ -45,16 +45,21 @@ export default class Loop {
         if (!step) {
         } else {
             //get the noteNumber
-            if (currentSequence.patternMap[this.patternIndex] <= this.playSlider &&
-                step.rootNote !== null && step.pattern[this.patternIndex] !== null) {
-                //use step key and scale
-                if (currentSequence.patternMap[this.patternIndex] >= this.chordSlider)
-                    noteNumbers = [(step.rootNote.number + step.pattern[this.patternIndex])];
-                else
-                    noteNumbers = getChordForNoteInScale(this.key, this.scale, (step.rootNote.number + step.pattern[this.patternIndex]))
+            if (currentSequence.patternMap[this.patternIndex] <= this.fillSlider &&
+                (step.rootNote !== null) ) {
+                    let stepPattern = step.pattern[this.patternIndex];
+                    if (stepPattern === null) {
+                        stepPattern = step.pattern[0];
+                    }
+                    //use step key and scale
+                    if (currentSequence.patternMap[this.patternIndex] >= this.chordSlider)
+                        noteNumbers = [(step.rootNote.number + stepPattern)];
+                    else
+                        noteNumbers = getChordForNoteInScale(this.key, this.scale, (step.rootNote.number + stepPattern))
             } else {
                 noteNumbers = null;
             }
+            console.log('noteNumbers: ', noteNumbers);
             this.patternIndex++;
             //if the pattern is done, go to the next step
             if (this.patternIndex >= step.pattern.length) {

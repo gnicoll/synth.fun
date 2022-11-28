@@ -39,7 +39,7 @@ const Keyboard = ({playedNote, highlightNote, onHover, notes}) => {
             onMouseUp={() => setMouseDown(false)} 
             >
             {octaves.map((element, index) => 
-              <Octave mouseDown={mouseDown} onHover={onHover} octaveNumber={(element)} key={index} />
+              <Octave keyNote={controls.key} mouseDown={mouseDown} onHover={onHover} octaveNumber={(element)} key={index} />
             )}
           </div>
         </div>

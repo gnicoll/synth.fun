@@ -38,14 +38,8 @@ const patterns = {
             step: 1,
             transpose: 0
         },
-        {
-            step: 1,
-            transpose: 0
-        },
-        {
-            step: 1,
-            transpose: 0
-        },
+        undefined,
+        undefined,
         {
             step: 4,
             transpose: 0
@@ -54,18 +48,9 @@ const patterns = {
             step: 1,
             transpose: 1
         },
-        {
-            step: 1,
-            transpose: 1
-        },
-        {
-            step: 1,
-            transpose: 1
-        },
-        {
-            step: 1,
-            transpose: 1
-        }
+        undefined,
+        undefined,
+        undefined
     ],
     j6: [
         {

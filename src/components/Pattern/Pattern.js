@@ -9,7 +9,7 @@ const Pattern = () => {
   const handleClick = (PatternNum) => {
   }
   const chordSliderMax = 5;
-  const playSliderMax = 4;
+  const fillSliderMax = 4;
 
   const setChordSlider = (p) => {
     let value = p/chordSliderMax * 100;
@@ -18,10 +18,10 @@ const Pattern = () => {
       value
     });
   }
-  const setPlaySlider = (p) => {
-    let value = p/playSliderMax * 100;
+  const setFillSlider = (p) => {
+    let value = p/fillSliderMax * 100;
     dispatch({
-      'type': 'playSlider',
+      'type': 'fillSlider',
       value
     });
   }
@@ -36,8 +36,9 @@ const Pattern = () => {
             {getPattern(controls?.pattern).map((entry, index) => 
             {
               //let entry = index > 0 ? pattern[index - 1] : pattern[controls.pattern.length-1];
-              let l = (100 * (Math.max(...pattern) - entry)) / ((Math.max(...pattern) - Math.min(...pattern) +1));
-              if ( controls.patternMap[index] > loop.playSlider ) 
+              
+              let l = entry ? (100 * (Math.max(...pattern) - entry)) / ((Math.max(...pattern) - Math.min(...pattern) +1)) : 100;
+              if ( controls.patternMap[index] > loop.fillSlider ) 
               return <div 
                         className={'arp_pattern_patternvisual_entry'}             
                         style = {
@@ -77,7 +78,7 @@ const Pattern = () => {
             )}
           </div>
         </div>
-        <Slider callback={setPlaySlider} maxValue={playSliderMax} />
+        <Slider callback={setFillSlider} maxValue={fillSliderMax} />
         <Slider callback={setChordSlider} maxValue={chordSliderMax} />
       </div>
     </div>

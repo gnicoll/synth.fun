@@ -4,7 +4,7 @@ import Loop from '../classes/Loop';
 import Step from "../classes/Step";
 import noteMap from "../data/noteMap";
 import patterns from '../data/patterns';
-import {patternGenerator, getChordTypeForNoteInScale, getPatternMap} from '../Helpers/PatternHelper';
+import {get16Pattern, getChordTypeForNoteInScale, getPatternMap} from '../Helpers/PatternHelper';
 
 //used to hold the selected Synths
 console.log('initializing SynthContext')
@@ -76,10 +76,12 @@ let synthInit = new Tone.PolySynth({
 });
 
 const vol = new Tone.Volume(0).toDestination();
-synthInit.connect(effect);
-effect.connect(vol);
-const pattern = patterns[Object.keys(patterns)[Math.round(Math.random() * (Object.keys(patterns).length-1))]];
-
+//synthInit.connect(effect);
+//effect.connect(vol);
+synthInit.connect(vol);
+//const pattern = patterns[Object.keys(patterns)[Math.round(Math.random() * (Object.keys(patterns).length-1))]];
+const pattern = patterns['j61'];
+const patternFullLength = get16Pattern(pattern);
 //routing synth through the reverb
 
 console.log('pattern: ', pattern);
@@ -90,21 +92,19 @@ let controls = {
     'name': 'C',
     'noteNum': 24
   },
-  'scale': 'major',
+  'scale': 'minor',
   'mode': 'sequence',
   'sequenceIndex': 0,
-  //  'pattern': [0,4,7,11, 14,11,7,4, 0,4,7,11, 14,11,7,4],
-  pattern,
-  patternMap: getPatternMap(pattern),
-  //  'pattern': [0,5,0,3, 0,5,0,8, 0,10,0,8, 0,5,0,3],
-  //  'pattern': [0,4,7],
+  'pattern': patternFullLength,
+  'patterLength': pattern.length,
+  'patternMap': getPatternMap(patternFullLength),
   'tempo': 94,
   'gain': 0.6,
   'notesPlayed': null,
   'patternIndexPlayed': null,
 }
 
-const loop = new Loop(false, synthInit, controls.key.noteNum, controls.scale,  pattern);
+const loop = new Loop(false, synthInit, controls.key.noteNum, controls.scale,  patternFullLength);
 
 toneInit.Transport.bpm.value = 96;
 toneInit.Transport.scheduleRepeat(repeat, '16n');
@@ -158,8 +158,10 @@ export default function synthReducer(store, action) {
       case "playNote": {
         const { note, sequenceIndex } = action;
         
-        let synth = new Tone.Synth().toDestination();
-        synth.triggerAttackRelease(`${note.name}`, "8n");
+        if (note) {
+          let synth = new Tone.Synth().toDestination();
+          synth.triggerAttackRelease(`${note.name}`, "8n");
+        }
         if (store.controls.mode === 'sequence') {
           //below pattern should come from current step selection
           // pattern should be transposed to the current sequence key
@@ -183,11 +185,10 @@ export default function synthReducer(store, action) {
       }
 
 
-      case "playSlider": {
+      case "fillSlider": {
         //store.tone.start();
         const { value } = action;
-        store.loop.playSlider = value;
-        console.log(value);
+        store.loop.fillSlider = value;
 
         return {
           tone: store.tone,
@@ -200,7 +201,6 @@ export default function synthReducer(store, action) {
         //store.tone.start();
         const { value } = action;
         store.loop.chordSlider = value;
-        console.log(value);
 
         return {
           tone: store.tone,
