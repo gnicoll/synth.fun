@@ -52,7 +52,7 @@ let synthVoice =
     );
 
 
-let synthInit = new Tone.PolySynth({
+/*let synthInit = new Tone.PolySynth({
 	"volume": 0,
 	"detune": 0,
 	"portamento": 0,
@@ -73,7 +73,21 @@ let synthInit = new Tone.PolySynth({
 		"count": 3,
 		"spread": 30
 	}
-});
+});*/
+let synthInit = new toneInit.PolySynth(toneInit.Synth, {
+  oscillator: {
+    type: "fatsawtooth",
+    count: 3,
+    spread: 30
+  },
+  envelope: {
+    attack: 0.01,
+    decay: 0.1,
+    sustain: 0.5,
+    release: 0.4,
+    attackCurve: "exponential"
+  },
+}).toDestination();
 
 const vol = new toneInit.Volume(0).toDestination();
 //synthInit.connect(effect);
