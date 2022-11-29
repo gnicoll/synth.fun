@@ -48,7 +48,7 @@ const scales = {
         'scale': [0,3,5,7,10],
         'name': 'Minor Pentatonic',
         'chords': ['minor', 'major', 'major', 'minor', 'minor']
-    },
+    }
 }
     /*
     'diatonic':         [0, 2, 4, 5, 7, 9, 11],

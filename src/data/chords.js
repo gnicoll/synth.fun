@@ -25,7 +25,7 @@ const chords = {
     "minor7": {
         "name": "Minor 7",
         "notes": [0, 3, 7, 10]
-    } 
+    }
 }
 
 

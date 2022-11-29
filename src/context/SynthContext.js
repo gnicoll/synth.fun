@@ -17,7 +17,7 @@ document.documentElement.addEventListener('mousedown', () => {
 let toneInit = Tone;
 
 
-let effect = new Tone.FeedbackDelay(0.1, 0.4); 
+let effect = new toneInit.FeedbackDelay(0.1, 0.4); 
 
 let synthVoice = 
     new toneInit.MonoSynth(
@@ -75,7 +75,7 @@ let synthInit = new Tone.PolySynth({
 	}
 });
 
-const vol = new Tone.Volume(0).toDestination();
+const vol = new toneInit.Volume(0).toDestination();
 //synthInit.connect(effect);
 //effect.connect(vol);
 synthInit.connect(vol);
@@ -83,6 +83,7 @@ const pattern = patterns[Object.keys(patterns)[Math.round(Math.random() * (Objec
 //const pattern = patterns['j61'];
 const patternFullLength = get16Pattern(pattern);
 //routing synth through the reverb
+toneInit.setContext(new toneInit.Context({ latencyHint : "playback" }))
 
 console.log('pattern: ', pattern);
 
@@ -123,7 +124,7 @@ if (playDetails.noteNumbers) {
 
 
 export function SynthProvider(props) {
-  toneInit.start();
+  toneInit.start("+0.1");
   const [tone, dispatch] = useReducer(synthReducer, {
     tone:toneInit,
     controls,
@@ -214,7 +215,7 @@ export default function synthReducer(store, action) {
         const { play } = action;
 
         if (play) 
-        store.tone.Transport.start();
+        store.tone.Transport.start("+0.1");
         else
         store.tone.Transport.stop();
 
