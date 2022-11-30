@@ -1,4 +1,10 @@
 const patterns = {
+    beat: [
+        { step: 1, transpose: 0 },
+        undefined,
+        undefined,
+        undefined
+    ],
     octave: [
         {
             step: 1,
@@ -10,6 +16,36 @@ const patterns = {
         {
             step: 1,
             transpose: 1
+        },
+        undefined,
+        undefined,
+        undefined,
+    ],
+    octaveupdown: [
+        {
+            step: 1,
+            transpose: 0
+        },
+        undefined,
+        undefined,
+        undefined,
+        {
+            step: 1,
+            transpose: 1
+        },
+        undefined,
+        undefined,
+        undefined,
+        {
+            step: 1,
+            transpose: 0
+        },
+        undefined,
+        undefined,
+        undefined,
+        {
+            step: 1,
+            transpose: -1
         },
         undefined,
         undefined,
@@ -147,5 +183,8 @@ const patterns = {
     ],
 }
 
-
-export default patterns;
+export default function choosePattern(pattern = undefined) {
+    if (!pattern)
+        return patterns[Object.keys(patterns)[Math.round(Math.random() * (Object.keys(patterns).length-1))]];
+    return patterns[pattern];
+};

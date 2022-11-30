@@ -15,7 +15,7 @@
     width: 11%;
     display: block;
     height: 5%;
-    /*content: " ";*/
+    content: " ";/**/
     background: #0061ac !important;
     position: absolute;
     bottom: 23%;
@@ -28,7 +28,7 @@
     width: 60%;
     display: block;
     height: 7%;
-    /*content: " ";*/
+    content: " ";/**/
     background: #0061ac !important;
     position: absolute;
     bottom: -10%;
@@ -43,7 +43,7 @@
     /*background: #0063af !important;
     background: rgb(254,242,242) !important;
     background: linear-gradient(0deg, rgb(226, 229, 243) 57%, rgb(189, 196, 236) 100%) !important;  
-    */
+    /**/
 
   }
 
@@ -52,7 +52,7 @@
     /*background: #0061ac !important;
     background: #08080a !important;
     background: linear-gradient(0deg, rgb(35, 35, 46) 57%, rgb(46, 46, 77) 100%) !important;
-    */
+    /**/
   }
 
   .arp_key--sharp.arp_key--notinscale > .arp_key_inner::after,.arp_key--notinscale > .arp_key_inner::after {

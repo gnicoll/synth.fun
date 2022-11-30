@@ -3,7 +3,7 @@ import * as Tone from 'tone';
 import Loop from '../classes/Loop';
 import Step from "../classes/Step";
 import noteMap from "../data/noteMap";
-import patterns from '../data/patterns';
+import choosePattern from '../data/patterns';
 import {get16Pattern, getChordTypeForNoteInScale, getPatternMap} from '../Helpers/PatternHelper';
 
 //used to hold the selected Synths
@@ -17,7 +17,7 @@ document.documentElement.addEventListener('mousedown', () => {
 let toneInit = Tone;
 
 
-let effect = new toneInit.FeedbackDelay(0.1, 0.4); 
+let effect = new toneInit.FeedbackDelay(0.2, 0.4); 
 
 let synthVoice = 
     new toneInit.MonoSynth(
@@ -93,8 +93,8 @@ const vol = new toneInit.Volume(0).toDestination();
 //synthInit.connect(effect);
 //effect.connect(vol);
 synthInit.connect(vol);
-const pattern = patterns[Object.keys(patterns)[Math.round(Math.random() * (Object.keys(patterns).length-1))]];
-//const pattern = patterns['j61'];
+//const pattern = patterns[Object.keys(patterns)[Math.round(Math.random() * (Object.keys(patterns).length-1))]];
+const pattern = choosePattern();
 const patternFullLength = get16Pattern(pattern);
 //routing synth through the reverb
 toneInit.setContext(new toneInit.Context({ latencyHint : "playback" }))
@@ -107,7 +107,7 @@ let controls = {
     'name': 'C',
     'noteNum': 24
   },
-  'scale': 'minor',
+  'scale': 'major',
   'mode': 'sequence',
   'sequenceIndex': 0,
   'pattern': patternFullLength,
@@ -122,6 +122,8 @@ let controls = {
 const loop = new Loop(false, synthInit, controls.key.noteNum, controls.scale,  patternFullLength);
 
 toneInit.Transport.bpm.value = 96;
+toneInit.Transport.swing=0.22;
+Tone.Transport.swingSubdivision = "16n"
 toneInit.Transport.scheduleRepeat(repeat, '16n');
 //toneInit.Transport.start();
 

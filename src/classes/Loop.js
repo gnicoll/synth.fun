@@ -52,7 +52,7 @@ export default class Loop {
                         stepPattern = step.pattern[0];
                     }
                     //use step key and scale
-                    if (currentSequence.patternMap[this.patternIndex] < this.chordSlider)
+                    if (((this.patternIndex%4)+1)*25 <= this.chordSlider)
                         noteNumbers = getChordForNoteInScale(this.key, this.scale, (step.rootNote.number + stepPattern))
                     else
                         noteNumbers = [(step.rootNote.number + stepPattern)];

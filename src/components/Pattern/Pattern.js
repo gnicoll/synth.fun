@@ -6,20 +6,20 @@ import Slider from './Slider/Slider';
 
 const Pattern = () => {
   const { loop, controls, dispatch } = useSynth();
-  const handleClick = (PatternNum) => {
-  }
   const chordSliderMax = 4;
-  const fillSliderMax = 4;
+  const fillSliderMax = controls.patternMap.reduce((a, b) => {
+    return Math.max(a, b);
+  })/25;
 
   const setChordSlider = (p) => {
-    let value = p/chordSliderMax * 100;
+    let value = p/chordSliderMax * (25*chordSliderMax);
     dispatch({
       'type': 'chordSlider',
       value
     });
   }
   const setFillSlider = (p) => {
-    let value = p/fillSliderMax * 100;
+    let value = p/fillSliderMax * (25 * fillSliderMax);
     dispatch({
       'type': 'fillSlider',
       value
@@ -27,13 +27,12 @@ const Pattern = () => {
   }
 
   const pattern = getPattern(controls.pattern);
-  console.log(loop.chordSlider)
   return (
     <div className="arp_patterns" >
       <div className='arp_pattern'>
         <div className={'arp_pattern_patternvisual'}>
           <div className='arp_pattern_patternvisual_entries'>
-            {getMappedPattern(getPattern(controls?.pattern), controls.patternMap, loop.fillSlider).map((entry, index) => 
+            {getMappedPattern(pattern, controls.patternMap, loop.fillSlider).map((entry, index) => 
             {
               //let entry = index > 0 ? pattern[index - 1] : pattern[controls.pattern.length-1];
               //let entry = controls.patternMap[index] > loop.fillSlider ? controls.pattern[0] : e;
@@ -61,7 +60,7 @@ const Pattern = () => {
                         className=
                           {
                             'arp_pattern_patternvisual_entry ' +
-                            (controls.patternMap[index] < loop.chordSlider ? 'arp_pattern_patternvisual_entry--chord': '')
+                            (((index%4)+1)*25 <= loop.chordSlider ? 'arp_pattern_patternvisual_entry--chord': '')
                           }             
                         style = {
                           {
