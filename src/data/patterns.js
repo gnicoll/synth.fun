@@ -106,6 +106,25 @@ const patterns = {
         undefined,
         undefined
     ],
+    gn : [
+        {step: 1, transpose: 0},
+        {step: 1, transpose: 0},
+        undefined,
+        {step: 4, transpose: 0},
+        undefined,
+        {step: 3, transpose: 0},
+        undefined,
+        {step: 4, transpose: 0},
+        undefined,
+        {step: 6, transpose: 0},
+        undefined,
+        {step: 7, transpose: 0},
+        undefined,
+        {step: 6, transpose: 0},
+        undefined,
+        {step: 4, transpose: 0},
+    ]
+    /*
     arp: [
         {
             step: 1,
@@ -180,7 +199,7 @@ const patterns = {
             step: 3,
             transpose: 0
         },undefined
-    ],
+    ],*/
 }
 
 export default function choosePattern(pattern = undefined) {

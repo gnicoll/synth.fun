@@ -17,6 +17,7 @@ const RestKey = ({ note, noteNumber}) => {
       });
   }
 
+  return null;
   return (
     <div 
       onMouseDown={() => clickHandler()} 
