@@ -108,8 +108,6 @@ const patterns = {
     ],
     gn : [
         {step: 1, transpose: 0},
-        {step: 1, transpose: 0},
-        undefined,
         {step: 4, transpose: 0},
         undefined,
         {step: 3, transpose: 0},
@@ -123,6 +121,8 @@ const patterns = {
         {step: 6, transpose: 0},
         undefined,
         {step: 4, transpose: 0},
+        undefined,
+        {step: 3, transpose: 0},
     ]
     /*
     arp: [
