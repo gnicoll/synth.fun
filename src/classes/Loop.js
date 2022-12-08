@@ -8,6 +8,7 @@ export default class Loop {
     constructor(dispatch, synth, key, scale, rootPattern) {
         this.chordSlider = 0;
         this.fillSlider = 0;
+        this.lengthSlider = 100;
         this.key= key;
         this.scale = scale;
         this.synth = synth;
@@ -59,10 +60,12 @@ export default class Loop {
             } else {
                 noteNumbers = null;
             }
-            console.log('noteNumbers: ', noteNumbers);
             this.patternIndex++;
             //if the pattern is done, go to the next step
-            if (this.patternIndex >= step.pattern.length) {
+            //((this.lengthSlider/100*15) < index) 
+            if (this.patternIndex >= step.pattern.length ||
+                ((this.lengthSlider/100*16) === this.patternIndex))
+            {
                 this.sequenceIndex++;
                 this.patternIndex = 0;
             }

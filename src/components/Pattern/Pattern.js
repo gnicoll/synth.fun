@@ -11,6 +11,13 @@ const Pattern = () => {
     return Math.max(a, b);
   })/25;
 
+  const setLengthSlider = (p) => {
+    let value = p/4 * (25*4);
+    dispatch({
+      'type': 'lengthSlider',
+      value
+    });
+  }
   const setChordSlider = (p) => {
     let value = p/chordSliderMax * (25*chordSliderMax);
     dispatch({
@@ -25,12 +32,12 @@ const Pattern = () => {
       value
     });
   }
-
   const pattern = getPattern(controls.pattern);
   return (
     <div className="arp_patterns" >
       <div className='arp_pattern'>
         <div className={'arp_pattern_patternvisual'}>
+          <Slider callback={setLengthSlider} maxValue={4} minValue={1} initValue={loop.lengthSlider} />
           <div className='arp_pattern_patternvisual_entries'>
             {getMappedPattern(pattern, controls.patternMap, loop.fillSlider).map((entry, index) => 
             {
@@ -39,14 +46,14 @@ const Pattern = () => {
               let l = entry ? (100 * (Math.max(...pattern) - entry)) / ((Math.max(...pattern) - Math.min(...pattern) +1)) : 100;
               if ( controls.patternMap[index] > loop.fillSlider ) 
               return <div 
-                        className={'arp_pattern_patternvisual_entry'}             
+                        className={'arp_pattern_patternvisual_entry '}             
                         style = {
                           {
                             'clipPath': 'polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)',
                           }
                         } 
                         key={index}>
-                      <div 
+                        <div 
                           className={'arp_pattern_patternvisual_entry_column'}             
                           style = {
                             {
@@ -60,7 +67,8 @@ const Pattern = () => {
                         className=
                           {
                             'arp_pattern_patternvisual_entry ' +
-                            (((index%4)+1)*25 <= loop.chordSlider ? 'arp_pattern_patternvisual_entry--chord': '')
+                            (((index%4)+1)*25 <= loop.chordSlider ? 'arp_pattern_patternvisual_entry--chord ': '') +
+                            (((loop.lengthSlider/100*15) < index) ? 'arp_pattern_patternvisual_entry--off ': '')
                           }             
                         style = {
                           {
@@ -82,7 +90,7 @@ const Pattern = () => {
           </div>
         </div>
         <Slider callback={setFillSlider} maxValue={fillSliderMax} />
-        <Slider callback={setChordSlider} maxValue={chordSliderMax} />
+        <Slider className={'chord'} callback={setChordSlider} maxValue={chordSliderMax} />
       </div>
     </div>
   )

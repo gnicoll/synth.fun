@@ -6,6 +6,7 @@
     display: grid;
     align-items: center;
     grid-area: keyboard;
+    padding-top: 3vh;
 }
 
 .arp_keys_octave_container {
@@ -49,7 +50,7 @@
     position: absolute;
     height: 20%;
     width: 10%;
-    top: 5%;
+    top: 15%;
     background: #ED1B24;
     right: 5%;
     clip-path: polygon(0 0, 100% 4%, 48% 21%, 22% 100%);
@@ -80,7 +81,7 @@
     position: absolute;
     height: 20%;
     width: 10%;
-    top: 25%;
+    top: 35%;
     background: #ED1B24;
     right: 5%;
     clip-path: polygon(100% 100%, 93% 0, 73% 57%, 0 78%);

@@ -1,0 +1,1107 @@
+
+  .arp_key{
+    width: 10%;
+    position: relative;
+    box-sizing: content-box;
+    flex-grow: 1;
+    transform: translateY(13%);
+  }
+
+  .arp_key > .arp_key_inner {
+    cursor: pointer;
+  }
+
+  .arp_key_inner::after{
+    width: 11%;
+    display: block;
+    height: 5%;
+    content: " ";/**/
+    background: #0061ac !important;
+    position: absolute;
+    bottom: 23%;
+    left: 45%;
+    border-radius: 0%;
+    
+  }
+  
+  .arp_key--sharp>.arp_key_inner::after{
+    width: 60%;
+    display: block;
+    height: 7%;
+    content: " ";/**/
+    background: #0061ac !important;
+    position: absolute;
+    bottom: -10%;
+    left: 150%;
+    border-radius: 0%;
+    
+  }
+  
+  .arp_key--notinscale > .arp_key_inner {
+    pointer-events: none;
+    cursor: auto;
+    /*background: #0063af !important;
+    background: rgb(254,242,242) !important;
+    background: linear-gradient(0deg, rgb(226, 229, 243) 57%, rgb(189, 196, 236) 100%) !important;  
+    /**/
+
+  }
+
+  .arp_key--sharp.arp_key--notinscale > .arp_key_inner{
+    pointer-events: none;
+    /*background: #0061ac !important;
+    background: #08080a !important;
+    background: linear-gradient(0deg, rgb(35, 35, 46) 57%, rgb(46, 46, 77) 100%) !important;
+    /**/
+  }
+
+  .arp_key--sharp.arp_key--notinscale > .arp_key_inner::after,.arp_key--notinscale > .arp_key_inner::after {
+    display: none;
+    /*background: #0063af !important;*/
+  }
+
+
+
+  .arp_key:nth-of-type(5) {
+    margin-right: 2.5%;
+  }
+  
+  /*C*/
+  .arp_key:nth-of-type(1) > .arp_key_inner {
+    clip-path: polygon(0 0, 100% 0, 99% 99%, 4% 100%);
+  }
+  /*C#
+  clip-path: polygon(5% 2%, 97% 1%, 99% 97%, 1% 100%);
+  */
+  /*D*/
+  .arp_key:nth-of-type(2) > .arp_key_inner {
+    clip-path: polygon(0 1%, 100% 0, 98% 100%, 0 99%);
+  }
+  /*D#
+  clip-path: polygon(2% 1%, 97% 1%, 92% 97%, 2% 97%);
+  */
+  /*E*/
+  .arp_key:nth-of-type(3) > .arp_key_inner {
+    clip-path: polygon(3% 1%, 98% 0, 98% 97%, 0 100%);
+  }
+  /*F*/
+  .arp_key:nth-of-type(4) > .arp_key_inner {
+    clip-path: polygon(9% 0, 98% 3%, 95% 97%, 2% 100%);
+}
+  /*F#
+  clip-path: polygon(9% 4%, 94% 0, 96% 99%, 3% 98%);
+  */
+/*G*/
+  .arp_key:nth-of-type(5) > .arp_key_inner {
+    clip-path: polygon(11% 4%, 95% 3%, 99% 100%, 2% 99%);
+}
+/*G#
+clip-path: polygon(9% 1%, 95% 4%, 100% 100%, 3% 97%);
+*/
+/*A*/
+  .arp_key:nth-of-type(6) > .arp_key_inner {
+    clip-path: polygon(0 0, 95% 3%, 99% 100%, 6% 96%);
+}
+/*A#
+clip-path: polygon(5% 1%, 96% 5%, 100% 97%, 1% 99%);
+*/
+/*B*/
+  .arp_key:nth-of-type(7) > .arp_key_inner {
+    clip-path: polygon(3% 3%, 98% 3%, 95% 97%, 2% 100%);
+
+}
+
+.arp_key:nth-of-type(1) > .arp_key_inner {
+    clip-path: polygon(5% 1%, 96% 5%, 100% 97%, 1% 99%);
+  }
+  .arp_key:nth-of-type(2) > .arp_key_inner {
+    clip-path: polygon(9% 1%, 95% 4%, 100% 100%, 3% 97%);
+    }
+
+  .arp_key_inner{ 
+    transition: all 0.25s ease;
+    background: rgb(221,213,199);
+    background: linear-gradient(0deg, rgba(221,213,199,1) 0%, rgba(254,251,246,1) 1%, rgba(254,251,246,1) 57%, rgba(217,206,189,1) 100%);
+    height: 80%;
+    padding: 4.25% 50%;
+    width: 0rem;
+    /* border-bottom: 2px solid #aaa; */
+    /* border-bottom-right-radius: 5px; */
+    /* border-bottom-left-radius: 5px; */
+    box-sizing: content-box;
+  }
+  .arp_key_inner:hover{
+    background: rgb(254,242,242) !important;
+    background: linear-gradient(0deg, rgb(226, 229, 243) 57%, rgb(189, 196, 236) 100%) !important;  
+  }
+  
+  .arp_key--sharp{
+    position: relative;
+    top: 0;
+    width: 0;
+    z-index: 1;
+    transform: translateX(-150%) translateY(3%);
+    height: 60%;
+  }
+
+  .arp_key--sharp .arp_key_inner{
+    background: #07060a;
+    background: rgb(3,3,5);
+    background: linear-gradient(0deg, rgb(3,3,5) 0%, rgb(15,12,25) 1%, rgb(15,12,25) 57%, rgb(3,3,5) 100%);
+    /* border-bottom: 2px solid #333; */
+    height: 100%;
+    /* border-bottom-right-radius: 3px; */
+    /* border-bottom-left-radius: 3px; */
+    padding: 100% 200%;
+  }
+  .arp_key--sharp .arp_key_inner:hover{
+    background: #08080a !important;
+    background: linear-gradient(0deg, rgb(35, 35, 46) 57%, rgb(46, 46, 77) 100%) !important;
+
+  }
+ 
+  .arp_key_12 .arp_key_inner:before,
+  .arp_key_24 .arp_key_inner:before, 
+  .arp_key_36 .arp_key_inner:before, 
+  .arp_key_48 .arp_key_inner:before, 
+  .arp_key_60 .arp_key_inner:before, 
+  .arp_key_72 .arp_key_inner:before, 
+  .arp_key_84 .arp_key_inner:before, 
+  .arp_key_96 .arp_key_inner:before  {
+    width: 100%;
+    height: 75%;
+    position: absolute;
+    left: 0;
+    display: grid;
+    opacity: 1;
+    top: 0;
+    align-items: end;
+    padding-bottom: 0;
+    font-weight: 600;
+    color: #261f22;
+    font-size: 4vw;
+  }
+
+  .arp_key_12 .arp_key_inner:before {
+    content: "0";
+  }
+  .arp_key_24 .arp_key_inner:before  {
+    content: "1";
+  }
+  .arp_key_36 .arp_key_inner:before  {
+    content: "2";
+  }
+  .arp_key_48 .arp_key_inner:before {
+    content: "3";
+  }
+  .arp_key_60 .arp_key_inner:before  {
+    content: "4";
+  }
+  .arp_key_72 .arp_key_inner:before  {
+    content: "5";
+  }
+  .arp_key_84 .arp_key_inner:before  {
+    content: "6";
+  }
+  .arp_key_96 .arp_key_inner:before {
+    content: "7";
+  }
+  
+  .arp_keys--playing_20 .arp_key_20 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_21 .arp_key_21 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_22 .arp_key_22 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_23 .arp_key_23 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_24 .arp_key_24 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_25 .arp_key_25 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_26 .arp_key_26 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_27 .arp_key_27 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_28 .arp_key_28 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_29 .arp_key_29 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_30 .arp_key_30 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_31 .arp_key_31 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_32 .arp_key_32 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_33 .arp_key_33 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_34 .arp_key_34 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_35 .arp_key_33 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_36 .arp_key_36 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_37 .arp_key_37 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_38 .arp_key_38 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_39 .arp_key_39 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_40 .arp_key_40 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_41 .arp_key_41 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_42 .arp_key_42 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_43 .arp_key_43 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_44 .arp_key_44 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_45 .arp_key_45 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_46 .arp_key_46 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_47 .arp_key_47 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_48 .arp_key_48 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_49 .arp_key_49 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_50 .arp_key_50 .arp_key_inner {
+    background: #FEF200 !important;
+    border-bottom: 2px solid  #FEF200 !important;
+    box-shadow: 0px 0px 15px 5px #FEF200;
+  }
+  .arp_keys--playing_51 .arp_key_51 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_52 .arp_key_52 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_53 .arp_key_53 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_54 .arp_key_54 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_55 .arp_key_55 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_56 .arp_key_56 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_57 .arp_key_57 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_58 .arp_key_58 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_59 .arp_key_59 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  /* MIDDLE C */
+  .arp_keys--playing_60 .arp_key_60 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_61 .arp_key_61 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_62 .arp_key_62 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_63 .arp_key_63 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_64 .arp_key_64 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_65 .arp_key_65 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_66 .arp_key_66 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_67 .arp_key_67 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_68 .arp_key_68 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_69 .arp_key_69 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  
+  .arp_keys--playing_70 .arp_key_70 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_71 .arp_key_71 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_72 .arp_key_72 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_73 .arp_key_73 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_74 .arp_key_74 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_75 .arp_key_75 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_76 .arp_key_76 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_77 .arp_key_77 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_78 .arp_key_78 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_79 .arp_key_79 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  
+  .arp_keys--playing_80 .arp_key_80 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_81 .arp_key_81 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_82 .arp_key_82 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_83 .arp_key_83 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_84 .arp_key_84 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_85 .arp_key_85 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_86 .arp_key_86 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_87 .arp_key_87 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_88 .arp_key_88 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_89 .arp_key_89 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  
+  .arp_keys--playing_90 .arp_key_90 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_91 .arp_key_91 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_92 .arp_key_92 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_93 .arp_key_93 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_94 .arp_key_94 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_95 .arp_key_95 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_96 .arp_key_96 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_97 .arp_key_97 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_98 .arp_key_98 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_99 .arp_key_99 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  
+  .arp_keys--playing_100 .arp_key_100 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_101 .arp_key_101 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_102 .arp_key_102 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_103 .arp_key_103 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_104 .arp_key_104 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_105 .arp_key_105 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_106 .arp_key_106 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_107 .arp_key_107 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_108 .arp_key_108 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_109 .arp_key_109 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  
+  .arp_keys--playing_110 .arp_key_110 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_111 .arp_key_111 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_112 .arp_key_112 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_113 .arp_key_113 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_114 .arp_key_114 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_115 .arp_key_115 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_116 .arp_key_116 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_117 .arp_key_117 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_118 .arp_key_118 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_119 .arp_key_119 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  
+  .arp_keys--playing_120 .arp_key_120 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_121 .arp_key_121 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_122 .arp_key_122 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_123 .arp_key_123 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_124 .arp_key_124 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_125 .arp_key_125 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_126 .arp_key_126 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_127 .arp_key_127 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_128 .arp_key_128 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  .arp_keys--playing_129 .arp_key_129 .arp_key_inner {
+    background: rgb(254,242,0) !important;
+    background: linear-gradient(0deg, rgb(254,242,0) 57%, rgb(221,187,51) 100%) !important;
+  }
+  
+    
+  .arp_keys--highlighting_20 .arp_key_20 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_21 .arp_key_21 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_22 .arp_key_22 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_23 .arp_key_23 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_24 .arp_key_24 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_25 .arp_key_25 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_26 .arp_key_26 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_27 .arp_key_27 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_28 .arp_key_28 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_29 .arp_key_29 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_30 .arp_key_30 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_31 .arp_key_31 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_32 .arp_key_32 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_33 .arp_key_33 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_34 .arp_key_34 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_35 .arp_key_33 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_36 .arp_key_36 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_37 .arp_key_37 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_38 .arp_key_38 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_39 .arp_key_39 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_40 .arp_key_40 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_41 .arp_key_41 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_42 .arp_key_42 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_43 .arp_key_43 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_44 .arp_key_44 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_45 .arp_key_45 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_46 .arp_key_46 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_47 .arp_key_47 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_48 .arp_key_48 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_49 .arp_key_49 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_50 .arp_key_50 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_51 .arp_key_51 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_52 .arp_key_52 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_53 .arp_key_53 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_54 .arp_key_54 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_55 .arp_key_55 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_56 .arp_key_56 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_57 .arp_key_57 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_58 .arp_key_58 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_59 .arp_key_59 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  /* MIDDLE C */
+  .arp_keys--highlighting_60 .arp_key_60 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_61 .arp_key_61 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_62 .arp_key_62 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_63 .arp_key_63 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_64 .arp_key_64 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_65 .arp_key_65 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_66 .arp_key_66 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_67 .arp_key_67 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_68 .arp_key_68 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_69 .arp_key_69 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  
+  .arp_keys--highlighting_70 .arp_key_70 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_71 .arp_key_71 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_72 .arp_key_72 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_73 .arp_key_73 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_74 .arp_key_74 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_75 .arp_key_75 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_76 .arp_key_76 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_77 .arp_key_77 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_78 .arp_key_78 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_79 .arp_key_79 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  
+  .arp_keys--highlighting_80 .arp_key_80 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_81 .arp_key_81 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_82 .arp_key_82 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_83 .arp_key_83 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_84 .arp_key_84 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_85 .arp_key_85 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_86 .arp_key_86 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_87 .arp_key_87 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_88 .arp_key_88 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_89 .arp_key_89 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  
+  .arp_keys--highlighting_90 .arp_key_90 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_91 .arp_key_91 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_92 .arp_key_92 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_93 .arp_key_93 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_94 .arp_key_94 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_95 .arp_key_95 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_96 .arp_key_96 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_97 .arp_key_97 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_98 .arp_key_98 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_99 .arp_key_99 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  
+  .arp_keys--highlighting_100 .arp_key_100 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_101 .arp_key_101 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_102 .arp_key_102 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_103 .arp_key_103 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_104 .arp_key_104 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_105 .arp_key_105 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_106 .arp_key_106 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_107 .arp_key_107 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_108 .arp_key_108 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_109 .arp_key_109 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  
+  .arp_keys--highlighting_110 .arp_key_110 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_111 .arp_key_111 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_112 .arp_key_112 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_113 .arp_key_113 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_114 .arp_key_114 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_115 .arp_key_115 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_116 .arp_key_116 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_117 .arp_key_117 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_118 .arp_key_118 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_119 .arp_key_119 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  
+  .arp_keys--highlighting_120 .arp_key_120 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_121 .arp_key_121 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_122 .arp_key_122 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_123 .arp_key_123 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_124 .arp_key_124 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_125 .arp_key_125 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_126 .arp_key_126 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_127 .arp_key_127 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_128 .arp_key_128 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  .arp_keys--highlighting_129 .arp_key_129 .arp_key_inner {
+    background: #2789f9 !important;
+    border-bottom: 2px solid  #1d61ad !important;
+  }
+  

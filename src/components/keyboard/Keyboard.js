@@ -3,6 +3,7 @@ import Octave from './Octave/Octave';
 import PropTypes from 'prop-types';
 import styles from './Keyboard.css';
 import RestKey from './RestKey/RestKey';
+import Keybar from './Keybar/Keybar';
 import {useSynth} from '../../context/SynthContext';
 
 const Keyboard = ({playedNote, highlightNote, onHover, notes}) => {
@@ -29,6 +30,7 @@ const Keyboard = ({playedNote, highlightNote, onHover, notes}) => {
   return (
     <>
       <div className={"arp_keys arp_keys--playing_"+controls?.noteNumbersPlayed+" arp_keys--highlighting_"+highlightNote+" arp_keys_octave-"+octaveNum}>
+      <Keybar />
         <div className="arp_keys_octave_up" onClick={()=>handleOctaveSet(octaveNum-1)} ></div>
         <div className="arp_keys_octave_down" onClick={()=>handleOctaveSet(octaveNum+1)}></div>
         <RestKey />

@@ -7,7 +7,6 @@ import choosePattern from '../data/patterns';
 import {get16Pattern, getChordTypeForNoteInScale, getPatternMap} from '../Helpers/PatternHelper';
 
 //used to hold the selected Synths
-console.log('initializing SynthContext')
 const SynthContext = React.createContext(null);
 
 document.documentElement.addEventListener('mousedown', () => {
@@ -98,8 +97,6 @@ const pattern = choosePattern();
 const patternFullLength = get16Pattern(pattern);
 //routing synth through the reverb
 toneInit.setContext(new toneInit.Context({ latencyHint : "playback" }))
-
-console.log('pattern: ', pattern);
 
 //controls is the interface object
 let controls = {
@@ -219,6 +216,17 @@ export default function synthReducer(store, action) {
         const { value } = action;
         store.loop.chordSlider = value;
 
+        return {
+          tone: store.tone,
+          loop: store.loop,
+          controls: store.controls
+        };
+      }
+
+      case "lengthSlider": {
+        //store.tone.start();
+        const { value } = action;
+        store.loop.lengthSlider = value;
         return {
           tone: store.tone,
           loop: store.loop,

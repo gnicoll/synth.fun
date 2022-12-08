@@ -10,7 +10,7 @@
     grid-template-rows: 1fr;
     grid-template-columns: 90%;
     position: fixed;
-    height: 10%;
+    height: 5%;
     bottom: 0;
     z-index: 10;
     box-shadow: 0px -5px 15px #888;
@@ -20,7 +20,7 @@
     display: grid;
     justify-content: left;
     align-items: center;
-    height: 50%;
+    height: 85%;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     gap: 5%;

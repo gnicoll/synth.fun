@@ -6,9 +6,6 @@ export default class Sequence {
         this.steps = [undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined];
         this.rootPattern = rp;
         this.patternMap = rp? getPatternMap(rp) : undefined;
-        console.log('rp: ', rp);
-        console.log('patternMap')
-        console.log(this.patternMap)
     }
 
     getRootPattern() {
