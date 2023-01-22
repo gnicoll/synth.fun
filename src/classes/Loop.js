@@ -12,20 +12,29 @@ export default class Loop {
         this.scale = scale;
         this.synth = synth;
         this.dispatch = dispatch;
-        //bool to indicate if the loop is playing
         this.patternIndex = 0;
         this.sequenceIndex = 0;
-        //an array of arrays of Step objects
         this.sequences = [
             new Sequence( 
                 'sequence 1',
                 rootPattern,
-            )
+            ),
+            new Sequence( 
+                'sequence 1',
+                rootPattern,
+            ),
+            new Sequence( 
+                'sequence 1',
+                rootPattern,
+            ),
+            new Sequence( 
+                'sequence 1',
+                rootPattern,
+            ),
         ];
         this.sequencesIndex = 0;
-        //an array of indexes (ints) of the sequences 
         this.sequencesQueue = [];
-        this.sequencesQueueIndex = [];
+        this.sequencesQueueIndex = 0;
     }
 
     play() {
@@ -103,6 +112,9 @@ export default class Loop {
         }
 
         return this.sequences[this.sequencesIndex].steps;
+    }
+    getSequences() {
+        return this.sequences;
     }
 
     getNextStepIndex() {

@@ -18,16 +18,20 @@ const Sequence = () => {
     });
   }, [sequenceIndex, dispatch]);
   
-  
+  console.log(loop.getSequences())
   return (
     <div className={'arp_sequence'}>   
     <div className='arp_sequence_grids'>
       <div className='arp_sequence_grid_container'>
-        <div className="arp_sequence_grid" >
-          {loop.getCurrentSequence()?.map((entry, index) => 
-            <Step onClick={()=>handleClick(index)} step={entry} key={index} sequenceNum={index} />
+          {loop.getSequences()?.map((sequence, sIndex) => 
+            <div className="arp_sequence_grid" >
+            {sequence.steps?.map((step, index) => 
+              <Step onClick={()=>handleClick(index)} step={step} key={index} sequenceNum={index} />
             )}
-        </div>
+              {loop.sequenceIndex === sIndex && <div className='arp_sequence_switcher'></div>}
+              
+            </div>
+          )}
       </div>  
       </div>  
     </div>
