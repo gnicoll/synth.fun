@@ -32,6 +32,7 @@
 }
 
 .arp_sequence_step_note {
+    pointer-events: none;
     color: white;
     line-height: 0;
     display: grid;
