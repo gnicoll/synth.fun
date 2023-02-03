@@ -101,11 +101,11 @@ toneInit.setContext(new toneInit.Context({ latencyHint : "playback" }))
 //controls is the interface object
 let controls = {
   'key': {
-    'name': 'C',
-    'noteNum': 24
+    'name': 'D',
+    'noteNum': 26
   },
   'scale': 'major',
-  'mode': 'sequence',
+  'mode': 'scale',
   'sequenceIndex': 0,
   'pattern': patternFullLength,
   'patterLength': pattern.length,
@@ -176,10 +176,6 @@ export default function synthReducer(store, action) {
           let synth = new Tone.Synth().toDestination();
           synth.triggerAttackRelease(`${note.name}`, "8n");
         }
-        if (store.controls.mode === 'sequence') {
-          //below pattern should come from current step selection
-          // pattern should be transposed to the current sequence key
-          
           let step = new Step( 
             note, 
             store.controls.pattern 
@@ -187,10 +183,6 @@ export default function synthReducer(store, action) {
 
           store.loop.addStepToSequence(step, sequenceIndex);
           store.controls.sequenceIndex = sequenceNext(loop.getCurrentSequence());
-        } else if (store.controls.mode === 'live') {
-          
-          //loop.synth.triggerAttackRelease(noteMap[playDetails.noteNumber], '4n', time);
-        }
         return {
           tone: store.tone,
           loop: store.loop,
@@ -243,6 +235,18 @@ export default function synthReducer(store, action) {
         else
         store.tone.Transport.stop();
 
+        return {
+          tone: store.tone,
+          loop: store.loop,
+          controls: store.controls
+        };
+      }
+      case "mode": {
+        const { mode } = action;
+
+        if (mode) 
+          store.controls.mode = mode;
+        
         return {
           tone: store.tone,
           loop: store.loop,

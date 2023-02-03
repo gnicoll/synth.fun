@@ -1,5 +1,5 @@
 
-.arp_keys_octaves{
+.arp_keys_scales{
   display: flex;
   position: relative;
   box-sizing: content-box;
@@ -10,8 +10,9 @@
   margin: 0 auto;
   transition: transform 0.3s ease-in-out;
 }
-  .arp_keys_octave{
+  .arp_keys_scale{
     display: flex;
+    gap: .25vh;
     position: relative;
     margin: 2px 0 2px 2px;
     box-sizing: content-box;
@@ -107,27 +108,6 @@
       
     }
         
-  .arp_keys_octave:nth-of-type(2) {
-    left: 15%;
-  }
-  .arp_keys_octave:nth-of-type(3) {
-    left: 30%;
-  }
-  .arp_keys_octave:nth-of-type(4) {
-    left: 45%;
-  }
-  .arp_keys_octave:nth-of-type(5) {
-    left: 60%;
-  }
-  .arp_keys_octave:nth-of-type(6) {
-    left: 75%;
-  }
-  .arp_keys_octave:nth-of-type(7) {
-    left: 90%;
-  }
-  .arp_keys_octave:nth-of-type(8) {
-    left: 105%;
-  }
 
   .arp_keys_octave:last-of-type {
     margin-right:0px
@@ -147,15 +127,6 @@
         padding-right: 1.25%;
     }
     
-  .arp_keys_octave:nth-of-type(2), 
-  .arp_keys_octave:nth-of-type(3), 
-  .arp_keys_octave:nth-of-type(4), 
-  .arp_keys_octave:nth-of-type(5),
-  .arp_keys_octave:nth-of-type(6),
-  .arp_keys_octave:nth-of-type(7),
-  .arp_keys_octave:nth-of-type(8) {
-    left: 0;
-  }
 }
 @media screen and (min-width: 1024px) {
     .arp_keys_octaves{

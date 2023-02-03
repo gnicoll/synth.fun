@@ -3,14 +3,15 @@ import { useState } from 'react';
 import { useSynth } from '../../../context/SynthContext';
 
 const Keybar = () => {
-  const { synth, dispatch } = useSynth();
-  const [play, setPlay] = useState(false);
+  const { synth, controls, dispatch } = useSynth();
+  const [mode, setMode] = useState(controls.mode);
 
-  const handleClick = (p) => {
-    setPlay(p)
+  const handleClick = (m) => {
+    let value = m === 'keys' ? 'scales' : 'keys';
+    setMode(m)
     dispatch({
-      'type': 'playpause',
-      'play': p
+      'type': 'mode',
+      'mode': value
     });
   }
   
@@ -18,14 +19,14 @@ const Keybar = () => {
     <div className="arp_keybar" >
       <div className="arp_keybar_container">
         <div className='arp_keybar_button'
-          onClick={()=>handleClick(!play)}
+          onClick={()=>handleClick(mode)}
           >
-          {!play && 
-          <div className='arp_keybar_button_play'>
-          </div>}
-          {play && 
-          <div className='arp_keybar_button_pause'>
-          </div>}
+          <div className='arp_keybar_button_play'></div>
+        </div>
+        <div className='arp_keybar_button'
+          onClick={()=>handleClick(mode)}
+          >
+          <div className='arp_keybar_button_play'></div>
         </div>
       </div>
     </div>

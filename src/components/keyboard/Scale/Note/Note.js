@@ -1,10 +1,10 @@
 import style from './Note.css';
 import React, { memo, useState } from 'react';
-import { useSynth } from '../../../context/SynthContext';
-import {GenerateClipPath} from '../../../Helpers/ClippathHelper';
-import {isNoteInScale} from '../../../Helpers/PatternHelper';
+import { useSynth } from '../../../../context/SynthContext';
+import {GenerateClipPath} from '../../../../Helpers/ClippathHelper';
+import {isNoteInScale} from '../../../../Helpers/PatternHelper';
 
-const Note = ({ note, sharp, noteNumber }) => {
+const Note = ({ note, sharp, noteNumber,scaleNum }) => {
   const {controls, dispatch}  = useSynth();
   const [clipPath, setClipPath] = useState(GenerateClipPath());
   
@@ -20,16 +20,18 @@ const Note = ({ note, sharp, noteNumber }) => {
   return (
     <div 
       className= {
-        "arp_key " +
-        "arp_key_"+noteNumber+" " + 
-        (sharp? "arp_key--sharp ":"") +
-        (!isNoteInScale(controls.key.noteNum, controls.scale, noteNumber)? "arp_key--notinscale":"")
+        "arp_note " +
+        "arp_note_"+noteNumber+" " + 
+        (sharp? "arp_note--sharp ":"") +
+        (!isNoteInScale(controls.key.noteNum, controls.scale, noteNumber)? "arp_note--notinscale":"")
       }>
       <div 
-        className={"arp_key_inner "} 
+        className={"arp_note_inner "} 
         onMouseDown={() => clickHandler(noteNumber, note)} 
         style={{'clipPath': clipPath}}
       >
+        {noteNumber}<br/>
+        {scaleNum}
       </div>
     </div>
   )

@@ -2,7 +2,7 @@ import Key from '../Key/Key';
 import style from './Octave.css';
 
 
-const Octave = ({ keyNote, octaveNumber, onHover, mouseDown }) => {
+const Octave = ({ keyNote, octaveNumber, mouseDown }) => {
   //Middle C should be 60
   let octave = (octaveNumber+1);
 
@@ -35,7 +35,6 @@ const Octave = ({ keyNote, octaveNumber, onHover, mouseDown }) => {
         return <Key 
         key={keys[noteIndex].name + octaveNumber}
         mouseDown={mouseDown} 
-        onHover={onHover} 
         noteNumber={keys[noteIndex].number +((octave)*12)} 
         sharp = {keys[noteIndex].name.indexOf('#') > -1}
         note={

@@ -1,15 +1,17 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import Octave from './Octave/Octave';
+import Scale from './Scale/Scale';
 import PropTypes from 'prop-types';
 import styles from './Keyboard.css';
 import RestKey from './RestKey/RestKey';
 import Keybar from './Keybar/Keybar';
 import {useSynth} from '../../context/SynthContext';
 
-const Keyboard = ({playedNote, highlightNote, onHover, notes}) => {
-  const [mouseDown , setMouseDown] = React.useState(false);
-  const [octaveNum , setOctaveNum] = React.useState(3);
-  const {controls, dispatch}  = useSynth();
+const Keyboard = () => {
+  const [mouseDown , setMouseDown] = useState(false);
+  const [mode , setMode] = useState('keys');
+  const [octaveNum , setOctaveNum] = useState(3);
+  const {controls, loop}  = useSynth();
 
 
   const octaves = [1,2,3,4,5,6,7]
@@ -29,11 +31,12 @@ const Keyboard = ({playedNote, highlightNote, onHover, notes}) => {
 
   return (
     <>
-      <div className={"arp_keys arp_keys--playing_"+controls?.noteNumbersPlayed+" arp_keys--highlighting_"+highlightNote+" arp_keys_octave-"+octaveNum}>
+      <div className={"arp_keys arp_keys--playing_"+controls?.noteNumbersPlayed+" arp_keys_octave-"+octaveNum}>
       <Keybar />
         <div className="arp_keys_octave_up" onClick={()=>handleOctaveSet(octaveNum-1)} ></div>
         <div className="arp_keys_octave_down" onClick={()=>handleOctaveSet(octaveNum+1)}></div>
         <RestKey />
+        { controls.mode === 'keys' ? 
         <div className='arp_keys_octave_container'>
           <div 
             className={"arp_keys_octaves "}
@@ -41,29 +44,40 @@ const Keyboard = ({playedNote, highlightNote, onHover, notes}) => {
             onMouseUp={() => setMouseDown(false)} 
             >
             {octaves.map((element, index) => 
-              <Octave keyNote={controls.key} mouseDown={mouseDown} onHover={onHover} octaveNumber={(element)} key={index} />
-            )}
+              <Octave 
+                keyNote={controls.key} 
+                mouseDown={mouseDown} 
+                octaveNumber={(element)} 
+                key={element} 
+              />
+              )}
           </div>
-        </div>
+        </div> 
+        :  
+        <div className='arp_scales_octave_container'>
+          <div 
+            className={"arp_scales_octaves "}
+            onMouseDown={() => setMouseDown(true)} 
+            onMouseUp={() => setMouseDown(false)} 
+            >
+            {octaves.map((element, index) => 
+                <Scale 
+                  keyNote={controls.key} 
+                  octaveNumber={(element)} 
+                  key={element} 
+                /> 
+              )}
+          </div>
+        </div>   }
       </div>
     </>
   )
 }
 
 Keyboard.defaultProps = {
-  onClick: undefined,
-  playedNote: null, 
-  highlightNote: null, 
-  onHover: undefined, 
-  notes: [],
 };
 
 Keyboard.propTypes = {
-  onClick: PropTypes.func,
-  playedNote: PropTypes.object, 
-  highlightNote: PropTypes.object, 
-  onHover: PropTypes.func, 
-  notes: PropTypes.array,
 };
 
 export default React.memo(Keyboard);
