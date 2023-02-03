@@ -11,9 +11,7 @@ app_version: 1.1.4
 
 <br/>
 
-<br/>
-
-
+This is where the App is launched from:
 <!-- NOTE-swimm-snippet: the lines below link your snippet to Swimm -->
 ### 📄 src/index.js
 ```javascript
