@@ -1,4 +1,5 @@
 import React, { useReducer, useEffect, useContext } from "react";
+import {WebMidi} from 'webmidi';
 import * as Tone from 'tone';
 import Loop from '../classes/Loop';
 import Step from "../classes/Step";
@@ -110,7 +111,7 @@ let controls = {
   'pattern': patternFullLength,
   'patterLength': pattern.length,
   'patternMap': getPatternMap(patternFullLength),
-  'tempo': 94,
+  'tempo': 48,
   'gain': 0.6,
   'notesPlayed': null,
   'patternIndexPlayed': null,
@@ -124,13 +125,44 @@ Tone.Transport.swingSubdivision = "16n"
 toneInit.Transport.scheduleRepeat(repeat, '16n');
 //toneInit.Transport.start();
 
+const midiDevice = {};
+
+WebMidi.enable(function (err) {
+    
+  if (err) {
+    console.log('there was an error:', err);
+  } else {
+    console.log("WebMidi enabled!");
+  }
+  WebMidi.outputs.forEach(function(output, index){
+    //if (index === 0){
+    if (output.name === 'PROVS-MINI') {
+      console.log('Setting Midi Output', output.name);
+      
+      midiDevice.midiOutput = output;
+      
+      midiDevice.midiOutput.playNote(64, 1, {duration: 120, velocity:0.5});
+
+    }
+  });
+
+  //startLoop();
+
+});
+
 function repeat(time) {
   //where should i put playDetails that the app can get it?? it should go into controls
   let playDetails = loop.play();
 //  controls.notesPlayed = playDetails.noteNumber;
 if (playDetails.noteNumbers) {
-  let notes = playDetails.noteNumbers.map((n)=>noteMap[n]);
+  if (midiDevice.midiOutput) {
+    playDetails.noteNumbers.forEach((n)=>{
+      midiDevice.midiOutput.playNote(n, 1, {duration: 120, velocity:0.5});
+    });
+  } else {
+    let notes = playDetails.noteNumbers.map((n)=>noteMap[n]);
     synthInit.triggerAttackRelease(notes, '16n', time);
+  }
   }
 }
 
