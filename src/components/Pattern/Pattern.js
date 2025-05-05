@@ -35,6 +35,7 @@ const Pattern = () => {
   const pattern = getPattern(controls.pattern);
   return (
     <div className="arp_patterns" >
+      <div className='arp_pattern_grid_container'>
       <div className='arp_pattern'>
         <div className={'arp_pattern_patternvisual'}>
           <Slider callback={setLengthSlider} maxValue={4} minValue={1} initValue={loop.lengthSlider} />
@@ -92,6 +93,7 @@ const Pattern = () => {
         <Slider callback={setFillSlider} maxValue={fillSliderMax} />
         <Slider className={'chord'} callback={setChordSlider} maxValue={chordSliderMax} />
       </div>
+    </div>
     </div>
   )
 }

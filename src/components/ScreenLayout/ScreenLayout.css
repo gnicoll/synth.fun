@@ -1,12 +1,11 @@
-.mode_sequence .arp_layout {
+.arp_screenlayout {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 1fr 2fr 0.5fr; 
+    grid-template-rows: 1fr 1fr; 
     grid-template-areas: 
-            "keyboard"
             "pattern"
-            "controls";
+            "sequence";
     row-gap: 1vh;
 }

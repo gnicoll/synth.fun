@@ -1,11 +1,9 @@
 import logo from './logo.svg';
 import React, { useEffect, useCallback, useRef  } from 'react';
 import './App.css';
-import { ReactSVG } from 'react-svg'
 import Keyboard from '../components/keyboard/Keyboard';
-import Sequence from '../components/Sequence/Sequence';
-import Pattern from '../components/Pattern/Pattern';
 import Controls from '../components/Controls/Controls';
+import ScreenController from '../components/ScreenController/ScreenController';
 import { useSynth } from '../context/SynthContext';
 import Layout from '../Layout/Layout';
 
@@ -22,9 +20,8 @@ function App() {
       }>
       <Layout>
         <Keyboard />
-        <Pattern />
+        <ScreenController />
         <Controls />
-        <Sequence />
       </Layout>
     </div>
   );

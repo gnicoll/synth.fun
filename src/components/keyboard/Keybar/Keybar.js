@@ -1,31 +1,22 @@
 import style from './Keybar.css';
-import { useState } from 'react';
-import { useSynth } from '../../../context/SynthContext';
+import { useUi } from '../../../context/UIContext';
 
 const Keybar = () => {
-  const { synth, dispatch } = useSynth();
-  const [play, setPlay] = useState(false);
-
-  const handleClick = (p) => {
-    setPlay(p)
-    dispatch({
-      'type': 'playpause',
-      'play': p
-    });
-  }
+  const ui = useUi();
   
   return (
     <div className="arp_keybar" >
       <div className="arp_keybar_container">
+        {ui.screen}
         <div className='arp_keybar_button'
-          onClick={()=>handleClick(!play)}
+          onClick={()=>ui.screen ='default'}
           >
-          {!play && 
-          <div className='arp_keybar_button_play'>
-          </div>}
-          {play && 
-          <div className='arp_keybar_button_pause'>
-          </div>}
+            play
+        </div>
+        <div className='arp_keybar_button'
+          onClick={()=>ui.screen = 'settings'}
+          >
+            settings
         </div>
       </div>
     </div>

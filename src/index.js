@@ -6,12 +6,15 @@ import reportWebVitals from './reportWebVitals';
 import { sendToVercelAnalytics } from './vitals';
 import {SynthProvider} from './context/SynthContext';
 import {SequenceProvider} from './context/SequenceContext';
+import { UiProvider } from './context/UIContext';
 
 ReactDOM.render(
   <React.StrictMode>
     <SynthProvider>
       <SequenceProvider>
-        <App />
+        <UiProvider>
+          <App />
+        </UiProvider>
       </SequenceProvider>
     </SynthProvider>
   </React.StrictMode>,
